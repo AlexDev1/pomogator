@@ -1,0 +1,10 @@
+.idea/*
+db.sqlite3
+.env
+*.pyc
+.DS_Store
+static/
+media/
+zojnews/local_settings.py
+sqlite3.db
+celerybeat-schedule.db
