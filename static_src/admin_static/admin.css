@@ -1,0 +1,15 @@
+tr.bisque {
+  background-color: bisque;
+}
+tr.publish-news {
+  background-color: #e9fdde70;
+}
+tr.unpublished-news {
+  background-color: #ff837f63;
+}
+tr.delayed-published-news {
+  background-color: #ffe77f61;
+}
+table.table-result-status tbody tr:hover {
+  font-weight: bold;
+}

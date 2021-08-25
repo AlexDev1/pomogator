@@ -1,0 +1,32 @@
+{% load thumbnail %}
+<div class="photo-wrap">
+  <a href="{{ object.get_absolute_url }}">
+    {% thumbnail object.get_cover.image "320x200" crop="center" as img %}
+    <img src="{{ img.url }}" alt="">
+    {% empty %}
+    <img class="noimage" src="/static/images/noimage300x180.png" alt="новость без фото">
+    {% endthumbnail %}
+  </a>
+  <span class="photo__title photo__title--right">
+    <span title="количество просмотров" class="visits_count noselect">
+      <span class="fa fa-eye"></span> {{ object.get_visits }}
+    </span>
+    {% if object.video %}
+    <a class="news-block__has-video" href="{{ object.video.get_absolute_url }}">
+        <span class="fa fa-video-camera"></span>
+    </a>
+    {% endif %}
+
+    {% if object.youtube_video %}
+    <a class="news-block__has-video" href="{{ object.get_absolute_url }}">
+        <span class="fa fa-video-camera"></span>
+    </a>
+    {% endif %}
+
+    {% if object.is_photogallery %}
+    <a class="news-block__has-photogallery" href="{{ object.photogallery.get_absolute_url }}">
+        <span class="fa fa-camera"></span>
+    </a>
+    {% endif %}
+  </span>
+</div>

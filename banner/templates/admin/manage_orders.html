@@ -1,0 +1,76 @@
+{% extends "admin/base_site.html" %}
+{% block title %} Управление заказами {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+
+
+<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>
+
+<script type="text/javascript">
+function ShowOrderPlace(id){
+    $.ajax({
+        type: "POST",
+        url: "/admin/banner/bannerorders/show_full_order/",
+        data: "id=" + id,
+        success: function(result){
+            $("#full_info").html(result);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+}
+</script>
+
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block content %}
+
+
+<p>&nbsp;</p>
+<div id="title_block"><a href="/admin/">Начало</a> / <a href="/admin/banner/banneradvertisers/">Управление показами банеров</a></div>
+<br>
+
+<br>
+
+<table cellpadding="5" cellspacing="5" width="100%">
+    <tr>
+        <td valing="top" witdh="60%">
+            <b>Запросы</b>
+        </td>
+        <td valing="top" witdh="40%">
+            <b>Описание</b>
+        </td>
+    </tr>
+    <tr>
+        <td valing="top" witdh="60%">
+            <!--
+            {{table_waiting_vip|safe}}
+            <hr>
+            
+            {{table_waiting|safe}}
+            <hr>
+            {{table_waiting_vip_ny|safe}}
+            <hr>
+            {{table_waiting_ny|safe}}
+            -->
+            {{result_waiting|safe}}
+            {{result_waiting_ny|safe}}
+        </td>
+        <td valing="top" witdh="40%">
+            <div id="full_info"></div>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

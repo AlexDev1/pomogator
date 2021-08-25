@@ -1,0 +1,22 @@
+.hasDatepicker + .ui-datepicker-trigger {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background-color: transparent;
+}
+.hasDatepicker + .ui-datepicker-trigger:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+  line-height: 24px;
+  content: "\f073";
+  color: black;
+}
+.hasDatepicker + .ui-datepicker-trigger:hover:before {
+  color: #37bf29;
+}

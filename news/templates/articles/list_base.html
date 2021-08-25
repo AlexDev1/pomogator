@@ -1,0 +1,15 @@
+{% extends "articles/base.html" %}
+
+{% load custom_utils %}
+{% load tags_utils %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+{% endblock %}
+
+{% block description %}{{ rubric.text }}{% if page_obj %} | Страница {{ page_obj.number }}{% endif %}{% endblock %}
+
+{% block post_content %}{% endblock %}
+
+
+{% block _panel_footer %}{% endblock %}

@@ -1,0 +1,87 @@
+.currency {
+  text-align: center;
+}
+.currency--wait {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+  color: #D7DBDA;
+  font-size: 300%;
+}
+.currency--wait:after {
+  content: "\f021";
+}
+.currency__item {
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+}
+.currency__item .item__left-wrap,
+.currency__item .item__right-wrap {
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  width: 50%;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.currency__item .item__title {
+  font-weight: bold;
+}
+.currency__item .item__date {
+  font-style: italic;
+}
+.currency__item .item__tax:after {
+  margin-left: 1pt;
+  content: "\20BD";
+}
+.currency__item .item__diff--up,
+.currency__item .item__diff--down {
+  margin-right: 2pt;
+}
+.currency__item .item__diff--up {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+  color: #1FE025;
+}
+.currency__item .item__diff--up:after {
+  content: "\f062";
+}
+.currency__item .item__diff--down {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+  color: #37bf29;
+}
+.currency__item .item__diff--down:after {
+  content: "\f063";
+}
+.currency__item + .currency__item {
+  margin-top: 1rem;
+}

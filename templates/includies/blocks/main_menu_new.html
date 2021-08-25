@@ -1,0 +1,37 @@
+<ul class="menu">{% load static menu_build %}
+  <li><a href="/" class="btn btn-primary ">
+    <img class="p-l-15" height="45" title="Zoj.news" src="{% static 'images/zoj_logo_6.png' %}">
+  </a></li>
+  <li>
+    <a href="{% url 'articles:list' %}" class="btn btn-secondary">
+      <img class="icon-menu" width="25" height="25" src="{% static 'icons/i-subscr-50.png' %}"/>
+      Статьи о ЗОЖ
+    </a>
+  </li>
+  <li style="background-color: #1f7e46;">
+    <a href="{% url 'news:list' %}" class="toggler btn btn-secondary">
+      <img class="icon-menu" src="{% static 'icons/i-news-50_v2.png' %}"/>
+      Новости
+    </a>
+    <ul class="submenu active">
+      {% menu_builder as rubrics %}
+      {% for rubric in rubrics %}
+        <li>
+          <a href="{% url 'news:rubric' rubric.slug %}" class="btn btn-small btn-secondary">{{ rubric.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <a class="btn btn-secondary" href="/reklama/">
+      <img class="icon-menu" width="25" height="25" src="{% static 'icons/i-reklama-50.png' %}"/>
+      Реклама
+    </a></li>
+  <li><a class="btn btn-secondary" href="/feedback/">
+    <img class="icon-menu" width="25" height="25" src="{% static 'icons/i-faq-50.png' %}"/>
+    Обратная связь</a></li>
+  <li><a class="btn btn-secondary" href="/about/">
+    <img class="icon-menu" width="25" height="25" src="{% static 'icons/i-about-50.png' %}"/>
+    О нас</a></li>
+</ul>
+

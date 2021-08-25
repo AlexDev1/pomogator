@@ -1,0 +1,618 @@
+{% extends "admin/base_site.html" %}
+{% load banner_tags %}
+
+{% block title %} Управление показами банеров {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+<script type="text/javascript" src="/site_media/js/jquery.browser.min.js"></script>
+<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+    <style>
+    .txt_b {font-size: 0.8em; background-color:#ffeaea;}
+    .txt_f {font-size: 0.8em; background-color:#e6ffe6;}
+    .txt_nm {font-size: 0.8em; background-color:#8ac5ff;}
+    .tb_zag {font-size: 0.9em; font-weight:bold; background-color:#eeeeee;}
+    .txt_pl {font-size: 0.9em; font-weight:bold; background-color:#ebebeb;}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<b>
+Выберите год: <a href="/admin/banner/table/{{p_year}}/">{{p_year}}</a>  | <a href="/admin/banner/table/{{c_year}}/">{{c_year}}</a>  |  <a href="/admin/banner/table/{{n_year}}/">{{n_year}}</a>  |  <a href="/admin/banner/table/{{nn_year}}/">{{nn_year}}</a>  
+</b>
+<hr><br><br>
+<h2>Выбранный год: {{ch_year}}</h2>
+<hr>
+    <h3>Эксперт</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+
+        <tr>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '1' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '2' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '3' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '4' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '5' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '6' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '7' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '8' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '9' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '10' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '11' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_expert ch_year '12' %}</td>
+        </tr>
+        
+    </table>
+<br>
+    
+<hr>
+    <h3>Конкурс</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        <tr>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '1' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '2' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '3' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '4' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '5' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '6' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '7' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '8' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '9' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '10' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '11' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_quest ch_year '12' %}</td>
+        </tr>
+
+        
+    </table>
+<br>
+    
+<hr>
+    <h3>Актуальное интервью</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        <tr>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '1' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '2' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '3' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '4' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '5' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '6' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '7' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '8' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '9' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '10' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '11' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_interview ch_year '12' %}</td>
+        </tr>
+        
+    </table>
+<br>
+    
+
+<hr>
+    <h3>Бюллетень HEAD</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in bulletinH %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '1' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '2' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '3' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '4' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '5' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '6' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '7' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '8' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '9' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '10' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '11' 'Tourprom_Bulletin_Head' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '12' 'Tourprom_Bulletin_Head' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+
+
+
+<hr>
+    <h3>Бюллетень RIGHT</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in bulletinR %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '1' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '2' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '3' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '4' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '5' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '6' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '7' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '8' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '9' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '10' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '11' 'Tourprom_Bulletin_Right' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '12' 'Tourprom_Bulletin_Right' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+
+<hr>
+    <h3>Бюллетень CENTER</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in bulletinC %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '1' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '2' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '3' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '4' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '5' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '6' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '7' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '8' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '9' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '10' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '11' 'Tourprom_Bulletin_Center' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_workweek item.alias item.id ch_year '12' 'Tourprom_Bulletin_Center' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+
+<hr>
+    <h3>VIP _banner</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in vip %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '1' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '2' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '3' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '4' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '5' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '6' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '7' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '8' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '9' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '10' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '11' 'vip' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '12' 'vip' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+
+<hr>
+    <h3>VIP MEnu _banner</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in vipmenu %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '1' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '2' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '3' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '4' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '5' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '6' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '7' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '8' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '9' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '10' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '11' 'vipmenu' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '12' 'vipmenu' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+    
+<hr>
+    <h3>NEWS _vidjet</h3><br>
+    <table border="1" width="100%" cellpadding="0" cellspacing="0">
+        <tr class="tb_zag">
+
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        {% for item in news %}
+        <tr>
+
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '1' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '2' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '3' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '4' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '5' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '6' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '7' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '8' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '9' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '10' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '11' 'news' %}</td>
+        <td style="padding:0;" width="8%">{% show_place_table_week item.alias item.id ch_year '12' 'news' %}</td>
+        </tr>
+    {% endfor %}
+
+        
+    </table>
+<br>
+<hr>
+    <h3>Турбизнес Блок 1 - Главная страница</h3><br>
+        <table border="1" width="100%" cellpadding="2" cellspacing="2">
+        <tr class="tb_zag">
+            <td></td>
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        
+    {% for item in tb_block1 %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+        
+    </table>
+<br>
+<hr>
+    <h3>ТУРБИЗНЕС: БЛОК II
+    <br>
+        Сквозной показ баннеров на страницах:
+1) "Лента новостей", 2) "Новость", 3) "Лента Информеров", 4) "Информер", 5) "Торговая площадка",
+
+    </h3><br>
+        <table border="1" width="100%" cellpadding="2" cellspacing="2">
+        <tr class="tb_zag">
+            <td></td>
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        
+    {% for item in tb_block2 %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+        
+    </table>
+        <br>
+   <hr>
+    <h3>ТУРБИЗНЕС: БЛОК III
+    <br>
+        Сквозной показ баннеров на страницах: 1) "Фото", 2) "Видео"
+
+    </h3><br>
+        <table border="1" width="100%" cellpadding="2" cellspacing="2">
+        <tr class="tb_zag">
+            <td></td>
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        
+    {% for item in tb_block3 %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+        
+    </table>
+        
+        
+       <br> 
+   <hr>
+    <h3>ТУРОПЕДИЯ: БЛОК I
+    <br>
+        Все страницы туропедии
+
+    </h3><br>
+        <table border="1" width="100%" cellpadding="2" cellspacing="2">
+        <tr class="tb_zag">
+            <td></td>
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        
+    {% for item in tt_prem %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+    {% for item in tt_pres %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+    </table>
+        
+        
+       <br> 
+   <hr>
+    <h3>СОЦИАЛКА: БЛОК I
+    <br>
+        Заглавная страница Туристической Социальной Сети
+
+    </h3><br>
+        <table border="1" width="100%" cellpadding="2" cellspacing="2">
+        <tr class="tb_zag">
+            <td></td>
+            <td>январь</td>
+            <td>февраль</td>
+            <td>март</td>
+            <td>апрель</td>
+            <td>май</td>
+            <td>июнь</td>
+            <td>июль</td>
+            <td>август</td>
+            <td>сентябрь</td>
+            <td>октябрь</td>
+            <td>ноябрь</td>
+            <td>декабрь</td>
+        </tr>
+        
+    {% for item in tc_block1 %}
+        <tr>
+        <td width="100" class="txt_pl">{{item.alias}}</td>
+        {% show_place_table item.alias item.id ch_year '1' '-' %}
+        {% show_place_table item.alias item.id ch_year '2' '-' %}
+        {% show_place_table item.alias item.id ch_year '3' '-' %}
+        {% show_place_table item.alias item.id ch_year '4' '-' %}
+        {% show_place_table item.alias item.id ch_year '5' '-' %}
+        {% show_place_table item.alias item.id ch_year '6' '-' %}
+        {% show_place_table item.alias item.id ch_year '7' '-' %}
+        {% show_place_table item.alias item.id ch_year '8' '-' %}
+        {% show_place_table item.alias item.id ch_year '9' '-' %}
+        {% show_place_table item.alias item.id ch_year '10' '-' %}
+        {% show_place_table item.alias item.id ch_year '11' '-' %}
+        {% show_place_table item.alias item.id ch_year '12' '-' %}
+        </tr>
+    {% endfor %}
+        
+    </table>
+        
+{% endblock %}

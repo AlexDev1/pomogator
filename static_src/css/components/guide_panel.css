@@ -1,0 +1,344 @@
+@-webkit-keyframes add-to-guide {
+  0% {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+  85% {
+    width: 108px;
+    height: 108px;
+    line-height: 108px;
+  }
+  100% {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+}
+@keyframes add-to-guide {
+  0% {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+  85% {
+    width: 108px;
+    height: 108px;
+    line-height: 108px;
+  }
+  100% {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+}
+@-webkit-keyframes add-to-guide--before {
+  0% {
+    font-size: 72px;
+  }
+  85% {
+    font-size: 108px;
+  }
+  100% {
+    font-size: 72px;
+  }
+}
+@keyframes add-to-guide--before {
+  0% {
+    font-size: 72px;
+  }
+  85% {
+    font-size: 108px;
+  }
+  100% {
+    font-size: 72px;
+  }
+}
+#guide-start-button {
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #37bf29;
+  color: white;
+  width: 72px;
+  height: 72px;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.7);
+          box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -144px;
+  left: 100%;
+  z-index: 12;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#guide-start-button:before {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 72px;
+  font-size: 72px;
+  content: "\f0ac";
+  vertical-align: middle;
+}
+#guide-start-button:hover {
+  -webkit-box-shadow: 0 1pt 6pt rgba(0, 0, 0, 0.8);
+          box-shadow: 0 1pt 6pt rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+#guide-start-button:hover:after {
+  border-width: 4px;
+  bottom: -2px;
+  left: -2px;
+  opacity: 1;
+  right: -2px;
+  top: -2px;
+}
+#guide-start-button:after {
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 1px solid #37bf29;
+  bottom: -20px;
+  content: "";
+  left: -20px;
+  opacity: 0;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+#guide-start-button.active:before {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 72px;
+  font-size: 36px;
+  content: "\f00d";
+}
+#guide-start-button.add-item-animation {
+  -webkit-animation-name: add-to-guide;
+          animation-name: add-to-guide;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+#guide-start-button.add-item-animation:before {
+  -webkit-animation-name: add-to-guide--before;
+          animation-name: add-to-guide--before;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+#guide-start-button .counter {
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  color: #2B2A28;
+  border: 0.2em solid #37bf29;
+  background-color: white;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  z-index: 13;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#guide-start-button .counter.empty {
+  visibility: hidden;
+  opacity: 0;
+}
+.btn.in-guide {
+  background-color: transparent;
+  color: #37bf29;
+  border-color: #E01F25 !important;
+  border-width: 1px !important;
+  border-style: solid;
+}
+.guide-panel {
+  visibility: hidden;
+  z-index: 11;
+  position: fixed;
+  bottom: 0;
+  -webkit-box-shadow: 0 -3pt 8pt rgba(0, 0, 0, 0.5);
+          box-shadow: 0 -3pt 8pt rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.guide-panel .hidden {
+  display: none;
+}
+.guide-panel .guide-panel-inner {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  background-color: white;
+  padding: 1rem;
+}
+.guide-panel .guide-panel-inner .guide-title {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-bottom: 5px;
+  margin-left: -1rem;
+  border-bottom: 5px solid #D7DBDA;
+  margin-left: 32px;
+  padding-left: 0;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.guide-panel .guide-panel-inner .guide-full__body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.guide-panel .guide-panel-inner .guide-full__body > * {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.guide-panel .guide-panel-inner .guide-tools {
+  text-align: center;
+  margin-right: 1rem;
+  min-width: 194px;
+}
+.guide-panel .guide-panel-inner .guide-tools > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.guide-panel .guide-panel-inner .guide-tools .guide-open-select {
+  border-bottom: 1px dashed #828685;
+  display: inline-block;
+}
+.guide-panel .guide-panel-inner .guide-slider {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.guide-panel .guide-panel-inner .guide-slider .guide-slider-prev,
+.guide-panel .guide-panel-inner .guide-slider .guide-slider-next {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  margin: 0.5rem;
+  top: 0;
+}
+.guide-panel .guide-panel-inner .guide-slider .guide-slider-prev {
+  left: 0;
+}
+.guide-panel .guide-panel-inner .guide-slider .guide-slider-next {
+  right: 0;
+}
+.guide-panel .guide-panel-inner .guide-item-wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 96px;
+}
+.guide-panel .guide-panel-inner .guide-item-container {
+  position: absolute;
+  max-height: 96px;
+  white-space: nowrap;
+}
+.guide-panel .guide-panel-inner .guide-item {
+  position: relative;
+  border: 1px solid #828685;
+  overflow: hidden;
+  height: 96px;
+  width: 120px;
+  display: inline-block;
+}
+.guide-panel .guide-panel-inner .guide-item + .guide-item {
+  margin-left: 0.5rem;
+}
+.guide-panel .guide-panel-inner .guide-item .photo-overlay {
+  /* Vertical gradient */
+  background-color: transparent;
+  /* Mozilla: */
+  background: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.6));
+  /* Chrome, Safari:*/
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
+  /* MSIE */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 48px;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-image {
+  height: 96px;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-title {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-title a {
+  padding: 0 2pt;
+  color: white;
+  display: inline-block;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-title a:hover {
+  color: #37bf29;
+  text-shadow: 1px 1px 2px black;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  font-size: 0;
+  border: none;
+  background: none;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-delete:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f00d";
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+.guide-panel .guide-panel-inner .guide-item .guide-item-delete:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}

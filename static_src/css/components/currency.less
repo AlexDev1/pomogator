@@ -1,0 +1,83 @@
+@import "../ui/core";
+@import "../../vendor/components-font-awesome/less/mixins";
+@import "../../vendor/components-font-awesome/less/variables";
+@import (reference) "../../vendor/components-font-awesome/less/fixed-width";
+@import (reference) "../../vendor/components-font-awesome/less/animated";
+
+
+.currency {
+    text-align: center;
+
+    &--wait {
+        .fa-icon();
+        .fa-fw();
+        .fa-spin();
+
+        color: @lite-color;
+        font-size: 300%;
+
+        &:after {
+            content: @fa-var-refresh;
+        }
+    }
+
+    &__item {
+        .flex();
+
+        .item {
+            &__left-wrap,
+            &__right-wrap {
+                .flex();
+                width: 50%;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            &__title {
+                font-weight: bold;
+            }
+
+            &__date {
+                font-style: italic;
+            }
+
+            &__tax {
+                &:after {
+                    margin-left: 1pt;
+                    content: "\20BD"; // Неразрывный пробел и символ рубля
+                }
+            }
+
+            &__diff {
+                &--up,
+                &--down {
+                    margin-right: 2pt;
+                }
+
+                &--up {
+                    .fa-icon();
+                    .fa-fw();
+                    color: @green;
+
+                    &:after {
+                        content: @fa-var-arrow-up;
+                    }
+                }
+
+                &--down {
+                    .fa-icon();
+                    .fa-fw();
+                    color: @red;
+
+                    &:after {
+                        content: @fa-var-arrow-down;
+                    }
+                }
+            }
+        }
+
+        & + & {
+            margin-top: @block-margin;
+        }
+    }
+}

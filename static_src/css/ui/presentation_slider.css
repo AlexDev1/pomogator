@@ -1,0 +1,114 @@
+.top-presentations-vue .vue-slider {
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+.top-presentations-vue .vue-slider--wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.top-presentations-vue .vue-slider:nth-child(1) {
+  width: 50%;
+  border-right: 4pt solid white;
+}
+.top-presentations-vue .vue-slider:nth-child(1) .title {
+  width: 18em;
+}
+.top-presentations-vue .vue-slider:nth-child(2) {
+  width: 30%;
+  border-right: 4pt solid white;
+}
+.top-presentations-vue .vue-slider:nth-child(2) .title {
+  width: 10em;
+}
+.top-presentations-vue .vue-slider:nth-child(3) {
+  width: 20%;
+}
+.top-presentations-vue .vue-slider:nth-child(3) .title {
+  display: none;
+}
+.top-presentations-vue .vue-slider__slide {
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: 0 center;
+}
+.top-presentations-vue .vue-slider__slide--wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.top-presentations-vue .vue-slider__slide .title {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-shadow: 1px 1px 2px black;
+}
+.top-presentations-vue .vue-slider__slide:hover {
+  color: #37bf29;
+}
+.top-presentations-vue .vue-slider__slide:hover .title {
+  color: #37bf29;
+}
+.top-presentations-vue .navigation {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+  width: 20%;
+  text-align: center;
+  color: white;
+}
+.top-presentations-vue .navigation .btn {
+  line-height: 30px;
+  height: 30px;
+}
+.top-presentations-vue .navigation .fa {
+  font-size: 2em;
+  text-shadow: 1px 1px 2px black;
+}
+.slidenext-enter {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  left: 500px;
+}
+.slidenext-enter-active,
+.slidenext-leave-active {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slidenext-enter-to,
+.slidenext-leave {
+  left: 0;
+}
+.slidenext-leave-to {
+  left: -500px;
+}
+.slideprev-enter {
+  left: -500px;
+}
+.slideprev-enter-active,
+.slideprev-leave-active {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slideprev-enter-to,
+.slideprev-leave {
+  left: 0;
+}
+.slideprev-leave-to {
+  left: 500px;
+}

@@ -1,0 +1,19 @@
+.feedback-form {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+.feedback-form input:not([type=submit]):not([type=checkbox]),
+.feedback-form textarea,
+.feedback-form select,
+.feedback-form .block {
+  width: 100%;
+}
+.feedback-form input[type=checkbox] {
+  margin-bottom: 1rem;
+}
+.feedback-form .form__row {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,7 @@
+{% if forloop.counter0 == 0 %}{% load banner_tags %}
+  {% get_widget_scripts section=5 %}
+{% elif forloop.counter0 == 4 %}
+  {% get_widget_scripts section=6 %}
+{% elif forloop.counter0 == 9 %}
+  {% get_widget_scripts section=7 %}
+{% endif %}

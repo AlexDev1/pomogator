@@ -1,0 +1,7 @@
+{% for object in object_list %}
+  {% with object.name as specialblock_title %}
+    {% with object.get_latest_news as object_list %}
+      {% include "news/blocks/top_specialblock_slider.html" %}
+    {% endwith %}
+  {% endwith %}
+{% endfor %}

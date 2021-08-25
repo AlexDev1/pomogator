@@ -1,0 +1,50 @@
+{% load thumbnail %}
+<section class="news-block">
+    <div class="news-block__header">
+    {% block header %}
+        <div class="photo-wrap">
+            <a href="{{ object.get_absolute_url }}">{% thumbnail object.get_cover "240x180" crop="center" as image %}
+                    <img src="{{ image.url }}" alt="">
+                {% empty %}
+                    {% thumbnail NOIMAGE_URL "240x180" crop="center" as noimage %}
+                    <img src="{{ noimage.url }}" class="noimage" alt="">
+                    {% endthumbnail %}
+                {% endthumbnail %}</a>
+
+            <span class="photo__title photo__title--right">
+                <span title="Количество просмотров" class="counter-icon visits_count noselect">
+                    <span class="fa fa-eye"></span> {{ object.fake_visits }}
+                </span>
+            </span>
+        </div>
+    {% endblock %}
+    </div>
+
+    <div class="news-block__body">
+    {% block body %}
+        <h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+
+        <div class="news-block__text">
+            <a class="link-more" href="{{ object.get_absolute_url }}">
+            {{ object.text|striptags|truncatewords:"15"|safe }}
+            </a>
+        </div>
+    {% endblock %}
+    </div>
+
+    <div class="news-block__footer">
+    {% block footer %}
+        {% ifnotequal object.countries.count 0 %}
+        {% with object.countries.all as labels %}
+            {% include "includies/blocks/labels.html" %}
+        {% endwith %}
+        {% endifnotequal %}
+
+        <div class="no-labels">
+            <span class="news-block__date date">
+                <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y" }}
+            </span>
+        </div>
+    {% endblock %}
+    </div>
+</section>

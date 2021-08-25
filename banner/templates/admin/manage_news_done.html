@@ -1,0 +1,72 @@
+
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %} Управление показами банеров {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+
+<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>
+
+<script type="text/javascript" src="/site_media/js/ajax_functions.js"></script>
+<script type="text/javascript" src="/site_media/js/jquery.MultiFile.pack.js"></script>
+<script type="text/javascript">
+function checkAndSubmitBaner() {
+    clearErrors();
+    valid = true;
+    if(jQuery.trim($('#banUrl').val())=='') {
+        $('#errorUrl').html("Вы не ввели адрес ссылки для банера");
+        valid = false;
+    }
+    if($('#banFile').val()=='') {
+        $('#errorFile').html("Вы не выбрали изображение для банера");
+        valid = false;
+    }
+    if($('#banFile2').val()=='') {
+        $('#errorFile2').html("Вы не выбрали большое изображение для банера");
+        valid = false;
+    }
+    if(valid) {
+        document.forms.addBaner.submit();
+    }
+}
+function clearErrors() {
+    $('#errorUrl').html("");
+    $('#errorFile').html("");
+    $('#errorFile2').html("");
+
+
+}
+$(document).ready(function() {
+    $("#preview_button").click(function() {
+        $(":input[name='preview']").val("1");
+        $("#addBaner").submit();
+    });
+
+    });
+</script>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="/admin/">{% trans 'Home' %}</a>
+&rsaquo; <a href="/admin/banner/banneradvertisers/">Управление показами банеров</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div id="title_block">Редактирование NEWS-ВИДЖЕТА</div>
+<br>
+
+<b>Готово</b>
+{% endblock %}

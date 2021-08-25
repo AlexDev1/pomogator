@@ -1,0 +1,71 @@
+@import "core";
+
+.hfilter {
+    display: block;
+    text-align: center;
+
+    &__list {
+        display: inline-block;
+        padding-top: @ui-height / 2; // для того, чтобы вместились псевдо радиокнопки
+        position: relative;
+    }
+
+    .title {
+        font-size: 120%;
+        height: @ui-height / 2;
+    }
+
+    .button {
+        cursor: pointer;
+        display: table-cell;
+        line-height: 2em;
+        padding: 0 @block-margin;
+        padding-top: @block-margin;
+        position: relative;
+        word-spacing: normal;
+
+        &:after {
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid @hint-color;
+            content: "";
+            display: block;
+            height: @ui-height / 4;
+            left: 47%;
+            position: absolute;
+            top: 0;
+            width: @ui-height / 4;
+        }
+
+        &:before {
+            border-bottom: 1px solid @hint-color;
+            content: "";
+            display: block;
+            left: 0;
+            position: absolute;
+            top: @ui-height / 8;
+            width: 100%;
+        }
+
+        &:first-child:before {
+            left: 50%;
+            width: 50%;
+        }
+
+        &:last-child:before {
+            right: 50%;
+            width: 50%;
+        }
+
+        &.ui-tabs-active, // jquery-ui
+        &.active,
+        &:hover {
+            color: @primary-bg-color;
+
+            &:after {
+                background-color: @primary-bg-color;
+                border-color: @primary-bg-color;
+            }
+        }
+    }
+}

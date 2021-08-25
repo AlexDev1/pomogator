@@ -1,0 +1,102 @@
+.continent-buttons--container {
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.continent-buttons .button {
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  padding-bottom: 16px;
+  position: relative;
+}
+.continent-buttons .button .title-wrap {
+  top: inherit;
+  bottom: 0;
+  position: absolute;
+}
+.continent-buttons .button .title {
+  border-bottom: 1px dashed #828685;
+  color: #828685;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+.continent-buttons .button.active .title,
+.continent-buttons .button:hover .title {
+  color: #2B2A28;
+  border-bottom: 1px solid #2B2A28;
+}
+.continent-buttons__africa {
+  background-image: url("/static/images/continents/map-africa.png");
+}
+.continent-buttons__africa.active {
+  background-image: url("/static/images/continents/map-africa-active.png");
+}
+.continent-buttons__africa:hover {
+  background-image: url("/static/images/continents/map-africa-active.png");
+}
+.continent-buttons__all {
+  background-image: url("/static/images/continents/map-all.png");
+}
+.continent-buttons__all.active {
+  background-image: url("/static/images/continents/map-all-active.png");
+}
+.continent-buttons__all:hover {
+  background-image: url("/static/images/continents/map-all-active.png");
+}
+.continent-buttons__asia {
+  background-image: url("/static/images/continents/map-asia.png");
+}
+.continent-buttons__asia.active {
+  background-image: url("/static/images/continents/map-asia-active.png");
+}
+.continent-buttons__asia:hover {
+  background-image: url("/static/images/continents/map-asia-active.png");
+}
+.continent-buttons__australia {
+  background-image: url("/static/images/continents/map-australia.png");
+}
+.continent-buttons__australia.active {
+  background-image: url("/static/images/continents/map-australia-active.png");
+}
+.continent-buttons__australia:hover {
+  background-image: url("/static/images/continents/map-australia-active.png");
+}
+.continent-buttons__europe {
+  background-image: url("/static/images/continents/map-europe.png");
+}
+.continent-buttons__europe.active {
+  background-image: url("/static/images/continents/map-europe-active.png");
+}
+.continent-buttons__europe:hover {
+  background-image: url("/static/images/continents/map-europe-active.png");
+}
+.continent-buttons__n-america {
+  background-image: url("/static/images/continents/map-n-america.png");
+}
+.continent-buttons__n-america.active {
+  background-image: url("/static/images/continents/map-n-america-active.png");
+}
+.continent-buttons__n-america:hover {
+  background-image: url("/static/images/continents/map-n-america-active.png");
+}
+.continent-buttons__s-america {
+  background-image: url("/static/images/continents/map-s-america.png");
+}
+.continent-buttons__s-america.active {
+  background-image: url("/static/images/continents/map-s-america-active.png");
+}
+.continent-buttons__s-america:hover {
+  background-image: url("/static/images/continents/map-s-america-active.png");
+}

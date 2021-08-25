@@ -1,0 +1,130 @@
+// Forms and input styles is a part of UI styles of tourprom
+// author: Coder <coder@xevin.ru>
+
+@import "core";
+
+
+select,
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=time],
+textarea {
+    border-color: @lite-color;
+    border-radius: @ui-border-radius;
+    border-style: @ui-border-style;
+    border-width: 1px;
+}
+
+select:not([multiple]),
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=time] {
+    line-height: @ui-height / 2;
+    height: @ui-height / 2;
+    vertical-align: baseline;
+    padding: 0 @block-margin / 2;
+}
+
+label input[type=checkbox] {
+    height: 1em;
+    vertical-align: middle;
+}
+
+select[multiple] {
+    overflow-y: scroll;
+    padding: @block-margin / 2;
+}
+
+textarea {
+    padding: @block-margin / 2;
+    resize: vertical;
+}
+
+.form {
+    &__row {
+        // padding-bottom: 1em;
+
+        td {
+            padding-bottom: 1em;
+            vertical-align: top;
+        }
+
+        .form__field input[type=text] {
+            width: 80%;
+        }
+    }
+
+    &__error {
+        color: @primary-bg-color;
+        list-style: none;
+    }
+
+    &__group {
+
+    }
+
+    &__legend {
+        font-weight: bold;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+.errorlist {
+    padding: @block-margin / 2;
+
+    li {
+        color: @primary-bg-color;
+        list-style: none;
+    }
+}
+
+.field {
+    &__help_text {
+        color: @hint-color;
+        font-size: .8em;
+        font-style: italic;
+        clear: both;
+    }
+
+    &__required {
+        color: red;
+        margin-left: 2pt;
+    }
+
+    &__errors {
+        ul {
+            padding: 0;
+
+            li {
+                color: @primary-bg-color;
+                list-style: none;
+            }
+        }
+    }
+}
+
+.form-table {
+    th, .item__title {
+        min-width: 200px;
+        max-width: 200px;
+        text-align: right;
+        padding-right: @padding;
+    }
+}
+
+.popup {
+    input[type=text],
+    input[type=password] {
+        line-height: @ui-height;
+        height: @ui-height;
+    }
+}
+
+input[type=submit] {
+    text-transform: uppercase;
+}

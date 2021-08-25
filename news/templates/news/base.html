@@ -1,0 +1,40 @@
+{% extends 'base.html' %}{% load banner_tags %}
+{% block seo_meta %}
+  <link rel="canonical" href="{% block canonical_url %}{% endblock %}">{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'news:list' %}">Новости ЗОЖ</a>
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="{% block main_block_css_id %}news-page{% endblock %}">
+    <div class="grid__col-sm-9 left-col" style="padding-top: 10px">
+      <div class="panel">
+        <div class="panel-heading">
+          {% block heading %}
+            <h1>Новости Здорового Образа Жизни | от ЗОЖ.news </h1>
+            {% if show_return_link %}
+              <a href="{% url 'news-list' %}" class="pull-right return-link">Вернуться ко всем новостям</a>
+            {% endif %}
+          {% endblock %}
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block description">
+              Лента новостей о ЗОЖ - источник оперативной и достоверной информации в мире Здорового Образа Жизни.
+              Новости нашего издательского дома широко цитируемы в рунете, однако мы не ограничиваемся лишь темой
+              Здорового и правильного питания: на нашей ленте новостей о Здоровом Образе Жизни вы найдёте исследования в
+              области правильного похудения, физической активности, а также вредных и полезных привычек для ЗОЖ.
+            </div>
+
+          </div>
+        {% endblock %}
+        {% block page_content %}{% endblock %}
+      </div>
+
+      </div>
+    <div class="grid__col-sm-3 right-col">
+      {% get_widget_scripts section=4 %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_popups %}{% endblock %}

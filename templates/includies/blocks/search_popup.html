@@ -1,0 +1,17 @@
+
+<div id="tp_search" class="search-popup popup">
+    <div class="panel">
+        <div class="panel-heading">
+            <h2>Поиск</h2>
+        </div>
+
+        <div class="panel-body">
+            <div class="panel-body-wrap--padding">
+                <form action="{% url 'search_results' %}" method="get" class="aja">
+                    <input type="text" name="q">
+                    <input class="btn btn-primary" value="Найти" type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

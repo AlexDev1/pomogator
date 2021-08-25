@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block seo_title %}Результаты поиска{% endblock %}
+{% block seo_meta %}{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'news:list' %}">Поиск по сайту</a>
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="{% block main_block_css_id %}news-page{% endblock %}">
+    <div class="grid__col-sm-9 left-col" style="padding-top: 10px">
+      <div class="panel m-rl-0">
+        <div class="panel-heading">
+          {% block heading %}<h1>Результаты поиска</h1>{% endblock %}
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block description">
+              <form action="{% url 'search_results' %}" method="get" name="search-form" class="form-search">
+                <input name="q" type="text" placeholder="Поиск..." value="{{ query }}" style="width: 50%"/>
+                <input class="btn btn-primary m-0" value="Найти" type="submit"><br><br>
+                <div class="form_radio_group">
+                  <div class="form_radio_group-item">
+                    <input id="radio-1" type="radio" name="sorted" value="false" {% if not sort %}checked{% endif %}>
+                    <label for="radio-1">По релевантности</label>
+                  </div>
+                  <div class="form_radio_group-item">
+                    <input id="radio-2" type="radio" name="sorted" value="true" {% if sort %}checked{% endif %}>
+                    <label for="radio-2">По дате</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        {% endblock %}
+      </div>
+      {% block page_content %}
+        <div class="panel">
+          {% for object in object_list %}
+            <section class="news-list__item">
+
+              <div class="news-item__block news-block">
+                <div class="grid">
+
+                  <div class="grid__col-sm-12 news-item__body">
+                    {% block body %}
+                      <h3><a target="_blank" href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+                      <div class="no-labels">
+                        <span class="news-block__date date">
+                           <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y" }} /
+                          {% for rubric in object.rubrics.all %}
+                            {{ rubric }}{% if not forloop.last %}, {% endif %}{% endfor %} / {{ object.type_content }}
+                        </span>
+                      </div>
+                      <div class="news-item__text">
+                        <a target="_blank" class="news-block__text" href="{{ object.get_absolute_url }}">
+                          {{ object.text|striptags|truncatechars:"180" }}
+                        </a>
+                      </div>
+                    {% endblock %}
+                  </div>
+                </div>
+              </div>
+            </section>
+          {% endfor %}
+        </div>
+      {% endblock %}
+    </div>
+
+
+    <div class="grid__col-sm-3 right-col">
+
+    </div>
+  </div>
+{% endblock %}
+{% block extra_js %}
+  <script>
+    jQuery(document).ready(function ($) {
+      var form = $('form[name="search-form"]'),
+              radio = $('input[type="radio"]'),
+              choice = '';
+
+      radio.change(function (e) {
+        form.submit();
+      });
+    });
+  </script>
+{% endblock %}
+{% block extra_popups %}{% endblock %}

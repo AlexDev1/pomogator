@@ -1,0 +1,125 @@
+{% extends "admin/base_site.html" %}
+{% block title %} Управление показами банеров {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+<script type="text/javascript" src="/site_media/js/jquery-1.3.2.min.js"></script>
+
+
+<script>
+document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");
+</script>
+
+
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block content %}
+
+
+<p>&nbsp;</p>
+<div id="title_block"><a href="/admin/">Начало</a> / Архив показа банеров</a></div>
+<br>
+<form method="POST" action=".">
+    <select name="month">
+        <option {% ifequal month 1 %}selected{% endifequal %} value="1">Январь</option>
+        <option {% ifequal month 2 %}selected{% endifequal %} value="2">Февраль</option>
+        <option {% ifequal month 3 %}selected{% endifequal %} value="3">Март</option>
+        <option {% ifequal month 4 %}selected{% endifequal %} value="4">Апрель</option>
+        <option {% ifequal month 5 %}selected{% endifequal %} value="5">Май</option>
+        <option {% ifequal month 6 %}selected{% endifequal %} value="6">Июнь</option>
+        <option {% ifequal month 7 %}selected{% endifequal %} value="7">Июль</option>
+        <option {% ifequal month 8 %}selected{% endifequal %} value="8">Август</option>
+        <option {% ifequal month 9 %}selected{% endifequal %} value="9">Сентябрь</option>
+        <option {% ifequal month 10 %}selected{% endifequal %} value="10">Октябрь</option>
+        <option {% ifequal month 11 %}selected{% endifequal %} value="11">Ноябрь</option>
+        <option {% ifequal month 12 %}selected{% endifequal %} value="12">Декабрь</option>
+    </select>
+
+    <select name="year">
+        <option {% ifequal year 2009 %}selected{% endifequal %} value="2009">2009</option>
+        <option {% ifequal year 2010 %}selected{% endifequal %} value="2010">2010</option>
+
+        <option {% ifequal year 2011 %}selected{% endifequal %} value="2011">2011</option>
+        <option {% ifequal year 2012 %}selected{% endifequal %} value="2012">2012</option>
+        <option {% ifequal year 2013 %}selected{% endifequal %} value="2013">2013</option>
+        <option {% ifequal year 2014 %}selected{% endifequal %} value="2014">2014</option>
+        <option {% ifequal year 2015 %}selected{% endifequal %} value="2015">2015</option>
+        <option {% ifequal year 2016 %}selected{% endifequal %} value="2016">2016</option>
+        <option {% ifequal year 2017 %}selected{% endifequal %} value="2017">2017</option>
+        <option {% ifequal year 2018 %}selected{% endifequal %} value="2018">2018</option>
+        <option {% ifequal year 2019 %}selected{% endifequal %} value="2019">2019</option>
+        <option {% ifequal year 2020 %}selected{% endifequal %} value="2020">2020</option>
+
+        <option {% ifequal year 2021 %}selected{% endifequal %} value="2021">2021</option>
+        <option {% ifequal year 2022 %}selected{% endifequal %} value="2022">2022</option>
+        <option {% ifequal year 2023 %}selected{% endifequal %} value="2023">2023</option>
+        <option {% ifequal year 2024 %}selected{% endifequal %} value="2024">2024</option>
+        <option {% ifequal year 2025 %}selected{% endifequal %} value="2025">2025</option>
+        <option {% ifequal year 2026 %}selected{% endifequal %} value="2026">2026</option>
+        <option {% ifequal year 2027 %}selected{% endifequal %} value="2027">2027</option>
+        <option {% ifequal year 2028 %}selected{% endifequal %} value="2028">2028</option>
+        <option {% ifequal year 2029 %}selected{% endifequal %} value="2029">2029</option>
+        <option {% ifequal year 2030 %}selected{% endifequal %} value="2030">2030</option>
+    </select>
+
+    <input type="Submit" name="ok" value="ok">
+</form>
+
+<br>
+
+<p>&nbsp;</p>
+
+{% if show %}
+<hr>
+    <b>Выбранный период: </b>{{dd_first|date:"d.m.y"}} - {{dd_last|date:"d.m.y"}}
+    <br><br>
+
+    <table border="1">
+
+        <tr>
+            <td><b>ID</b></td>
+            <td><b>Place</b></td>
+            <td><b>Date</b></td>
+            <td><b>ADV</b></td>
+            <td><b>Banner</b></td>
+            <td><b>Url</b></td>
+            <td><b>Show</b></td>
+            <td><b>Clicked</b></td>
+        </tr>
+    {% for f in banners %}
+        <tr>
+            <td>{{f.id}}</td>
+            <td>{{f.scedule.banner_place}}</td>
+            <td>{{f.datetime|date:"d.m.y - H:i"}}</td>
+            <td>{{f.user}}</td>
+            <td>
+                {% ifequal f.scedule.banner_place.id 46 %}
+                    <a href="/admin/banner/banneradvertisers/newsvidget/{{f.id}}/">открыть news-виджет</a>
+                {% endifequal %}
+                {% ifnotequal f.scedule.banner_place.id 46 %}
+                    <a href="/site_media/{{f.storage}}" target="new">{{f.storage}}</a><br><a href="/site_media/{{f.storage_vip}}" target="new">{{f.storage_vip}}</a>
+                {% endifnotequal %}
+                {% ifequal f.type.type 'T' %}
+                    <pre>{{f.text}}</pre>
+                {% endifequal %}
+            </td>
+            <td>{{f.baner_url}}</td>
+            <td>{{f.count_show}}</td>
+            <td>{{f.clicked}}</td>
+        </tr>
+    {% endfor%}
+
+    </table>
+
+
+{% endif %}
+
+{% endblock %}

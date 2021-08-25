@@ -1,0 +1,12 @@
+{% if labels|length > 0 %}
+<div class="label-container{% if labels|length > 1 %} label-container--more{% endif %}">
+    {% for label in labels %}
+    <a href="{{ label.get_absolute_url }}" class="label">
+        {{ label.title }}
+    </a>
+    {% endfor %}
+    {% if labels|length > 1 %}
+    <span class="label more-title">ещё</span>
+    {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,77 @@
+.paginator {
+  display: block;
+}
+.paginator .paging-wrapper .paging-label {
+  display: block;
+  line-height: 24px;
+  height: 24px;
+  font-weight: bold;
+}
+.paginator .paging-wrapper .paging {
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.paginator .paging-wrapper .paging .first {
+  -webkit-border-top-left-radius: 2pt;
+          border-top-left-radius: 2pt;
+  -webkit-border-bottom-left-radius: 2pt;
+          border-bottom-left-radius: 2pt;
+  overflow: hidden;
+}
+.paginator .paging-wrapper .paging .last {
+  -webkit-border-top-right-radius: 2pt;
+          border-top-right-radius: 2pt;
+  -webkit-border-bottom-right-radius: 2pt;
+          border-bottom-right-radius: 2pt;
+  overflow: hidden;
+}
+.paginator .paging-wrapper .paging li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  cursor: default;
+  list-style: none;
+  border: 1px solid #D7DBDA;
+  border-bottom: 1px solid #D7DBDA;
+  border-right: 1px solid #D7DBDA;
+}
+.paginator .paging-wrapper .paging li span {
+  cursor: default;
+}
+.paginator .paging-wrapper .paging li a,
+.paginator .paging-wrapper .paging li span {
+  font-size: 92%;
+  white-space: nowrap;
+  display: inline-block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 1rem;
+  background-color: white;
+}
+.paginator .paging-wrapper .paging li.skip {
+  text-align: center;
+  border-width: 0px;
+}
+.paginator .paging-wrapper .paging li.skip span {
+  background-color: transparent;
+}
+.paginator .paging-wrapper .paging li.current span {
+  font-weight: bold;
+  color: white;
+  background-color: #37bf29;
+}
+.paginator .paging-wrapper .paging li:not(.skip) + li:not(.skip) {
+  border-left-width: 0;
+}

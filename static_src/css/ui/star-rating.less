@@ -1,0 +1,120 @@
+@import "../../vendor/components-font-awesome/less/mixins";
+@import "../../vendor/components-font-awesome/less/variables";
+@import (reference) "../../vendor/components-font-awesome/less/fixed-width";
+@import (reference) "../../vendor/components-font-awesome/less/animated";
+
+
+.star-rating + a,
+.star-rating + span {
+    vertical-align: top;
+}
+
+@star-icon-width: 15px;
+@star-color: #2f77b9;
+
+.star-icon() {
+    font-size: 0;
+    white-space: nowrap;
+    display: inline-block;
+    height: @star-icon-width;
+    width: @star-icon-width;
+    overflow: hidden;
+    position: relative;
+    background: url("/site_media/images/redesign/touropedia/fivestar-sprite.png");
+    background-position: 0 0;
+}
+
+.star-icon-new(@color: @star-color) {
+    .fa-icon();
+    .fa-fw();
+    &:before {
+        content: @fa-var-star;
+        color: @color;
+    }
+    width: @star-icon-width;
+    height: @star-icon-width;
+}
+
+.star-rating {
+    .star-icon();
+    width: 85px;
+
+    li {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: @star-icon-width;
+        width: 20%;
+        background: url("/site_media/images/redesign/touropedia/fivestar-sprite.png");
+        background-position: 0 -@star-icon-width;
+
+        &.two {
+            width: 40%;
+        }
+
+        &.three {
+          width: 60%;
+        }
+
+        &.four {
+          width: 80%;
+        }
+
+        &.five {
+          width: 100%;
+        }
+
+        &.current {
+          opacity: 1;
+          width: 0;
+        }
+    }
+
+    input {
+        opacity: 0;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    &.star-input {
+        height: 19px;
+        width: 116px;
+        background: url("/site_media/images/redesign/touropedia/fivestar-sprite-big.png");
+        background-position: 0 0;
+
+        li {
+            height: 19px;
+            background: url("/site_media/images/redesign/touropedia/fivestar-sprite-big.png");
+            background-position: 0 -20px;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.star-input-hint {
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: top;
+    color: #39458F;
+    min-width: 200px;
+}
+
+.review-popup .star-input-hint {
+    padding: 2px 0 0 5px;
+}
+
+.review-popup .star-input-hint:before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 10px;
+    background: url("/site_media/images/redesign/touropedia/poi-sprite.png") -70px -96px;
+}

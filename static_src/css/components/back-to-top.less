@@ -1,0 +1,65 @@
+@import "../ui/core";
+
+@back-to-top-width: @ui-height * 1.5;
+
+#back-to-top {
+    .circle-btn(@back-to-top-width);
+    background-color: white;
+    // bottom: @back-to-top-width + @back-to-top-width * 0.5;
+    bottom: 0;
+    margin-bottom: @block-margin;
+    opacity: 0;
+    position: absolute;
+    right: -@back-to-top-width / 2;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    overflow: visible;
+
+    &:hover {
+        border-color: @primary-bg-color;
+        cursor: pointer;
+
+        &:before {
+            border-color: @primary-bg-color;
+            border-width: 4px;
+        }
+
+        &:after {
+            border-width: 4px;
+            bottom: -2px;
+            left: -2px;
+            opacity: 1;
+            right: -2px;
+            top: -2px;
+        }
+    }
+
+    &:after {
+        border-radius: 50%;
+        border: 1px solid @primary-bg-color;
+        bottom: -20px;
+        content: "";
+        left: -20px;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        .transition(all 0.3s ease-out);
+    }
+
+    &:before {
+        .circle-btn-arrow-top(@back-to-top-width);
+        display: block;
+        .transition(border-width 0.3s ease-in-out);
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.fade-out {
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,28 @@
+/* local treemenu.js styles */
+.treemenu li.tree-empty > span.toggler:after,
+.treemenu li.tree-closed > span.toggler:after,
+.treemenu li.tree-opened > span.toggler:after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+  margin-left: 4pt;
+  font-size: 80%;
+}
+.treemenu li.tree-empty > span.toggler:after {
+  content: "";
+}
+.treemenu li.tree-closed > span.toggler:after {
+  content: "\f178";
+}
+.treemenu li.tree-opened > span.toggler:after {
+  content: "\f175";
+}
+.treemenu li.tree-empty > .toggler {
+  visibility: hidden;
+  display: none !important;
+}

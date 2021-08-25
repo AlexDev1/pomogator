@@ -1,0 +1,147 @@
+@import (reference) "core";
+
+@slide-width: 500px;
+@slide-height: 200px;
+
+.top-presentations-vue {
+    .vue-slider {
+        overflow: hidden;
+        height: @slide-height;
+        position: relative;
+
+        &--wrap {
+            display: flex;
+        }
+
+        &:nth-child(1) {
+            width: 50%;
+            border-right: 4pt solid white;
+
+            .title {
+                width: 18em;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 30%;
+            border-right: 4pt solid white;
+
+            .title {
+                width: 10em;
+            }
+        }
+
+        &:nth-child(3) {
+            width: 20%;
+
+            .title {
+                display: none;
+            }
+        }
+
+        &__slide {
+            position: absolute;
+            height: @slide-height;
+            width: @slide-width;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 center;
+
+            &--wrap {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+            .title {
+                color: white;
+                font-weight: bold;
+                font-size: .9em;
+                padding: .5em;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                text-shadow: 1px 1px 2px black;
+
+            }
+
+            &:hover {
+                color: @primary-bg-color;
+
+                .title {
+                    color: @primary-bg-color;
+                }
+            }
+        }
+    }
+
+    .navigation {
+        position: absolute;
+        right: .5em;
+        bottom: 1em;
+        width: 20%;
+        text-align: center;
+        color: white;
+
+        .btn {
+            line-height: 30px;
+            height: 30px;
+        }
+
+        .fa {
+            font-size: 2em;
+            text-shadow: 1px 1px 2px black;
+        }
+    }
+}
+
+
+@slide-effect-time: .5s;
+// next
+.slidenext-enter {
+    transition: all @slide-effect-time ease;
+    left: @slide-width;
+    // transform: translateX(@slide-width);
+}
+
+.slidenext-enter-active,
+.slidenext-leave-active {
+    transition: all @slide-effect-time ease;
+}
+
+.slidenext-enter-to,
+.slidenext-leave {
+    // transform: translateX(0);
+    left: 0;
+}
+
+.slidenext-leave-to {
+    // transform: translateX(-@slide-width);
+    left: -@slide-width;
+}
+
+
+// prev
+.slideprev-enter {
+    // transform: translateX(-@slide-width);
+    left: -@slide-width;
+}
+
+.slideprev-enter-active,
+.slideprev-leave-active {
+    transition: all @slide-effect-time ease;
+}
+
+.slideprev-enter-to,
+.slideprev-leave {
+    // transform: translateX(0);
+    left: 0;
+}
+
+
+.slideprev-leave-to {
+    // transform: translateX(@slide-width);
+    left: @slide-width;
+}

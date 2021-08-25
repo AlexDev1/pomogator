@@ -1,0 +1,99 @@
+
+@import "core";
+
+.search {
+    // height: @ui-height;
+    background-color: @primary-bg-color;
+    border-radius: @ui-border-radius;
+
+    .sticked& {
+        z-index: 900;
+
+        input[type=text],
+        button {
+            box-sizing: border-box;
+            height: @ui-height / 2;
+            line-height: @ui-height;
+            margin: @ui-height / 6;
+        }
+    }
+
+    form {
+        display: block; // for old browsers
+        display: flex;
+        position: relative;
+
+        input[type=text],
+        button {
+            .transition(all .2s ease-out);
+            box-sizing: border-box;
+            height: @ui-height / 1.5;
+            line-height: @ui-height;
+            margin: @ui-height / 4;
+            vertical-align: top;
+        }
+
+        input {
+            flex-grow: 1;
+            width: 90%;
+            display: inline-block;
+        }
+
+        button[type=submit] {
+            background-color: transparent;
+            border: none;
+            font-size: 200%;
+            margin-left: 0;
+            width: @ui-height / 1.5;
+
+            span {
+                color: white;
+                vertical-align: top;
+            }
+        }
+
+        .suggestions {
+            left: 0;
+            position: absolute;
+            top: (@ui-height / 1.5) + (@ui-height / 2);
+            z-index: 10;
+
+            table { // fix legacy styles and template
+                .block-shadow();
+                background-color: white;
+                border-collapse: collapse;
+
+                tr {
+                    td {
+                        height: @ui-height / 2;
+                    }
+                }
+
+                .que {
+                    color: @primary-bg-color;
+                }
+
+                #searchresults {
+                    a {
+                        display: block;
+                        height: @ui-height / 2;
+                        line-height: @ui-height / 2;
+                        padding: 0 @block-margin;
+                    }
+                }
+
+                .category {
+                    background-color: @lite-color;
+                    height: @ui-height / 2;
+                    line-height: @ui-height / 2;
+                    padding: 0 @block-margin;
+                }
+
+                .left,
+                .right {
+                    display: none;
+                }
+            }
+        }
+    }
+}

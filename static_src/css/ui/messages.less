@@ -1,0 +1,59 @@
+@import "core";
+
+.message {
+    display: block;
+
+    border-width: .1rem;
+    border-style: solid;
+    border-radius: @ui-border-radius;
+    padding: @block-margin;
+    position: relative;
+    font-size: 1.2em;
+
+    &__title {}
+
+    &__text,
+    &__footer {
+        * + & {
+            margin-top: @block-margin;
+        }
+    }
+
+    &--centered {
+        text-align: center;
+    }
+
+    &--warning {
+        border-color: @color-warning-border;
+        background-color: @color-warning-bg;
+        color: @color-warning;
+    }
+
+    &--success,
+    &--info {
+        color: @color-success;
+        border-color: @color-success-border;
+        background-color: @color-success-bg;
+    }
+
+    &--danger,
+    &--error {
+        border-color: @primary-bg-color;
+        background-color: @color-danger + #aaa;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.2em;
+        height: 1.2em;
+        text-align: center;
+        font-size: 1.5em;
+
+        &:hover {
+            cursor: pointer;
+            color: black;
+        }
+    }
+}

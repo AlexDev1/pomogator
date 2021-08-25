@@ -1,0 +1,134 @@
+.unslider {
+  position: relative;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+.unslider nav {
+  position: absolute;
+  top: 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+.unslider li,
+.unslider ol,
+.unslider ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.unslider .unslider-nav ol {
+  list-style: none;
+  text-align: center;
+}
+.unslider .unslider-nav ol li {
+  display: inline-block;
+  background: transparent;
+  border-radius: 1em;
+  border-width: 1px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  height: 1em;
+  width: 1em;
+  margin: 0.1em 0.3em;
+  overflow: hidden;
+  text-indent: -999em;
+}
+.unslider .unslider-nav ol li.unslider-active {
+  background: #fff;
+  cursor: default;
+}
+.unslider--bottom-controls .unslider-arrow {
+  top: 200px !important;
+}
+.unslider .unslider-arrow {
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  height: 48px;
+  line-height: 48px;
+  opacity: 1;
+  overflow: hidden;
+  width: 48px;
+  border-color: white;
+  display: block;
+  left: auto;
+  right: 1em;
+  text-indent: -999em;
+  top: 240px;
+  position: absolute;
+  transition: opacity 0.4s;
+  z-index: 2;
+  cursor: pointer;
+}
+.unslider .unslider-arrow:before {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  content: "";
+  height: 18.46153846px;
+  position: absolute;
+  width: 18.46153846px;
+  left: 42%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -moz-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  -o-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-color: white;
+  box-shadow: 1px -1px 0 black;
+}
+.unslider .unslider-arrow:hover {
+  border-width: 1px;
+  opacity: 1;
+}
+.unslider .unslider-arrow:hover:before {
+  border-right-width: 2px;
+  border-top-width: 2px;
+  box-shadow: 2px -2px 0 black;
+}
+.unslider .unslider-arrow.prev {
+  left: 0.5rem;
+  right: auto;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.unslider .unslider-arrow.next {
+  left: auto;
+  right: 0.5rem;
+}
+.unslider-wrap {
+  position: relative;
+}
+.unslider-wrap.unslider-carousel li {
+  float: left;
+}
+.unslider-vertical > ul {
+  height: 100%;
+}
+.unslider-vertical li {
+  float: none;
+  width: 100%;
+}
+.unslider-fade {
+  position: relative;
+}
+.unslider-fade .unslider-wrap li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 8;
+}
+.unslider-fade .unslider-wrap li.unslider-active {
+  z-index: 10;
+}
+.slider--small .unslider-arrow {
+  height: 24px;
+}
+/*# sourceMappingURL=unslider.css.map */

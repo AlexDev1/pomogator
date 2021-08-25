@@ -1,0 +1,125 @@
+.map-baloon {
+  width: 390px;
+  height: 120px;
+}
+.map-baloon .left {
+  float: left;
+}
+.map-baloon figure {
+  width: 136px;
+  position: relative;
+  margin: 0;
+}
+.map-baloon figure .photo-overlay {
+  display: none;
+}
+.map-baloon figure .photo-overlay .sign .icon {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  /*background: url("/site_media/images/redesign/news-icons.png") bottom left no-repeat;*/
+  background-position: 0px 0px;
+  margin-right: 5px;
+}
+.map-baloon .map-baloon-info {
+  width: 234px;
+  overflow: hidden;
+}
+.map-baloon .map-baloon-image {
+  display: block;
+  width: 136px;
+  height: 136px;
+}
+.map-baloon .map-baloon-description {
+  font-size: 80%;
+  line-height: 15px;
+  height: 48px;
+  overflow: hidden;
+}
+.map-baloon .map-baloon-title {
+  line-height: 16px;
+  margin-bottom: 3px;
+}
+.map-baloon .add-to-guide {
+  float: right;
+  width: 120px;
+  height: 22px;
+  font-size: 11px;
+  line-height: 14px;
+}
+.map-baloon .orange-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  cursor: default;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-border-radius: 2pt;
+          border-radius: 2pt;
+  border-width: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 7px;
+  vertical-align: middle;
+  background-color: #37bf29;
+  color: white;
+  height: 24px;
+  line-height: 24px;
+  margin: 2pt 0;
+}
+.map-baloon .orange-button:focus {
+  outline: none;
+}
+.map-baloon .orange-button:hover {
+  text-decoration: none;
+}
+.map-baloon .orange-button:active {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.1s;
+       -o-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+.map-baloon .orange-button-default {
+  color: white;
+  background-color: #37bf29;
+}
+.map-baloon .orange-button-default:hover {
+  text-decoration: none;
+  background-color: #f13036;
+  color: #2B2A28;
+}
+.map-baloon .orange-button--fullwidth {
+  display: block;
+}
+.map-baloon .orange-button--small {
+  height: 24px;
+  line-height: 24px;
+}
+.map-baloon .orange-button--simple {
+  background-color: transparent;
+  border-color: #2B2A28;
+  border-width: 1px;
+  border-style: solid;
+}
+.map-baloon .orange-button:hover {
+  background-color: #ff1f25;
+  color: #000000;
+}
+.map-baloon-load {
+  height: 20px;
+}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}{% load custom_utils banner_tags news %}
+{% block seo_title %}{% if rubric %}{{ rubric.title }} | {% endif %}Новости ЗОЖ{% endblock %}
+{% block seo_keywords %}{% if rubric %}{{ rubric.title }} {% endif %}новости ЗОЖ, Здоровый образ жизни, Здоровое и
+  правильное питание, Правильное похудение,
+  Правильная физическая активность{% endblock %}
+{% block seo_description %}{% if rubric %}{{ rubric.text|striptags }}{% else %}Новости ЗОЖ - всё о Здоровом образе жизни
+  - профессионально и оперативно{% endif %}{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'news:list' %}">Новости ЗОЖ</a>
+  {% if rubric %}<a herf="">{{ rubric }}</a>{% endif %}
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="news-page">
+  <div class="grid__col-sm-9 left-col" style="padding-top: 10px">
+    <div class="panel">
+      <div class="panel-heading">
+        {% if rubric %}
+          <h1>{{ rubric.title }} | Новости ЗОЖ</h1>
+        {% else %}
+          <h1>Новости Здорового Образа Жизни | от ЗОЖ.news</h1>
+        {% endif %}
+      </div>
+      {% block heading-description %}
+        <div class="panel-body" style="padding-bottom: 20px">
+        <div class="block cover">
+          {% block cover %}
+            <div class="block map">
+              <img width="100%" src="{{ rubric.image.url }}" alt="{{ subject.name }}" title="{{ subject.name }}"/>
+            </div>
+          {% endblock %}
+          <div class="block description">
+            {% if rubric.description %}
+              {{ rubric.description }}
+            {% endif %}
+          </div>
+        </div>
+      {% endblock %}
+      </div>
+    </div>
+    {% block page_content %}
+      {% include 'news/news_list_items.html' %}
+      {% include 'includies/paginator2.html' %}
+    {% endblock %}
+  </div>
+  <div class="grid__col-sm-3 right-col">
+    {% get_widget_scripts section=4 %}
+  </div>
+
+{% endblock %}

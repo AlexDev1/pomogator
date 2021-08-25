@@ -1,0 +1,12 @@
+{% load tiles from tiles_tags %}
+{% if object_list|length %}
+<div class="panel">
+    <div class="panel__head">
+        <h3>{{ object.title }}: <a href="{% url 'articles:list' %}?tourismtype={{ object.slug }}">Статьи</a>
+            и <a href="{% url 'presentations:list' %}?tourismtype={{ object.slug }}">Презентации</a></h3>
+    </div><!-- /panel__head -->
+    <div class="panel__body">
+        {% tiles object_list %}
+    </div><!-- /panel__body -->
+</div><!-- /panel -->
+{% endif %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/ui/forms.css' %}">
+  <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+  <link rel="stylesheet" href="{% static 'css/ui/messages.css' %}">
+{% endblock %}
+
+
+{% block breadcrumbs %}
+  <a href="/">Главная</a>
+  <span>Форма обратной связи</span>
+{% endblock %}
+
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block extra_js %}{% endblock extra_js %}
+
+
+{% block main %}
+  <div class="grid grid--bleed">
+    <div class="grid__col-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <h1>Форма обратной связи</h1>
+        </div>
+
+        <div class="panel-body">
+          <div class="panel-body-wrap--padding text">
+
+            <div class="grid grid--bleed">
+              <div class="grid__col-md-12">
+                <div class="block">
+                  Напишите нам в ЗОЖ.news, и мы решим ваши задачи: поможем продвинуть ваш продукт или рассмотрим вашу
+                  информацию для публикации в новостях. Также вы можете позвонить нам - по вопросам рекламы на номер +7
+                  (495) 585-40-35, или в редакцию на номер +7 (495) 585-80-10.
+                </div>
+              </div>
+              <div class="grid__col-md-6 grid__col-sm-6">
+                {% if messages %}
+                  {% for message in messages %}
+                    <div class="block message {% if message.tags %}message--{{ message.tags }}{% endif %}">
+                      <div class="message__text">{{ message }}</div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+
+                <div class="block text">
+                  <form class="ajax-form feedback-form" action="" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                      <div class="form__row">
+                        {% if field.name == 'privacy' %}
+                          {{ field.errors }}
+                          {{ field }}
+                          {{ field.label|safe }}
+                          {% if field.field.required %}
+                            <span class="field__required" title="Обязательно заполнить">*</span>{% endif %}
+                        {% elif field.name == 'captcha' %}
+                          {{ field.errors }}
+                          {{ field }}
+                        {% else %}
+                          {{ field.label }}
+                          {% if field.field.required %}
+                            <span class="field__required" title="Обязательно заполнить">*</span>{% endif %}
+                          {{ field.errors }}
+                          {{ field }}
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                    <tr>
+                      <td colspan="2">
+                        <input type="submit" class="btn btn-primary btn-big" value="Отправить">
+                      </td>
+                    </tr>
+                  </form>
+                </div>
+              </div>
+
+              <div class="grid__col-md-6  grid__col-sm-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

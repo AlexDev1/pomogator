@@ -1,0 +1,171 @@
+@import "../ui/core";
+@import "../../vendor/components-font-awesome/less/mixins";
+@import "../../vendor/components-font-awesome/less/variables";
+@import (reference) "../../vendor/components-font-awesome/less/fixed-width";
+
+
+@map-list-closed-height: @ui-height;
+@map-list-opened-height: 600px;
+@map-tabs-height: @ui-height / 2;
+
+#map-container-wrapper {
+    height: @map-list-closed-height;
+    position: relative;
+    z-index: 999;
+}
+
+.map-container {
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    &.sticked {
+        position: fixed !important;
+    }
+
+    .map-tabs {
+        display: block;
+        max-height: 100px;
+        background-color: @secondary-bg-color;
+        .transition(all .3s ease-in-out);
+
+        &__item {
+            .no-select();
+            display: inline-block;
+            line-height: @map-tabs-height;
+            padding: 0 1em;
+            cursor: default;
+            font-weight: bold;
+            color: @secondary-fg-color;
+
+            &:hover {
+                background-color: @primary-bg-color;
+                color: @secondary-bg-color;
+            }
+
+            &.active {
+                background-color: @primary-bg-color;
+                color: @primary-color;
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: @ui-height / 2;
+            line-height: @ui-height / 2;
+            width: @ui-height / 2;
+            cursor: pointer;
+        }
+    }
+
+    &.hidden {
+        .map-list--wrap {
+            max-height: @map-list-closed-height;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-tabs {
+            overflow: hidden;
+            max-height: 0;
+
+            .close {
+                display: none;
+            }
+        }
+    }
+
+    .map-list {
+        top: 0;
+        max-height: @map-list-opened-height;
+        position: relative;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+        .transition(all .3s ease-in-out);
+
+        &--wrap {
+            top: 0;
+            position: relative;
+            max-height: @map-list-opened-height;
+            .transition(all .3s ease-in-out);
+        }
+
+        &__item {
+            .transition(all .3s ease-in-out);
+            overflow: hidden;
+            background-image: url(../../images/map-bg.jpg);
+            background-size: cover;
+            max-height: @map-list-opened-height;
+        }
+
+        &__item:not(.active) {
+            display: none;
+        }
+
+        &__item.active {
+            display: block;
+        }
+    }
+
+    .map-container__toggler {
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -@ui-height / 4;
+        left: 48%;
+        background-color: @primary-bg-color;
+        color: @primary-color;
+        text-align: center;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        .transition(all .2s ease-in);
+
+        .fa-icon();
+        width: @ui-height / 2;
+        height: @ui-height / 2;
+        line-height: @ui-height / 2;
+
+        &:hover {
+            color: @color;
+            // cursor: move;
+            cursor: pointer;
+        }
+
+        &:after {
+            content: @fa-var-arrow-up;
+        }
+
+        &.opener {
+            &:before {
+                font-family: sans-serif;
+                position: absolute;
+                top: -@ui-height / 2;
+                color: @color;
+                transform: translate(-50%, 0);
+                left: 50%;
+                line-height: 1em;
+                display: block;
+                content: "открыть карту";
+                background-color: rgba(255,255,255,0.7);
+                padding: @padding / 3;
+                border-radius: @ui-border-radius;
+                text-decoration: underline;
+                box-shadow: 0 0 2pt black;
+            }
+
+            &:hover {
+                &:before {
+                    background-color: white;
+                }
+            }
+
+            &:after {
+                content: @fa-var-arrow-down;
+            }
+        }
+    }
+}
+

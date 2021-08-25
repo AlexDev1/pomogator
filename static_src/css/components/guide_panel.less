@@ -1,0 +1,341 @@
+@import "../ui/core";
+
+@import (reference) "../ui/panel_mixins";
+@import (reference) "../../vendor/components-font-awesome/less/mixins";
+@import (reference) "../../vendor/components-font-awesome/less/variables";
+@import (reference) "../../vendor/components-font-awesome/less/fixed-width";
+
+
+@guide-start-button-width: @ui-height * 1.5;
+@start-button-z-index: 12;
+
+@keyframes add-to-guide {
+    0% {
+        width: @guide-start-button-width;
+        height: @guide-start-button-width;
+        line-height: @guide-start-button-width;
+    }
+
+    85% {
+        width: @guide-start-button-width * 1.5;
+        height: @guide-start-button-width * 1.5;
+        line-height: @guide-start-button-width * 1.5;
+    }
+
+    100% {
+        width: @guide-start-button-width;
+        height: @guide-start-button-width;
+        line-height: @guide-start-button-width;
+    }
+}
+
+@keyframes add-to-guide--before {
+    0% {
+        font-size: @guide-start-button-width;
+    }
+
+    85% {
+        font-size: @guide-start-button-width * 1.5;
+    }
+
+    100% {
+        font-size: @guide-start-button-width;
+    }
+}
+
+
+
+
+#guide-start-button {
+    border-radius: 50%;
+    background-color: #37bf29;
+    color: white;
+    width: @guide-start-button-width;
+    height: @guide-start-button-width;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.7);
+    position: absolute;
+
+    // центрирование анимации работает только со значениями top и left, но не с right и bottom
+    top: -@guide-start-button-width * 2;
+    left: 100%;
+    // right: @guide-start-button-width / 2;
+    // bottom: @guide-start-button-width + @guide-start-button-width * 0.5;
+
+    z-index: @start-button-z-index;
+    .transition(all .2s ease-in-out);
+
+    // для того, чтобы анимация 'add-to-guide' шла от центра
+    transform: translate(-50%, -50%);
+
+    &:before {
+        .transition(all .3s ease-in-out);
+        .fa-icon();
+        line-height: @guide-start-button-width;
+        font-size: @guide-start-button-width;
+        content: @fa-var-globe;
+
+        // для того, чтобы при анимации 'add-to-guide' иконка оставалась по центру
+        vertical-align: middle;
+    }
+
+    &:hover {
+        box-shadow: 0 1pt 6pt rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+
+        // effect
+        &:after {
+            border-width: 4px;
+            bottom: -2px;
+            left: -2px;
+            opacity: 1;
+            right: -2px;
+            top: -2px;
+        }
+    }
+
+    // effect
+    &:after {
+        border-radius: 50%;
+        border: 1px solid @primary-bg-color;
+        bottom: -20px;
+        content: "";
+        left: -20px;
+        opacity: 0;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        pointer-events: none;
+        .transition(all 0.3s ease-out);
+    }
+
+    &.active {
+        &:before {
+            .transform(rotate(90deg));
+            .fa-icon();
+            line-height: @guide-start-button-width;
+            font-size: @guide-start-button-width / 2;
+            content: @fa-var-close;
+        }
+    }
+
+    &.add-item-animation {
+        animation-name: add-to-guide;
+        animation-duration: .30s;
+        animation-timing-function: ease;
+
+        &:before {
+            animation-name: add-to-guide--before;
+            animation-duration: .30s;
+            animation-timing-function: ease;
+        }
+    }
+
+    @counter-width: @ui-height / 2;
+
+    .counter {
+        min-width: @counter-width;
+        // padding: 0 @block-margin / 2;
+        height: @counter-width;
+        line-height: @counter-width;
+        border-radius: 50%;
+        color: @secondary-bg-color;
+        border: .2em solid @primary-bg-color;
+        background-color: white;
+
+        position: absolute;
+        top: -@counter-width / 4;
+        right: -@counter-width / 4;
+        z-index: @start-button-z-index + 1;
+        box-sizing: content-box;
+        .transition(all .3s ease-in-out);
+
+        &.empty {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+
+@guide-item-height: @ui-height * 2;
+
+.btn {
+    &.in-guide {
+        background-color: transparent;
+        color: @primary-bg-color;
+        border-color: @primary-bg-color !important;
+        border-width: 1px !important;
+        border-style: solid;
+    }
+}
+
+.guide-panel {
+    visibility: hidden;
+
+    z-index: @start-button-z-index - 1;
+    position: fixed;
+    bottom: 0;
+    // bottom: @guide-start-button-width * 2;
+
+    box-shadow: 0 -3pt 8pt rgba(0,0,0,0.5);
+    .transition(all .3s ease-in-out);
+
+
+    .hidden {
+        display: none;
+    }
+
+    .guide-panel-inner {
+        .block-shadow();
+        width: 100%;
+        background-color: white;
+        padding: @block-margin;
+
+        .guide-title {
+            .panel-heading-title();
+            margin-left: @ui-height / 1.5;
+            padding-left: 0;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: @block-margin / 2;
+        }
+
+        .guide-open-new {
+        }
+
+        .guide-full__body {
+            display: flex;
+
+            & > * {
+                flex-direction: column;
+            }
+
+        }
+
+        .guide-tools {
+            text-align: center;
+            margin-right: @block-margin;
+            min-width: 194px;
+
+            & > * {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .guide-open-select {
+                border-bottom: 1px dashed @hint-color;
+                display: inline-block;
+            }
+        }
+
+        .guide-slider {
+            flex-grow: 1;
+
+            .guide-slider-prev,
+            .guide-slider-next {
+                width: @ui-height / 1.5;
+                height: @ui-height / 1.5;
+                position: absolute;
+                margin: @block-margin / 2;
+                top: 0;
+            }
+
+            .guide-slider-prev {
+                left: 0;
+            }
+
+            .guide-slider-next {
+                right: 0;
+            }
+        }
+
+        .guide-item-wrapper {
+            overflow: hidden;
+            position: relative;
+            height: @guide-item-height;
+        }
+
+        .guide-item-container {
+            position: absolute;
+            max-height: @guide-item-height;
+            white-space: nowrap;
+        }
+
+        .guide-item {
+            position: relative;
+            border: 1px solid @hint-color;
+            overflow: hidden;
+            height: @guide-item-height;
+            width: @ui-height * 2.5;
+            display: inline-block;
+
+            & + .guide-item {
+                margin-left: @block-margin / 2;
+            }
+
+            .photo-overlay {
+                .gradient(transparent, rgba(0, 0, 0, 0.6));
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: @ui-height;
+            }
+
+            .guide-image {
+                height: @guide-item-height;
+            }
+
+            .guide-item-title {
+                color: white;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                a {
+                    padding: 0 2pt;
+                    color: white;
+                    display: inline-block;
+
+                    &:hover {
+                        color: @primary-bg-color;
+                        text-shadow: 1px 1px 2px black;
+                    }
+                }
+            }
+
+            .guide-item-delete {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: @ui-height / 2;
+                height: @ui-height / 2;
+                vertical-align: middle;
+
+                // hide legacy close symbol in html
+                font-size: 0;
+                border: none;
+                background: none;
+
+                &:before { // add new close symbol
+                    .fa-icon();
+                    content: @fa-var-close;
+                    width: @ui-height / 2;
+                    height: @ui-height / 2;
+                    line-height: @ui-height / 2;
+                    font-size: 1rem;
+                    color: white;
+                    text-shadow: 1px 1px 2px black;
+                }
+
+                &:hover {
+                    background-color: rgba(255,255,255,0.5);
+                }
+            }
+        }
+    }
+}

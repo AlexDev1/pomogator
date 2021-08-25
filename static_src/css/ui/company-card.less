@@ -1,0 +1,57 @@
+@import "core";
+
+.company-card {
+
+    margin: @block-margin;
+    overflow: hidden; // чтобы .company__logo не вываливалось из-за float: left
+
+    .news-item__body > & {
+        margin: 0;
+        margin-bottom: @block-margin;
+    }
+
+    .company__logo {
+        margin-right: @block-margin;
+        float: left;
+
+        img {
+            border: 1px solid @lite-color;
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .company__name {
+        text-align: left;
+        margin-bottom: @block-margin;
+        display: block;
+    }
+
+    .company__website {
+        color: @primary-bg-color;
+    }
+
+    .company__type {
+        display: block;
+    }
+
+    .date {
+        display: inline-block;
+        margin-left: @block-margin;
+        line-height: @ui-height / 2;
+        height: @ui-height / 2;
+        vertical-align: top;
+    }
+
+    .label-container {
+        display: inline-block;
+
+        .label {
+            margin-left: 0;
+
+            &:hover {
+                margin-left: 0;
+            }
+        }
+    }
+}

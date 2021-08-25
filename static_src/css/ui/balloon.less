@@ -1,0 +1,21 @@
+@import (reference) "core";
+
+
+.balloon-list--title {
+  margin-bottom: @block-margin;
+}
+
+.balloon-item {
+  display: flex;
+  margin-bottom: @block-margin;
+  &--cover img {
+    width: 100%;
+  }
+  &--cover {
+    width: 80px;
+    min-width: 80px;
+  }
+  &--text {
+    padding-left: @padding;
+  }
+}

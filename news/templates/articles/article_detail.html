@@ -1,0 +1,173 @@
+{% extends "articles/base.html" %}{% load static news banner_tags custom_utils thumbnail cache %}
+
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/ui/comments.css' %}">
+  <link rel="stylesheet" href="{% static 'css/photo/photogallery_block.css' %}">
+  <style>
+    .slider .photo__title {
+      padding: 8px 64px;
+    }
+
+    .unslider--bottom-controls {
+      overflow: hidden;
+    }
+
+    .unslider--bottom-controls .unslider-arrow {
+      top: 240px !important;
+    }
+
+    /*
+        Проблема: при загрузке слайдера в первые секунды
+        отображаются все изображения, а затем скрипт слайдера их скрывает.
+
+        Решение: скрыть изображения слайдера стилями до загрузки и
+        отобразить после загрузки с помощью скрипта
+    */
+    .slider .photo-wrap {
+      display: none;
+    }
+  </style>
+{% endblock %}
+{% block extra_js %}
+  <script src="{% static 'vendor/requirejs/require.js' %}"></script>
+  <script src="{% static 'js/config.js' %}"></script>
+  <script src="{% static 'js/articles.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script>
+    $('#gallery-carousel').owlCarousel(
+            {
+              itemElement: 'item-yandex-carusel',
+              autoplay: false,
+              loop: false,
+              rewind: false,
+              dots: false,
+              margin: 0,
+              items: 4,
+              nav: true,
+              stagePadding: 10,
+              responsive: {
+                0: {
+                  items: 2,
+                  nav: true
+                },
+                600: {
+                  items: 3,
+                  nav: false
+                },
+                1000: {
+                  items: 4,
+                  nav: true,
+                  loop: false
+                }
+              },
+              navText: ['<i class="fa fa-long-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'],
+            }
+    );
+    $(".next-carousel").click(function () {
+      owl.trigger('owl.next');
+    })
+    $(".prev-carousel").click(function () {
+      owl.trigger('owl.prev');
+    })
+  </script>
+  <script>!function (e, t, d, s, a, n, c) {
+    e[a] = {}, e[a].date = (new Date).getTime(), n = t.createElement(d), c = t.getElementsByTagName(d)[0], n.type = "text/javascript", n.async = !0, n.src = s, c.parentNode.insertBefore(n, c)
+  }(window, document, "script", "https://tourpromru.push.world/https.embed.js", "pw"), pw.websiteId = "2fcfe137b86e6e4f6cb579e902aeb72c625133372d0e884b3fca73f874376978";</script>
+  <script>!function (e, t, d, s, a, n, c) {
+    e[a] = {}, e[a].date = (new Date).getTime(), n = t.createElement(d), c = t.getElementsByTagName(d)[0], n.type = "text/javascript", n.async = !0, n.src = s, c.parentNode.insertBefore(n, c)
+  }(window, document, "script", "https://tourpromru.push.world/https.embed.js", "pw"), pw.websiteId = "2fcfe137b86e6e4f6cb579e902aeb72c625133372d0e884b3fca73f874376978";</script>
+  <script type="text/javascript" async src="https://relap.io/v7/relap.js" data-relap-token="_5HoSnj8LtMu_Pn8"></script>
+{% endblock extra_js %}
+{% block seo_title %}{{ object.title }}{% endblock %}
+{% block seo_description %}{{ object.text|striptags|truncatechars:150 }}{% endblock %}
+{% block seo_keywords %}{{ object.title }}{% endblock %}
+{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block breadcrumbs %}
+  {{ block.super }}
+  <span>{{ object.title }}</span>
+{% endblock %}
+
+{% block heading-description %}{% endblock %}
+{% block heading %}
+  <h1>{{ object.title }}</h1>
+  <div class="subheading block"></div>
+  <div class="block">
+    {% ifnotequal object.countries.count 0 %}
+      {% with object.countries.all as labels %}
+        {% include "includies/blocks/labels.html" %}
+      {% endwith %}
+    {% endifnotequal %}
+
+    <span class="news-block__date date" style="padding-left: 10px;">
+            <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y" }}
+            <span title="количество просмотров" class="visits_count noselect">
+                <span class="fa fa-eye"></span> {{ object.get_visits }}
+            </span>
+        </span>
+
+    {% if object.video %}
+      <a class="news-block__has-video" href="{{ object.video.get_absolute_url }}">
+        <span class="fa fa-video-camera"></span>
+      </a>
+    {% endif %}
+
+    {% if object.photogallery %}
+      <a class="news-block__has-photogallery" href="{{ object.photogallery.get_absolute_url }}">
+        <span class="fa fa-camera"></span>
+      </a>
+    {% endif %}
+  </div>
+{% endblock %}
+{% block page_content %}
+  <div class="">
+
+    {% if object.articleimage_set.count > 1 %}
+      <div class="unslider--bottom-controls">
+        <div class="slider" data-autoplay="false">
+          <ul>
+            {% for artimage in object.articleimage_set.all %}
+              {% thumbnail artimage.image "980x640" crop="center" as img %}
+                <li class="photo-wrap">
+                  <div class="photo">
+                    <img src="{{ img.url }}" alt="{{ artimage.description }}">
+                    {% if artimage.description %}
+                      <div class="photo__title">{{ artimage.description }}</div>{% endif %}
+                  </div>
+                </li>
+              {% endthumbnail %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% else %}
+      <div class="photo-wrap">
+        <img class="photo__img" src="{{ object.get_cover.url }}"
+             alt="{{ object.get_cover.description|default:object.title|safe }}">
+        <div class="photo__title">
+          {{ object.get_cover.description|default:object.title|safe }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="block panel-body-wrap--padding news-detail hentry">
+      {% include 'includies/blocks/_subscribers_news.html' %}
+      {% get_widget_scripts section=2 %}
+      <article class="hentry">
+        {% for part in object.text|tag_list %}
+          {% if forloop.counter == 2 %}
+            {#        {% get_tours_for_country2 object.countries.all.0 count=3 %}#}
+          {% elif forloop.counter == 6 %}
+            {% with same_articles as object %}
+              {# {% include "redesign2/news/blocks/news_item.html" %} #}
+            {% endwith %}
+          {% endif %}
+          {{ part|safe }}
+        {% endfor %}
+      </article>
+      {% top_topics_day_news news_block=False %}
+    </div>
+    {% get_widget_scripts section=3 %}
+  </div>
+
+
+{% endblock %}

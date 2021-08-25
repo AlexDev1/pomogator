@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% load cache custom_utils static banner_tags %}
+{% block seo_title %}Статьи о ЗОЖ{% endblock %}
+{% block seo_description %}Статьи о ЗОЖ{% endblock %}
+{% block seo_keywords %}Статьи о ЗОЖ{% endblock %}
+{% block seo_meta %}
+  <link rel="canonical" href="{% block canonical_url %}{% endblock %}">{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'articles:list' %}">Журнал о ЗОЖ</a>
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="{% block main_block_css_id %}news-page{% endblock %}">
+    <div class="grid__col-sm-9 left-col p-t-10">
+      <div class="panel">
+        <div class="panel-heading">
+          {% block heading %}
+            <h1>Все статьи о пользе ЗОЖ</h1>
+            {% if show_return_link %}
+              <a href="{% url 'news-list' %}" class="pull-right return-link">Вернуться ко всем новостям</a>
+            {% endif %}
+          {% endblock %}
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block description">
+              Статьи о пользе Здорового Образа Жизни (ЗОЖ): различные исследования, диеты, фитнес-тренировки и другая
+              полезная информация на портале ZOJ.news
+            </div>
+
+          </div>
+        {% endblock %}
+        {% block page_content %}{% endblock %}
+      </div>
+
+    </div>
+    <div class="grid__col-sm-3 right-col">
+      {% get_widget_scripts section=4 %}
+    </div>
+  </div>
+{% endblock %}

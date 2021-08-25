@@ -1,0 +1,167 @@
+body > header {
+  background-color: #f5f5f5;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  max-width: 980px;
+  font-family: Arial, sans;
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 0.5rem;
+}
+header {
+  z-index: 1010;
+}
+header .banner {
+  margin-top: 1rem;
+}
+header nav {
+  height: 48px;
+  position: relative;
+  z-index: 1;
+}
+header nav .sticked {
+  z-index: 1000;
+}
+header nav #hamburger {
+  max-width: 48px;
+  min-width: 48px;
+}
+header nav .header-logo-2 {
+  background-image: url("../../images/menu-logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  border: 4px solid transparent;
+  display: inline-block;
+  height: 48px;
+  min-width: 140px;
+}
+header nav .header-logo-2:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header nav .header-logo-2.holiday-xmas:before {
+  top: 24px;
+  left: 0;
+  height: 48px;
+  background-image: url("../../images/holidays/xmas-logo.png");
+}
+header nav .header-logo-2.holiday-eightmarch:before {
+  top: 4;
+  width: 62.4px;
+  left: -19.2px;
+  height: 62.4px;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-image: url("../../images/holidays/8march.png");
+}
+header nav .header-logo-2.holiday-ninemay:before {
+  top: 24px;
+  left: 0;
+  height: 48px;
+  background-image: url("../../images/holidays/9may.png");
+}
+header nav .btn {
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+header nav + .banner > *:first-child {
+  margin-top: 1rem;
+}
+header nav ul.menu {
+  display: table;
+  padding: 0;
+  width: 100%;
+}
+header nav ul.menu .submenu {
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  max-height: 0;
+  overflow-y: hidden;
+  z-index: 1000;
+  padding-left: 0;
+  min-width: 180px;
+}
+header nav ul.menu .submenu li {
+  display: block;
+}
+header nav ul.menu .submenu li .btn {
+  white-space: nowrap;
+  text-align: left;
+}
+header nav ul.menu .main-menu__element:before {
+  content: "";
+  display: block;
+  float: left;
+  height: 24px;
+  margin-left: -1px;
+  position: absolute;
+  top: 12px;
+  width: 1px;
+}
+header nav ul.menu .main-menu__element:hover ul.submenu {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  max-height: 2000px;
+}
+header nav ul.menu > li,
+header nav ul.menu .main-menu__element {
+  border-collapse: collapse;
+  display: table-cell;
+  list-style: none;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+header nav ul.menu > li .btn,
+header nav ul.menu .main-menu__element .btn {
+  width: 100%;
+}
+header nav ul.menu > li > .btn,
+header nav ul.menu .main-menu__element > .btn {
+  text-transform: uppercase;
+}
+header nav ul.menu > li:first-child,
+header nav ul.menu .main-menu__element:first-child {
+  width: 48px;
+}
+header nav ul.menu > li:first-child > *,
+header nav ul.menu .main-menu__element:first-child > * {
+  max-width: 48px;
+}
+header nav ul.menu .sign-in {
+  width: 96px;
+  white-space: nowrap;
+}
+header nav ul.menu .sign-in .btn__text {
+  vertical-align: top;
+}
+header nav ul.menu .sign-out {
+  width: 48px;
+}
+header nav ul.menu .sign-out .submenu {
+  right: 0;
+}
+header nav ul.menu .sign-out > .btn {
+  padding: 4px 0.5cm;
+}
+header nav ul.menu .sign-out img.avatar {
+  width: 40px;
+  height: 40px;
+}
+header nav ul.menu .sign-in .fa,
+header nav ul.menu .sign-out .fa,
+header nav ul.menu #hamburger .fa,
+header nav ul.menu .search .fa {
+  line-height: 48px;
+}

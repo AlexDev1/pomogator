@@ -1,0 +1,71 @@
+@import (reference) "buttons";
+
+.map-baloon {
+    width: 390px;
+    height: 120px;
+
+    .left {
+        float: left;
+    }
+
+    figure {
+        width: 136px;
+        position: relative;
+        margin: 0;
+
+        .photo-overlay {
+            display: none;
+
+            .sign .icon{
+                display: inline-block;
+                width: 20px;
+                height: 15px;
+                /*background: url("/site_media/images/redesign/news-icons.png") bottom left no-repeat;*/
+                background-position: 0px 0px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .map-baloon-info {
+        width: 234px;
+        // max-height: 116px;
+        overflow: hidden;
+    }
+
+    .map-baloon-image {
+        display: block;
+        width: 136px;
+        height: 136px;
+    }
+
+    .map-baloon-description {
+        font-size: 80%;
+        line-height: 15px;
+        height: 48px;
+        overflow: hidden;
+    }
+
+    .map-baloon-title {
+        line-height: 16px;
+        margin-bottom: 3px;
+    }
+
+    .add-to-guide {
+        float: right;
+        width: 120px;
+        height: 22px;
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .orange-button {
+        .btn();
+        .btn-primary();
+        .btn-small();
+    }
+}
+
+.map-baloon-load  {
+    height: 20px;
+}

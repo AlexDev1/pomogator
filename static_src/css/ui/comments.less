@@ -1,0 +1,133 @@
+@import "core";
+
+
+.comment,
+.comment-form,
+.pseudoform {
+    & + & {
+        margin-top: @block-margin;
+    }
+
+    .grid__col-md-10 {
+        padding-left: @block-margin;
+    }
+}
+
+.comment {
+    &__text {
+        margin-top: @block-margin;
+    }
+
+    &__author {
+        font-weight: bold;
+        margin-right: 8pt;
+
+        &-avatar {
+            width: 100%;
+            height: auto;
+            border: 1px solid #D7DBDA;
+            padding: @block-margin / 3;
+        }
+    }
+
+    &__date {
+        .fa {
+            margin-right: 2pt;
+        }
+    }
+
+    &__rating {
+        text-align: center;
+        line-height: @ui-height / 2;
+        height: @ui-height / 2;
+
+        & > * + * {
+            margin-left: @block-margin;
+        }
+
+        form {
+            display: inline-block;
+
+            button[type=submit] {
+                background: none;
+                border: none;
+                color: @hint-color;
+            }
+        }
+
+        &--errors {
+            text-align: center;
+            font-size: 80%;
+        }
+    }
+
+    &__vote {
+        .transition(all 0.3s ease-in-out);
+        cursor: pointer;
+        color: @hint-color;
+
+        &--down {
+            &:hover {
+                color: @primary-bg-color;
+
+                button[type=submit] {
+                    color: @primary-bg-color;
+                }
+            }
+        }
+
+        &--up {
+            &:hover {
+                color: @third-bg-color;
+
+                button[type=submit] {
+                    color: @third-bg-color;
+                }
+            }
+        }
+    }
+
+    &__tree {
+        padding-left: 5%;
+
+        .comment,
+        .comment-form {
+            margin-top: @block-margin;
+        }
+    }
+
+    &-reply {
+        .transition(all 0.3s ease-in-out);
+        color: @hint-color;
+        cursor: pointer;
+        display: inline-block;
+        height: @ui-height / 2;
+        line-height: @ui-height / 2;
+        margin-top: @block-margin;
+
+        &:hover, &.active {
+            color: @hint-color - #444;
+        }
+    }
+}
+
+.textarea-style() {
+    max-height: 200px;
+    height: 72px;
+    width: 100%;
+}
+
+.pseudoform {
+    .textarea {
+        .textarea-style();
+        border: 1px solid @lite-color;
+        color: @lite-color;
+        display: block;
+    }
+}
+
+.comment-form {
+    textarea {
+        .textarea-style();
+    }
+}

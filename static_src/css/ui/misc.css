@@ -1,0 +1,50 @@
+.h-links-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.h-links-block .fa {
+  color: gray;
+  margin: 0.2em;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.h-links-block li {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  text-align: center;
+  list-style: none;
+  padding: 8px 8px;
+}
+.h-links-block li:hover .fa {
+  color: #37bf29;
+}
+.h-links-block li a {
+  color: #2B2A28;
+}
+.h-links-block li a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+.h-links-block li a.active {
+  font-weight: bold;
+}
+.h-links-block li h3 {
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}

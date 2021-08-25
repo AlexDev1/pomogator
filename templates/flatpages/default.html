@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block seo_title %}{{ flatpage.title }}{% endblock %}
+{% block seo_description %}{{ flatpage.content|striptags|truncatechars:150 }}{% endblock %}
+{% block seo_keywords %}{{ flatpage.title }}{% endblock %}
+
+{% block breadcrumbs %}<span>{{ flatpage.title }}</span>{% endblock %}
+
+{% block main %}
+  <div class="block" style="padding: 0.5rem;">
+  <div class="grid grid--bleed">
+    <div class="grid__col-sm-12  panel">
+      <div class="panel-heading">
+        <h1>{{ flatpage.title }}</h1>
+
+      </div>
+      {% block page_content %}
+        <div class="block panel-body-wrap--padding news-detail " >
+        {{ flatpage.content|safe }}
+        </div>
+
+      {% endblock %}
+    </div>
+
+  </div>
+  </div>
+
+
+{% endblock %}

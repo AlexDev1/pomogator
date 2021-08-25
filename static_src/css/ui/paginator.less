@@ -1,0 +1,79 @@
+@import "core";
+
+.paginator {
+    display: block;
+
+    .paging-wrapper {
+        .paging-label {
+            display: block;
+            line-height: @ui-height / 2;
+            height: @ui-height / 2;
+            font-weight: bold;
+        }
+
+        .paging {
+            .flex;
+            padding: 0;
+            margin: 0;
+
+            .first {
+                border-top-left-radius: @ui-border-radius;
+                border-bottom-left-radius: @ui-border-radius;
+                overflow: hidden;
+            }
+
+            .last {
+                border-top-right-radius: @ui-border-radius;
+                border-bottom-right-radius: @ui-border-radius;
+                overflow: hidden;
+            }
+
+            li {
+                .no-select;
+                list-style: none;
+
+                span {
+                    cursor: default;
+                }
+
+                border: 1px solid @lite-color;
+                border-bottom: 1px solid @lite-color;
+                border-right: 1px solid @lite-color;
+
+                a, span {
+                    font-size: 92%;
+                    white-space: nowrap;
+                    display: inline-block;
+                    flex-direction: column;
+                    height: @ui-height / 1.5;
+                    line-height: @ui-height / 1.5;
+                    padding: 0 @block-margin;
+                    background-color: white;
+                }
+
+                &.skip {
+                    // flex-grow: 1;
+                    text-align: center;
+                    border-width: 0px;
+
+                    span {
+                        background-color: transparent;
+                    }
+                }
+
+                &.current {
+                    span {
+                        font-weight: bold;
+                        color: @primary-color;
+                        background-color: @primary-bg-color;
+                    }
+                }
+
+            }
+
+            li:not(.skip) + li:not(.skip) {
+                border-left-width: 0;
+            }
+        }
+    }
+}

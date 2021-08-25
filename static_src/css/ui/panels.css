@@ -1,0 +1,247 @@
+.panel {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.panel + .panel {
+  margin-top: 1rem;
+}
+.panel--transparent {
+  background-color: transparent;
+}
+.panel.panel-default .panel-heading {
+  color: #2B2A28;
+}
+.panel-heading,
+.panel__title,
+.panel__head {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  color: #2B2A28;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 1rem;
+  position: relative;
+}
+.panel-heading--no-border,
+.panel__title--no-border,
+.panel__head--no-border {
+  border-color: transparent !important;
+}
+.panel-heading--no-border h1,
+.panel__title--no-border h1,
+.panel__head--no-border h1,
+.panel-heading--no-border h2,
+.panel__title--no-border h2,
+.panel__head--no-border h2,
+.panel-heading--no-border h3,
+.panel__title--no-border h3,
+.panel__head--no-border h3,
+.panel-heading--no-border h4,
+.panel__title--no-border h4,
+.panel__head--no-border h4,
+.panel-heading--no-border h5,
+.panel__title--no-border h5,
+.panel__head--no-border h5,
+.panel-heading--no-border .title,
+.panel__title--no-border .title,
+.panel__head--no-border .title {
+  border-color: transparent !important;
+}
+.panel-heading h1,
+.panel__title h1,
+.panel__head h1,
+.panel-heading h2,
+.panel__title h2,
+.panel__head h2,
+.panel-heading h3,
+.panel__title h3,
+.panel__head h3,
+.panel-heading h4,
+.panel__title h4,
+.panel__head h4,
+.panel-heading h5,
+.panel__title h5,
+.panel__head h5 {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-bottom: 5px;
+  margin-left: -1rem;
+  border-bottom: 5px solid #D7DBDA;
+}
+.panel-heading > .subtitle,
+.panel__title > .subtitle,
+.panel__head > .subtitle,
+.panel-heading > .subheading,
+.panel__title > .subheading,
+.panel__head > .subheading {
+  display: block;
+  margin-top: 1rem;
+}
+.panel-heading > .subtitle,
+.panel__title > .subtitle,
+.panel__head > .subtitle {
+  font-style: italic;
+}
+.panel-heading > .subheading,
+.panel__title > .subheading,
+.panel__head > .subheading {
+  font-weight: normal;
+}
+.panel-heading--white,
+.panel__title--white,
+.panel__head--white {
+  background-color: white;
+}
+.panel-heading > *,
+.panel__title > *,
+.panel__head > * {
+  margin: 0;
+}
+.panel-heading.panel-mini-heading,
+.panel__title.panel-mini-heading,
+.panel__head.panel-mini-heading {
+  padding: 4px 10px;
+}
+.panel-heading.panel-empty-heading,
+.panel__title.panel-empty-heading,
+.panel__head.panel-empty-heading {
+  height: 2pt;
+  padding: 0;
+}
+.panel-heading .close,
+.panel__title .close,
+.panel__head .close {
+  color: #828685;
+}
+.panel-heading .close:hover,
+.panel__title .close:hover,
+.panel__head .close:hover {
+  color: white;
+  background-color: #828685;
+}
+.panel .panel-empty-heading + .panel-body {
+  border-top-width: 0;
+}
+.panel .panel-body,
+.panel__body {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.panel .panel-body--no-overflow,
+.panel__body--no-overflow {
+  overflow: hidden;
+}
+.panel .panel-body--transparent,
+.panel__body--transparent {
+  background-color: transparent;
+}
+.panel .panel-body--white,
+.panel__body--white {
+  background-color: white;
+  padding: 0;
+}
+.panel .panel-body > * + .panel .panel-body > *,
+.panel .panel-body > * + .panel__body > *,
+.panel__body > * + .panel .panel-body > *,
+.panel__body > * + .panel__body > * {
+  margin-top: 1rem;
+}
+.panel .panel-body .panel-body-wrap--padding,
+.panel__body .panel-body-wrap--padding {
+  padding: 1rem;
+}
+.panel .panel-body .panel-body-wrap,
+.panel__body .panel-body-wrap {
+  background-color: transparent;
+}
+.panel .panel-body .panel-body-wrap > * + *,
+.panel__body .panel-body-wrap > * + * {
+  margin-top: 12px;
+}
+.panel .panel-body > table,
+.panel__body > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.panel .panel-body > table tr,
+.panel__body > table tr {
+  border-collapse: collapse;
+}
+.panel .panel-body > table td,
+.panel__body > table td,
+.panel .panel-body > table th,
+.panel__body > table th {
+  border-bottom: 1px solid #D7DBDA;
+  border-collapse: collapse;
+  padding-left: 1em;
+}
+.panel .panel-body > table td:last-child,
+.panel__body > table td:last-child {
+  padding-right: 1em;
+}
+.panel .panel-body > table tr:last-child td,
+.panel__body > table tr:last-child td {
+  border-bottom: 0px;
+}
+.panel .panel-body > table th,
+.panel__body > table th {
+  color: #7397A5;
+  text-transform: uppercase;
+}
+.panel-footer,
+.panel__footer {
+  -webkit-border-bottom-left-radius: 2pt;
+          border-bottom-left-radius: 2pt;
+  -webkit-border-bottom-right-radius: 2pt;
+          border-bottom-right-radius: 2pt;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  padding: 1rem;
+  padding-top: 0;
+}
+.panel-footer--center,
+.panel__footer--center {
+  text-align: center;
+}
+.panel-footer--center .btn-small,
+.panel__footer--center .btn-small {
+  display: block;
+}
+.panel-footer--white,
+.panel__footer--white {
+  background-color: white;
+}
+.panel-footer .links,
+.panel__footer .links {
+  text-align: left;
+}
+.panel-footer .links .btn2,
+.panel__footer .links .btn2 {
+  display: inline-block;
+}
+.mini-panel {
+  border: 1px solid #D7DBDA;
+}
+.mini-panel + .mini-panel {
+  margin-top: 1rem;
+}
+.mini-panel-heading {
+  height: 32px;
+  background-color: #D7DBDA;
+  line-height: 32px;
+  text-align: center;
+  border-bottom: 1px solid #D7DBDA;
+}
+.mini-panel-body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}

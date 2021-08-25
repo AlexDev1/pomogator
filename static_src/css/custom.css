@@ -1,0 +1,156 @@
+.topic-overlay {
+    min-height: 60px;
+    padding: 10px;
+}
+
+header nav ul.menu {
+    background: white;
+}
+
+.slick-next {
+    right: -5px;
+}
+
+.slick-prev {
+    left: -5px;
+}
+
+button.owl-prev.slick-arrow, button.owl-next.slick-arrow {
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0 !important;
+    z-index: 999;
+}
+
+button.owl-prev.slick-arrow.slick-disabled, button.owl-next.slick-arrow.slick-disabled {
+    opacity: 0;
+}
+
+/*.slick-prev:before, .slick-next:before {*/
+/*  font-size: 29px;*/
+/*  line-height: 1;*/
+/*  opacity: 1;*/
+/*  color: #444444;*/
+/*  border-radius: 35px;*/
+/*  background-color: white;*/
+/*  border: #4141414a 1px solid;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    position: absolute;*/
+/*    top: 40%;*/
+/*    transform: translateY(-40%);*/
+/*    display: block;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+.pw-button.pw-button--circle.pw-button--yellow.pw-permission--default {
+    margin: auto !important;
+}
+
+.pt-10 {
+    padding-top: 10px !important;
+}
+
+.pt-15 {
+    padding-top: 15px !important;
+}
+
+img.icon-menu {
+    padding-top: 13px;
+    float: left;
+    padding-right: 3px;
+    top: 8px;
+    width: 25px;
+    height: 35px;
+}
+
+ul.menu li.main-menu__element.menu-yet ul li span.btn,
+ul.menu li.main-menu__element.menu-yet ul li a.btn {
+    height: 38px;
+    line-height: 38px;
+}
+
+#main-menu-popup ul.menu .header-logo-2 {
+    width: 285px !important;
+}
+
+#main-menu-popup .main-menu-wrap {
+    width: 285px !important;
+}
+
+li.main-menu__element ul.submenu li a.btn.btn-secondary {
+    height: 38px;
+    line-height: 38px;
+}
+
+.hamburger span.fa-bars {
+    background-color: white;
+    color: #1F7E46;
+}
+
+div.top-news a.link-more,
+div.top-articles a.link-more,
+div.news-slider a.link-more {
+    color: #2B2A28;
+}
+
+.form-search input[type="text"] {
+    height: 36px;
+}
+
+.form-search input[type="submit"] {
+    height: 35px;
+    line-height: 36px;
+    padding: 0 18px;
+    vertical-align: baseline;
+}
+
+.form_radio_group input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+
+.form_radio_group {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.form_radio_group-item {
+    display: inline-block;
+    float: left;
+}
+
+.form_radio_group input[type=radio] {
+    display: none;
+}
+
+.form_radio_group label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    user-select: none;
+}
+
+
+/* Checked */
+.form_radio_group input[type=radio]:checked + label {
+    background-color: #1f7e46;
+    border-color: #1f7e46;
+    color: #ffffff;
+}
+
+/* Hover */
+.form_radio_group label:hover {
+    color: #666;
+}
+
+/* Disabled */
+.form_radio_group input[type=radio]:disabled + label {
+    background: #efefef;
+    color: #666;
+}

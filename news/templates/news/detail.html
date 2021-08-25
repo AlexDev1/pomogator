@@ -1,0 +1,109 @@
+{% extends 'news/base.html' %}{% load thumbnail banner_tags news %}
+
+{% block seo_title %}{{ object.title }} | Новости ЗОЖ{% endblock %}
+{% block seo_description %}{{ object.text|striptags|truncatechars:150 }}{% endblock %}
+{% block seo_keywords %}{{ object.title }}{% endblock %}
+{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  <span>{{ object.title }}</span>
+{% endblock %}
+{% block heading %}
+  <h1>{{ object.title }}</h1>
+  <div class="subheading block">
+    <em><a href="{% url 'news:list' %}"
+           title="Все новости"
+           class="link-subtitle">Все новости </a> /
+      <a href="{% url 'news:rubric' object.rubrics.all.0.slug %}" title="{{ object.rubrics.all.0.title }}"
+         class="link-subtitle">{{ object.rubrics.all.0.title }}</a></em><br>
+  </div>
+  <div class="block">
+    {% ifnotequal object.countries.count 0 %}
+      {% with object.countries.all as labels %}
+        {% include "includies/blocks/labels.html" %}
+      {% endwith %}
+    {% endifnotequal %}
+
+    <span class="news-block__date date" style="padding-left: 10px;">
+            <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y" }}
+            <span title="количество просмотров" class="visits_count noselect">
+                <span class="fa fa-eye"></span> {{ object.get_visits }}
+            </span>
+        </span>
+
+    {% ifnotequal object.get_comment_count 0 %}
+      <a class="news-block__comments" href="{{ object.get_absolute_url }}#comments">
+        <span class="fa fa-comment"></span> {{ object.get_comment_count }}
+      </a>
+    {% endifnotequal %}
+
+    {% if object.video %}
+      <a class="news-block__has-video" href="{{ object.video.get_absolute_url }}">
+        <span class="fa fa-video-camera"></span>
+      </a>
+    {% endif %}
+
+    {% if object.photogallery %}
+      <a class="news-block__has-photogallery" href="{{ object.photogallery.get_absolute_url }}">
+        <span class="fa fa-camera"></span>
+      </a>
+    {% endif %}
+  </div>
+{% endblock %}
+{% block heading-description %}{% endblock %}
+{% block page_content %}
+  <div class="">
+    {% if object.youtube_video %}
+      <div class="video-frame-wrap">
+        <iframe
+                allowfullscreen=""
+                frameborder="0"
+                height="360"
+                 width="100%"
+                src="{{ object.get_youtube_embed }}"></iframe>
+      </div>
+      {% else %}{# paste cover #}
+      {% if object.get_normal_photos|length > 1 %}
+        <div class="unslider--bottom-controls">
+          <div class="slider" data-autoplay="false">
+            <ul>
+              {% for newsphoto in object.get_normal_photos %}
+                {% thumbnail newsphoto.image "960x640" crop="center" as img %}
+                  <li class="photo-wrap">
+                    <div class="photo">
+                      <img src="{{ img.url }}" alt="{{ newsphoto.description|default:"" }}">
+                      {% if newsphoto.description %}
+                        <div class="photo__title">{{ newsphoto.description }}</div>{% endif %}
+                    </div>
+                  </li>
+                {% endthumbnail %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% else %}
+        <div class="photo-wrap">
+          <img class="photo__img" src="{{ object.get_cover.image.url }}"
+               alt="{{ object.get_cover.description|default:object.title|safe }}">
+          <div data-relap-id="ZZplzA3NQ6Ren7-_" class="js-relap-anchor"></div>
+
+          <div class="photo__title">
+            {{ object.get_cover.description|default:object.title|safe }}
+          </div>
+
+        </div>
+      {% endif %}
+    {% endif %}
+    {% include 'includies/blocks/_subscribers_news.html' %}
+    <div class="p-b-10 p-t-10">{% get_widget_scripts section=2 %}</div>
+    <div class="block panel-body-wrap--padding news-detail hentry" style="margin-top: 0">
+      <article class="hentry">
+        {{ object.text|safe }}
+      </article>
+      {% top_topics_day_news news_block=False %}
+      <div class="p-t-10">{% get_widget_scripts section=3 %}</div>
+    </div>
+
+  </div>
+{% endblock %}

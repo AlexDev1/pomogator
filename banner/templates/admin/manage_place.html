@@ -1,0 +1,232 @@
+
+{% extends "admin/base_site.html" %}{% load static %}
+{% block title %} Управление показами банеров {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+
+
+
+{#<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>#}
+
+<script type="text/javascript" src="{% static 'media_js/ajax_functions.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="{% static 'site_media/css/jquery-ui/ui.all.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block content %}
+
+
+<p>&nbsp;</p>
+<div id="title_block"><a href="/admin/">Начало</a> / <a href="/admin/banner/banneradvertisers/">Управление показами банеров</a></div>
+<br>
+Период - <b>{{month_str}} {{year_id}}</b>&nbsp;&nbsp;
+{% if country_yes %} страна - <b>{{country.title}}</b>{%endif%}
+{% if ttype_yes %} вид туризма - <b>{{ttype.title}}</b>{%endif%}
+{% if cruise_yes %} круизная компания - <b>{{cruise.title}}</b>{%endif%}
+<br>
+<hr>
+<br>
+{% if new_sc %}
+
+    <div id="new_schedule">
+        <form action="." method="POST" name="askPlace" enctype="multipart/form-data">
+            <input type="hidden" name="action_type" value="schedule">
+            <input type="hidden" name="months" value="{{month_id}}" class="months">
+            <input type="hidden" name="year" value="{{year_id}}" class="months">
+            <input type="hidden" name="banner_place" value="{{baner_place_id}}">
+            <input type="hidden" name="ban_type" value="{{ban_type}}">
+                {% if country_yes %}
+                <input type="hidden" name="country_id" value="{{country.id}}">
+                    {%else%}
+                <input type="hidden" name="country_id" value="0">
+                {%endif%}
+                {% if ttype_yes %}
+                <input type="hidden" name="ttype_id" value="{{ttype.id}}">
+                    {%else%}
+                <input type="hidden" name="ttype_id" value="0">
+                {%endif%}
+                {% if cruise_yes %}
+                <input type="hidden" name="cruise_id" value="{{cruise.id}}">
+                    {%else%}
+                <input type="hidden" name="cruise_id" value="0">
+                {%endif%}
+                {% ifequal ban_type 'vip'%}
+                <input type="hidden" name="w1" value="{{w1}}">
+                <input type="hidden" name="w2" value="{{w2}}">
+            {% endifequal %}
+            {% ifequal ban_type 'news'%}
+                <input type="hidden" name="w1" value="{{w1}}">
+                <input type="hidden" name="w2" value="{{w2}}">
+                {% endifequal %}
+                {% ifequal ban_type 'vipmenu'%}
+                <input type="hidden" name="w1" value="{{w1}}">
+                <input type="hidden" name="w2" value="{{w2}}">
+                {% endifequal %}
+                {% ifequal ban_type 'bulletin'%}
+                <input type="hidden" name="w1" value="{{w1}}">
+                <input type="hidden" name="w2" value="{{w2}}">
+                {% endifequal %}
+        <b>Добавить рекламодателя на указанный период</b><br>
+        <select name="adv">
+            {%for f in adv%}<option value="{{f.id}}">{{f.name}}</option>{%endfor%}
+        </select>
+        <br>примечания:
+        <textarea name="description" cols="30" rows="6"></textarea>
+        <br><br>
+        <input type="Submit" name="Create" value="Забронировать рекламное место">
+        </form>
+    </div>
+
+{% else %}
+
+<p>&nbsp;</p>
+<div id="title_block">Место показа и период</div>
+
+<table cellpadding="10" cellspacing="20" border="0">
+<tr>
+    <td><b>ID</b></td>
+    <td><b>Место</b></td>
+    <td><b>Период показа</b></td>
+    <td><b>Начало показа</b></td>
+    <td><b>Конец показа</b></td>
+    <td><b>Бесплатно</b></td>
+    <td><b>Картинки снаружи</b></td>
+    <td><b>Flash снаружи</b></td>
+    <td><b>HTML code</b></td>
+    <td><b>&nbsp;</b></td>
+</tr>
+<tr>
+    <td>{{scedule.id}}</a></td>
+    <td>{{scedule.banner_place.alias}}<br><i>{{scedule.banner_place.description|safe}}</i></td>
+    <td>{{scedule.period_type}}</td>
+    <td>{{scedule.start_date|date:"d.m.y"}}</td>
+    <td>{{scedule.end_date|date:"d.m.y"}}</td>
+    <td>
+        <input type="checkbox" {% if scedule.nomoney %}checked{% endif %} id="s{{ scedule.id }}" onclick="addNoMoney('{{ scedule.id }}')">
+    </td>
+    <td>
+        <input type="checkbox" {% if scedule.allow_out_img %}checked{% endif %} id="i{{ scedule.id }}" onclick="addOutsideImg('{{ scedule.id }}')">
+    </td>
+    <td>
+        <input type="checkbox" {% if scedule.allow_out_flash %}checked{% endif %} id="f{{ scedule.id }}" onclick="addOutsideFlash('{{ scedule.id }}')">
+    </td>
+    <td>
+        <input type="checkbox" {% if scedule.allow_out_html %}checked{% endif %} id="h{{ scedule.id }}" onclick="addOutsideHTML('{{ scedule.id }}')">
+    </td>
+    <td><a href="?action=delete&id={{scedule.id}}">удалить бронь</a></td>
+</tr>
+
+</table>
+{% ifnotequal ban_type 'news'%}
+
+    {% ifnotequal ban_type 'cv'%}
+<p>&nbsp;</p>
+<div id="title_block">Загрузить банер</div>
+<br>
+<form action="." method="POST" name="addBaner" enctype="multipart/form-data">
+<input type="hidden" name="action_type" value="baner">
+<input type="hidden" name="scedule_id" value="{{scedule.id}}">
+            <input type="hidden" name="months" value="{{month_id}}" class="months">
+            <input type="hidden" name="year" value="{{year_id}}" class="months">
+            <input type="hidden" name="banner_place" value="{{baner_place_id}}">
+<b>URL:</b> <input type="text" name="url" value="">
+    <br>
+<b>Тип Банера</b>
+<select name="baner_type">
+                <option value="G" selected>Графический (Jpg, Gif)</option>
+                <option value="F">Flash банер</option>
+                <option value="T">Текстовый банер</option>
+</select>
+
+    <br>
+
+<input type="file" name="new_baner">
+{% ifequal ban_type 'vip'%}
+vip_big:    <input type="file" name="new_baner_vip">
+{% endifequal %}
+<br>
+<textarea name="description" cols="30" rows="6"></textarea>
+<br><br>
+<input type="Submit" name="Create" value="Добавить банер">
+</form>
+
+    {%endifnotequal%}
+
+{% ifequal ban_type 'cv'%}
+    <br><br>
+    <b><a href="?action=create&id={{scedule.id}}">Создать COUNTRY_ВИДЖЕТ</a></b>
+    <br>
+{%endifequal%}
+
+{%endifnotequal%}
+
+
+{% ifequal ban_type 'news'%}
+    <br><br>
+    <b><a href="?action=create&id={{scedule.id}}">Создать NEWS_ВИДЖЕТ</a></b>
+    <br>
+{%endifequal%}
+
+<p>&nbsp;</p>
+<div id="title_block">Управление банерами</div>
+<br>
+
+<table cellpadding="6" cellspacing="6" border="0">
+<tr>
+    <td><b>ID</b></td>
+    <td><b>Начало показа</b></td>
+    <td><b>Конец показа</b></td>
+    <td><b>Дата добавления</b></td>
+    <td><b>Тип</b></td>
+    <td><b>Показывается</b></td>
+    <td><b>банер</b></td>
+</tr>
+{% for f in baner_list %}
+<tr>
+    <td>{{f.id}}</td>
+    <td>{{f.scedule.start_date|date:"d.m.y"}}</td>
+    <td>{{f.scedule.end_date|date:"d.m.y"}}</td>
+    <td>{{f.datetime|date:"d.m.y, H:i:s"}}</td>
+    <td>{{f.type}}</td>
+    <td><input type="checkbox" id="b{{ f.id }}" onclick="addToBannerShow('{{ f.id }}')"></td>
+    <td>
+{% ifnotequal ban_type 'news'%}
+    {% ifnotequal ban_type 'cv'%}
+        {% ifequal f.type.type 'T' %}
+            <pre>{{f.text}}</pre>
+        {% endifequal %}
+        {% ifnotequal f.type.type 'T' %}
+            <a href="/site_media/{{f.storage}}" target="_p">показать</a>
+        {%endifnotequal%}
+    {%endifnotequal%}
+    {% ifequal ban_type 'cv'%}
+        <a href="/admin/banner/banneradvertisers/newsvidget/{{f.id}}">редактировать</a>
+    {%endifequal%}
+{%endifnotequal%}
+{% ifequal ban_type 'news'%}
+        <a href="/admin/banner/banneradvertisers/newsvidget/{{f.id}}">редактировать</a>
+{%endifequal%}
+
+    </td>
+</tr>
+{% endfor %}
+</table>
+    {% for baner in baner_list %}
+        {%if baner.show%}
+        <script type="text/javascript">$("#b{{ baner.id }}").attr('checked', true);</script>
+        {%endif%}
+    {% endfor %}
+<p>&nbsp;</p>
+
+{% endif %}
+
+
+{% endblock %}

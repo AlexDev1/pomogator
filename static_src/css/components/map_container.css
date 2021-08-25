@@ -1,0 +1,157 @@
+#map-container-wrapper {
+  height: 48px;
+  position: relative;
+  z-index: 999;
+}
+.map-container {
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.map-container.sticked {
+  position: fixed !important;
+}
+.map-container .map-tabs {
+  display: block;
+  max-height: 100px;
+  background-color: #2B2A28;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.map-container .map-tabs__item {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  display: inline-block;
+  line-height: 24px;
+  padding: 0 1em;
+  cursor: default;
+  font-weight: bold;
+  color: white;
+}
+.map-container .map-tabs__item:hover {
+  background-color: #37bf29;
+  color: #2B2A28;
+}
+.map-container .map-tabs__item.active {
+  background-color: #37bf29;
+  color: white;
+}
+.map-container .map-tabs .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 24px;
+  line-height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+.map-container.hidden .map-list--wrap {
+  max-height: 48px;
+  overflow: hidden;
+  position: relative;
+}
+.map-container.hidden .map-tabs {
+  overflow: hidden;
+  max-height: 0;
+}
+.map-container.hidden .map-tabs .close {
+  display: none;
+}
+.map-container .map-list {
+  top: 0;
+  max-height: 600px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.map-container .map-list--wrap {
+  top: 0;
+  position: relative;
+  max-height: 600px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.map-container .map-list__item {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  background-image: url(../../images/map-bg.jpg);
+  -webkit-background-size: cover;
+          background-size: cover;
+  max-height: 600px;
+}
+.map-container .map-list__item:not(.active) {
+  display: none;
+}
+.map-container .map-list__item.active {
+  display: block;
+}
+.map-container .map-container__toggler {
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  position: absolute;
+  bottom: -12px;
+  left: 48%;
+  background-color: #37bf29;
+  color: white;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.map-container .map-container__toggler:hover {
+  color: #2B2A28;
+  cursor: pointer;
+}
+.map-container .map-container__toggler:after {
+  content: "\f062";
+}
+.map-container .map-container__toggler.opener:before {
+  font-family: sans-serif;
+  position: absolute;
+  top: -24px;
+  color: #2B2A28;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
+  line-height: 1em;
+  display: block;
+  content: "открыть карту";
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.33333333rem;
+  -webkit-border-radius: 2pt;
+          border-radius: 2pt;
+  text-decoration: underline;
+  -webkit-box-shadow: 0 0 2pt black;
+          box-shadow: 0 0 2pt black;
+}
+.map-container .map-container__toggler.opener:hover:before {
+  background-color: white;
+}
+.map-container .map-container__toggler.opener:after {
+  content: "\f063";
+}

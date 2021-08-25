@@ -1,0 +1,109 @@
+<!DOCTYPE html>{% load static compress cache banner_tags %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block seo_title %}{% endblock seo_title %}</title>
+  <meta name="keywords" content="{% block seo_keywords %}{% endblock seo_keywords %}">
+  <meta name="description" content="{% block seo_description %}{% endblock seo_description %}">
+  {% block seo_meta %}{% endblock %}
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+  {% block css %}
+    <!-- base css -->
+    {% compress css %}
+      <link rel="stylesheet" href="{% static 'vendor/reflex-grid/css/reflex.min.css' %}">
+      <link rel="stylesheet" href="{% static 'vendor/components-font-awesome/css/font-awesome.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/common.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/panels.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/buttons.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/breadcrumbs.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/footer.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/weather-icons.css' %}">
+      <link rel="stylesheet" href="{% static 'css/media.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/forms.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/aspect-ratio.css' %}">
+      <link rel="stylesheet" href="{% static 'css/components/back-to-top.css' %}">
+      <link rel="stylesheet" href="{% static 'css/components/guide_panel.css' %}">
+      <link rel="stylesheet" href="{% static 'css/treemenu.css' %}">
+      <link rel="stylesheet" href="{% static 'vendor/magnific-popup/dist/magnific-popup.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/carusel-news.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/paginator.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/news.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ui/articles.css' %}">
+      <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+      <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+      <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+      <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    {% endcompress %}
+    <!-- extra css -->
+    {% block extra_css %}{% endblock %}
+    <!-- /extra css -->
+    <meta name="yandex-verification" content="b41b034ceb0ebd10"/>
+  {% endblock %}
+  <meta name="pmail-verification" content="921a364655a6bbdf9b8313a791f82f33">
+  <meta name="verify-admitad" content="de63e99919" />
+  <meta name="robots" content="max-image-preview:large">
+</head>
+<body>
+{% include 'includies/blocks/metrika.html' %}
+{% cache 600 widget_branding_3 %}{% get_widget_branding %}{% endcache %}
+{% include "includies/blocks/header.html" %}
+<div id="main">
+  {% block _wrap_breadcrumbs %}
+    <div class="block breadcrumbs">
+      <a href="/">Главная</a>
+      {% block breadcrumbs %}{% endblock %}
+    </div>
+  {% endblock %}
+
+  {% block main %}{% endblock %}
+
+</div><!-- /#main -->
+{% cache 86400 zoj_footer_1 %}
+  {% include "includies/blocks/footer.html" %}
+{% endcache %}
+<div id="popups">
+  {% block popups %}
+    <div id="main-menu-popup">
+      <div class="overlay"></div>
+      <nav class="main-menu-wrap">
+        <span class="close"></span>
+        <div class="hide-scroll">
+          {% include "includies/blocks/main_menu_new.html" %}
+        </div>
+      </nav>
+    </div>
+
+    {% include "includies/blocks/search_popup.html" %}
+
+    {% block extra_popups %}
+    {% endblock %}
+  {% endblock %}
+</div>
+{% block js %}
+  {% compress js %}
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-form/jquery.form.js' %}"></script>
+    <script src="{% static 'vendor/treemenu.js/jquery.treemenu.js' %}"></script>
+    <script src="{% static 'vendor/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'vendor/velocity/velocity.min.js' %}"></script>
+    <script src="{% static 'vendor/unslider/dist/js/unslider-min.js' %}"></script>
+    <script src="{% static 'js/lib.js' %}"></script>
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/sticky-stack.js' %}"></script>
+    <script src="{% static 'vendor/jquery.cookie/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/back-to-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+  {% endcompress %}
+
+  {% block extra_js %}{% endblock %}
+{% endblock %}
+
+</body>
+</html>

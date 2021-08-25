@@ -1,0 +1,69 @@
+{% comment %}
+This template for custom_utils.paginator2 tag
+{% endcomment %}
+{% load tags_utils %}
+
+<div class="paging-wrapper">
+  {% if page.paginator.num_pages > 1 %}
+    <div class="paging-label">Страницы</div>
+    <ul class="paging">
+      {% spaceless %}
+        {% if page.has_previous %}
+          <li class="prev first">
+            <a href="{% query_string 'page=page.previous_page_number' '' %}">
+              <i class="fa fa-arrow-left"></i> Предыдущая
+            </a>
+          </li>
+        {% endif %}
+
+        {% for n in begin %}
+          <li class="pagelink {% if  n == page.number %}current{% endif %} {% if forloop.first and not page.has_previous %}first{% endif %} {% if forloop.last and not page.has_next %}last{% endif %}">
+            {% if  n == page.number %}
+              <span>{{ n }}</span>
+            {% else %}
+              <a href="{% query_string 'page=n' "" %}">{{ n }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+
+        {% if middle %}
+          <li class="skip">
+            <span>...</span>
+          </li>
+          {% for n in middle %}
+            <li class="pagelink {% if  n == page.number %}current{% endif %}">
+              {% if  n == page.number %}
+                <span>{{ n }}</span>
+              {% else %}
+                <a href="{% query_string 'page=n' '' %}">{{ n }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+
+        {% if end %}
+          <li class="skip">
+            <span>...</span>
+          </li>
+          {% for n in end %}
+            <li class="pagelink {% if  n == page.number %}current{% endif %} {% if forloop.last and not page.has_next %}last{% endif %}">
+              {% if  n == page.number %}
+                <span>{{ n }}</span>
+              {% else %}
+                <a href="{% query_string 'page=n' '' %}">{{ n }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+
+        {% if page.has_next %}
+          <li class="next last">
+            <a href="{% query_string 'page=page.next_page_number' '' %}">
+              Следующая <i class="fa fa-arrow-right"></i>
+            </a>
+          </li>
+        {% endif %}
+      {% endspaceless %}
+    </ul>
+  {% endif %}
+</div>

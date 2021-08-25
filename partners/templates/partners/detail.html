@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% load news %}
+
+{% block title %}{% if object.meta_title %}{{ object.meta_title }}{% else %}{{ object.title }}{% endif %}{% endblock %}
+{% block meta_name %}
+  <meta name="keywords" content="{% if not object.meta_keywords %}{{ object.title }}{% else %}{{ object.meta_keywords }}{% endif %}">
+  <meta name="description" content="{% if not object.meta_description %}{{ object.title }}{% else %}{{ object.meta_description }}{% endif %}">
+{% endblock %}
+{% block javascript %}
+{% endblock %}
+{% block top_branding %}{% endblock %}
+{% block headershow_banner_place %}{% endblock %}
+{% block breadcrumbs %}
+  <a href="/">Главная</a>
+  <span>{{ object.title }}</span>
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed">
+    <div class="grid__col-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <h1>{{ object.title }}</h1>
+        </div>
+
+        <div class="panel-body">
+          <div class="panel-body-wrap--padding text">
+            {{ object.disc|safe }}
+          </div>
+          <div class="panel-body-wrap--padding text pt-0">
+            {% for foo in object.partnerwidgetscript_set.all %}
+              {{ foo.content|safe }}
+            {% endfor %}
+          </div>
+          <div class="grid grid--bleed grid--no-flex-grow">
+            {% for subject in object.news_subjects.all|slice:2 %}
+            <div class="grid__col-sm-6">
+              {% top_news_subject subject count=5 %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock main %}

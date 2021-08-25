@@ -1,0 +1,23 @@
+{% load thumbnail cache %}
+  <div class="panel-heading" style="padding-bottom: 0">
+    <h3>ТЕМЫ ДНЯ:</h3>
+  </div>
+  <div class="panel-body">
+    <div id="{{ topics_carousel }}" class="owl-carousel">
+      {% for topic in topics %}
+        <div class="hovereffect item-yandex-carusel">
+          <a class="unit" href="{{ topic.get_absolute_url }}">
+            <div class="item-owl-carousel">
+              {% thumbnail topic.image "165x134" crop='center' as im %}
+                <img src="{{ im.url }}" width="100%" height="{{ im.height }}" class="p-5">
+              {% endthumbnail %}
+              <div class="topic-overlay">
+                {{ topic.title|truncatechars:35 }}
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div><!-- /.panel-body -->
+

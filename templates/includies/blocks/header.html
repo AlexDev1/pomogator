@@ -1,0 +1,13 @@
+<header>{% load banner_tags cache %}
+  {% block header %}
+    {% cache 600 zoj_header_4 %}
+    <nav>
+      <div class="main-menu-wrap sticky-stack">
+{#      {% include "redesign2/blocks/top_menu.html" %}#}
+        {% include "includies/blocks/top_menu_new.html" %}
+      </div>
+    </nav>
+    {% endcache %}
+    {% get_widget_scripts section=1 %}
+  {% endblock header %}
+</header>

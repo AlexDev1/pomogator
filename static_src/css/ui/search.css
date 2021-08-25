@@ -1,0 +1,89 @@
+.search {
+  background-color: #37bf29;
+  -webkit-border-radius: 2pt;
+          border-radius: 2pt;
+}
+.sticked.search {
+  z-index: 900;
+}
+.sticked.search input[type=text],
+.sticked.search button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 24px;
+  line-height: 48px;
+  margin: 8px;
+}
+.search form {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.search form input[type=text],
+.search form button {
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 32px;
+  line-height: 48px;
+  margin: 12px;
+  vertical-align: top;
+}
+.search form input {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 90%;
+  display: inline-block;
+}
+.search form button[type=submit] {
+  background-color: transparent;
+  border: none;
+  font-size: 200%;
+  margin-left: 0;
+  width: 32px;
+}
+.search form button[type=submit] span {
+  color: white;
+  vertical-align: top;
+}
+.search form .suggestions {
+  left: 0;
+  position: absolute;
+  top: 56px;
+  z-index: 10;
+}
+.search form .suggestions table {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  background-color: white;
+  border-collapse: collapse;
+}
+.search form .suggestions table tr td {
+  height: 24px;
+}
+.search form .suggestions table .que {
+  color: #37bf29;
+}
+.search form .suggestions table #searchresults a {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 1rem;
+}
+.search form .suggestions table .category {
+  background-color: #D7DBDA;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 1rem;
+}
+.search form .suggestions table .left,
+.search form .suggestions table .right {
+  display: none;
+}

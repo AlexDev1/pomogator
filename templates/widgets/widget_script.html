@@ -1,0 +1,11 @@
+{% if scripts_list %}
+{% for script in scripts_list %}
+  {% if script.active %}
+  {% for foo in  script.get_widgets %}
+    <div class="banner" style="text-align: center">
+          {{ foo.content|safe }}
+    </div>
+  {% endfor %}
+  {% endif %}
+{% endfor %}
+{% endif %}

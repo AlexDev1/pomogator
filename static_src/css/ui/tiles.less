@@ -1,0 +1,68 @@
+@import "core";
+
+.tiles {
+    .no-cover {
+        width: 100%;
+        // min-height: 160px;
+        background-image: url('/static/images/blue_sky_800x800.jpg');
+        background-size: cover;
+        background-position: center center;
+
+        .company-logo {
+            width: 60%;
+            max-width: 80px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .tile {
+        background-position: center center;
+        background-size: cover;
+        width: inherit !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border: 7px solid white;
+
+        &:hover {
+            h2, h3, h4 {
+                color: @primary-bg-color;
+            }
+        }
+
+        .photo__title {
+            padding: 4pt 4pt;
+        }
+
+        &-wrap--big {
+        }
+
+        &-wrap--small {
+            .photo__title {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    & > [class*="grid__col"]:first-child {
+        .left { // is aspect-ratio in left side
+            & > * {
+                left: 0;
+            }
+        }
+    }
+
+    & > [class*="grid__col"]:last-child {
+        .right { // is aspect-ratio in left side
+            & > * {
+                right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// out:breadcrumbs.css
+// Part of UI for tourprom
+// author: Coder <coder@xevin.ru>
+// date 05 march 2016
+
+@import "core";
+
+
+.breadcrumbs {
+    padding: @block-margin / 2;
+    overflow: hidden;
+    background-color: @body-background-color;
+
+    &> * {
+        white-space: nowrap;
+    }
+
+    &> a {
+        display: inline-block;
+
+        &:hover:before {
+            color: @color + #777;
+            text-decoration: none;
+            background-color: transparent;
+        }
+    }
+
+    &> * + *::before,
+    .split {
+        display: inline-block;
+        color: @color + #777;
+        text-shadow: 1px 1px white;
+        vertical-align: middle;
+    }
+
+    &> * + *::before {
+        content: "»";
+        padding-right: 4px;
+        vertical-align: top;
+    }
+}
+
+// alias for old name
+.breadcomb {
+    .breadcrumbs;
+}
+
+// alias for redesign name
+.breadcrumb {
+    .breadcrumbs;
+}
+

@@ -1,0 +1,7 @@
+{% for object in object_list %}
+  {% include 'news/blocks/_forloop_ad_video.html' %}
+  {% include 'news/blocks/_forloop_yandex_widget.html' %}
+  <div class="news-list__item-wrap p-r-5 p-l-5">
+    {% include "news/news_list_item.html" with show_date_circle=1 %}
+  </div>
+{% endfor %}

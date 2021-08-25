@@ -1,0 +1,11 @@
+{% extends "includies/blocks/slider.html" %}
+
+{% block slider_title %}{{ specialblock_title }}{% endblock %}
+
+{% block slider_body %}
+    {% for object in object_list %}
+        <li class="news-slider__element">
+        {% include "news/blocks/news_slider_item.html" %}
+        </li>
+    {% endfor %}
+{% endblock %}

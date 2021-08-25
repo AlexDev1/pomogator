@@ -1,0 +1,46 @@
+.message {
+  display: block;
+  border-width: 0.1rem;
+  border-style: solid;
+  -webkit-border-radius: 2pt;
+          border-radius: 2pt;
+  padding: 1rem;
+  position: relative;
+  font-size: 1.2em;
+}
+* + .message__text,
+* + .message__footer {
+  margin-top: 1rem;
+}
+.message--centered {
+  text-align: center;
+}
+.message--warning {
+  border-color: #faf2cc;
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+.message--success,
+.message--info {
+  color: #167819;
+  border-color: #7ae17d;
+  background-color: #92ff96;
+}
+.message--danger,
+.message--error {
+  border-color: #37bf29;
+  background-color: #ffc9cf;
+}
+.message__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.2em;
+  height: 1.2em;
+  text-align: center;
+  font-size: 1.5em;
+}
+.message__close:hover {
+  cursor: pointer;
+  color: black;
+}

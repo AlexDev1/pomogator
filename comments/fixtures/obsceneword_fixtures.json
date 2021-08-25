@@ -1,0 +1,163 @@
+[
+    {
+        "pk": 1,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "с у к а"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "п еи з д"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "х у йёуяию"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "о х у е втл"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "п и д оеа р"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "п и д р"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "её б а нклт"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "у её б оа нтк"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "её б л аои"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "в ы её б"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "е б ё т"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "св ъь еёи б"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "б л я"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "г оа в н"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "м у д а кч"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "г ао н д о н"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "ч м оы"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "д е р ь м"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "ш л ю х"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "з ао л у п"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "м ао н д"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "с у ч а р"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "comments.obsceneword",
+        "fields": {
+            "chars": "д ао л б ао её б"
+        }
+    }
+]

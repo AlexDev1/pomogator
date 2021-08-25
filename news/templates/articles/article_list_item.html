@@ -1,0 +1,66 @@
+{% load thumbnail custom_utils %}
+<section class="news-list__item">
+    {% if show_date_circle %}
+    <div class="news-item__date hidden-xs hidden-xxs">
+        <div class="date-circle">
+            <div class="date">{{ object.pubdate|date:"d.m" }}</div>
+            <div class="time">{{ object.pubdate|date:"H:i" }}</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="news-item__block news-block">
+        <div class="grid">
+            <div class="grid__col-sm-6 news-item__header">
+            {% block header %}
+                <div class="photo-wrap">
+                    <a href="{{ object.get_absolute_url }}">
+                    {% thumbnail object.get_cover "300x180" crop="center" as img %}
+                    <img src="{{ img.url }}" alt="">
+                    {% empty %}
+                    <img class="noimage" src="/static/images/noimage300x180.png" alt="новость без фото">
+                    {% endthumbnail %}
+                    </a>
+
+                    <span class="photo__title photo__title--right">
+                        <span title="количество просмотров" class="visits_count noselect">
+                            <span class="fa fa-eye"></span> {{ object.fake_visits }}
+                        </span>
+
+                        {% if object.photogallery %}
+                        <a class="news-block__has-photogallery" href="{{ object.photogallery.get_absolute_url }}">
+                            <span class="fa fa-camera"></span>
+                        </a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endblock %}
+            </div>
+
+            <div class="grid__col-sm-6 news-item__body">
+            {% block body %}
+                <h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+                <div class="news-item__text">
+                    <a class="news-block__text link-more" href="{{ object.get_absolute_url }}">
+                    {{ object.text|striptags|truncatechars:"480"|balance_title_n_text2:object.title|safe }}
+                    </a>
+                </div>
+            {% endblock %}
+            </div>
+        </div>
+
+        <div class="news-item__footer">
+            {% ifnotequal object.countries.count 0 %}
+            {% with object.countries.all as labels %}
+                {% include "includies/blocks/labels.html" %}
+            {% endwith %}
+            {% endifnotequal %}
+
+            <div class="no-labels">
+                <span class="news-block__date date">
+                    <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y"}}
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

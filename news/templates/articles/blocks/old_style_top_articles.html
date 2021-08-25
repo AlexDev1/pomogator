@@ -1,0 +1,31 @@
+{% if articles_by_tourismtype|length > 0 %}
+<b class="orangeb1h"></b><b class="orangeb2h"></b><b class="orangeb3h"></b><b class="orangeb4h"></b>
+    <div class="orangeheadh">
+        <h2 class="titleblock" style="margin:0; color:#fff; font-size: 1em; padding-left: 4px;">
+        {{ item }} в статьях</h2>
+    </div>
+
+    <div class="contenth">
+        <noindex>
+            <table>
+            {% for f in articles_by_tourismtype %}
+            <tr valign="top">
+                <td>
+                    <a href="/news/{{f.id}}" rel="nofollow">
+                        <img align="left" src='{{ f.get_cover.url }}' width="40" height="40" class="square2">
+                    </a>
+                </td>
+                <td>
+                    <div style="overflow: hidden; width: 205px;">
+                        {{ f.title }} <a href="/news/{{f.id}}" class="country" rel="nofollow">
+                            <span style="font-size:0.7em;">{{f.pubdate|date:"d.m.y"}}</span>
+                        </a><br>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        </noindex>
+    </div>
+<b class="b4bh"></b><b class="b3bh"></b><b class="b2bh"></b><b class="b1h"></b>
+{% endif %}

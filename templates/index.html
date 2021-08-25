@@ -1,0 +1,38 @@
+{% extends 'base.html' %}{% load cache news %}
+{% block seo_title %}ЗОЖ.news - новости и пропаганда ЗОЖ: о Здоровом Образе Жизни, о здоровом и правильном питании, а также о рецептах ЗОЖ, о вредных привычках и борьбе с ними - всё в нашем журнале ЗОЖ{% endblock %}
+{% block seo_keywords %}
+  ЗОЖ-news: новости ЗОЖ и HLS, новости активити, правильной еды и HLS, науки и медицины, знаменитости и ЗОЖ, а также
+  новости по Анти-ЗОЖ на ZOJ.news
+{% endblock %}
+{% block seo_description %}
+  ЗОЖ-news: новости ЗОЖ и HLS, новости активити, правильной еды и HLS, науки и медицины, знаменитости и ЗОЖ, а также
+  новости по Анти-ЗОЖ на ZOJ.news
+{% endblock %}
+{% block _wrap_breadcrumbs %}{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed">
+    <div class="grid__col-sm-6 left-col">
+      <div class="grid grid--bleed grid--no-flex-grow">
+        <div class="grid__col-sm-12 left-col__left-col">
+          {% cache 600 zoj_top_news %}
+            {% top_news count=15 %}
+          {% endcache %}
+        </div>
+        <div class="grid__col-sm-0">
+        </div>
+      </div>
+    </div>
+    <div class="grid__col-sm-6 right-col" style="padding-top: 0px!important;">
+      <div class="grid grid--bleed grid--no-flex-grow">
+        <div class="grid grid--bleed grid--no-flex-grow">
+          <div class="grid__col-12">
+            {% cache 600 zoj_top_articles_index_2 %}{% top_articles 15 %}{% endcache %}
+          </div>
+          <div class="grid__col-sm-12 ">
+            {% cache 600 zoj_top_specialblocks_index %}{% top_specialblocks %}{% endcache %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

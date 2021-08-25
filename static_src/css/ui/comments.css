@@ -1,0 +1,106 @@
+.comment + .comment,
+.comment + .comment-form,
+.comment + .pseudoform,
+.comment-form + .comment,
+.comment-form + .comment-form,
+.comment-form + .pseudoform,
+.pseudoform + .comment,
+.pseudoform + .comment-form,
+.pseudoform + .pseudoform {
+  margin-top: 1rem;
+}
+.comment .grid__col-md-10,
+.comment-form .grid__col-md-10,
+.pseudoform .grid__col-md-10 {
+  padding-left: 1rem;
+}
+.comment__text {
+  margin-top: 1rem;
+}
+.comment__author {
+  font-weight: bold;
+  margin-right: 8pt;
+}
+.comment__author-avatar {
+  width: 100%;
+  height: auto;
+  border: 1px solid #D7DBDA;
+  padding: 0.33333333rem;
+}
+.comment__date .fa {
+  margin-right: 2pt;
+}
+.comment__rating {
+  text-align: center;
+  line-height: 24px;
+  height: 24px;
+}
+.comment__rating > * + * {
+  margin-left: 1rem;
+}
+.comment__rating form {
+  display: inline-block;
+}
+.comment__rating form button[type=submit] {
+  background: none;
+  border: none;
+  color: #828685;
+}
+.comment__rating--errors {
+  text-align: center;
+  font-size: 80%;
+}
+.comment__vote {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: #828685;
+}
+.comment__vote--down:hover {
+  color: #37bf29;
+}
+.comment__vote--down:hover button[type=submit] {
+  color: #37bf29;
+}
+.comment__vote--up:hover {
+  color: #1FE025;
+}
+.comment__vote--up:hover button[type=submit] {
+  color: #1FE025;
+}
+.comment__tree {
+  padding-left: 5%;
+}
+.comment__tree .comment,
+.comment__tree .comment-form {
+  margin-top: 1rem;
+}
+.comment-reply {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #828685;
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  margin-top: 1rem;
+}
+.comment-reply:hover,
+.comment-reply.active {
+  color: #3e4241;
+}
+.pseudoform .textarea {
+  max-height: 200px;
+  height: 72px;
+  width: 100%;
+  border: 1px solid #D7DBDA;
+  color: #D7DBDA;
+  display: block;
+}
+.comment-form textarea {
+  max-height: 200px;
+  height: 72px;
+  width: 100%;
+}

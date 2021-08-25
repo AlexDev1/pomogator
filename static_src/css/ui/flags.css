@@ -1,0 +1,796 @@
+[class*="country-flag"] {
+  display: inline-block;
+  width: 36px;
+  height: 22px;
+  line-height: 22px;
+  background-position: center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+}
+.country-flag-ZW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ZW.png");
+}
+.country-flag-ZM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ZM.png");
+}
+.country-flag-ZA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ZA.png");
+}
+.country-flag-YT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/YT.png");
+}
+.country-flag-YE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/YE.png");
+}
+.country-flag-WS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/WS.png");
+}
+.country-flag-WF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/WF.png");
+}
+.country-flag-VU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VU.png");
+}
+.country-flag-VN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VN.png");
+}
+.country-flag-VI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VI.png");
+}
+.country-flag-VG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VG.png");
+}
+.country-flag-VE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VE.png");
+}
+.country-flag-VC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VC.png");
+}
+.country-flag-VA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/VA.png");
+}
+.country-flag-UZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/UZ.png");
+}
+.country-flag-UY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/UY.png");
+}
+.country-flag-US {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/US.png");
+}
+.country-flag-UG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/UG.png");
+}
+.country-flag-UA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/UA.png");
+}
+.country-flag-TZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TZ.png");
+}
+.country-flag-TW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TW.png");
+}
+.country-flag-TV {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TV.png");
+}
+.country-flag-TT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TT.png");
+}
+.country-flag-TR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TR.png");
+}
+.country-flag-TO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TO.png");
+}
+.country-flag-TN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TN.png");
+}
+.country-flag-TM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TM.png");
+}
+.country-flag-TL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TL.png");
+}
+.country-flag-TK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TK.png");
+}
+.country-flag-TJ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TJ.png");
+}
+.country-flag-TH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TH.png");
+}
+.country-flag-TG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TG.png");
+}
+.country-flag-TF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TF.png");
+}
+.country-flag-TD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TD.png");
+}
+.country-flag-TC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/TC.png");
+}
+.country-flag-SZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SZ.png");
+}
+.country-flag-SY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SY.png");
+}
+.country-flag-SV {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SV.png");
+}
+.country-flag-ST {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ST.png");
+}
+.country-flag-SS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SS.png");
+}
+.country-flag-SR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SR.png");
+}
+.country-flag-SO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SO.png");
+}
+.country-flag-SN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SN.png");
+}
+.country-flag-SM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SM.png");
+}
+.country-flag-SL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SL.png");
+}
+.country-flag-SK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SK.png");
+}
+.country-flag-SI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SI.png");
+}
+.country-flag-SH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SH.png");
+}
+.country-flag-SG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SG.png");
+}
+.country-flag-SE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SE.png");
+}
+.country-flag-SD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SD.png");
+}
+.country-flag-SC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SC.png");
+}
+.country-flag-SB {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SB.png");
+}
+.country-flag-SA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/SA.png");
+}
+.country-flag-RW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/RW.png");
+}
+.country-flag-RU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/RU.png");
+}
+.country-flag-RS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/RS.png");
+}
+.country-flag-RO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/RO.png");
+}
+.country-flag-QA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/QA.png");
+}
+.country-flag-PY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PY.png");
+}
+.country-flag-PW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PW.png");
+}
+.country-flag-PT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PT.png");
+}
+.country-flag-PS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PS.png");
+}
+.country-flag-PR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PR.png");
+}
+.country-flag-PN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PN.png");
+}
+.country-flag-PL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PL.png");
+}
+.country-flag-PK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PK.png");
+}
+.country-flag-PH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PH.png");
+}
+.country-flag-PG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PG.png");
+}
+.country-flag-PF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PF.png");
+}
+.country-flag-PE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PE.png");
+}
+.country-flag-PA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/PA.png");
+}
+.country-flag-OM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/OM.png");
+}
+.country-flag-NZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NZ.png");
+}
+.country-flag-NU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NU.png");
+}
+.country-flag-NR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NR.png");
+}
+.country-flag-NP {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NP.png");
+}
+.country-flag-NO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NO.png");
+}
+.country-flag-NL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NL.png");
+}
+.country-flag-NI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NI.png");
+}
+.country-flag-NG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NG.png");
+}
+.country-flag-NF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NF.png");
+}
+.country-flag-NE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NE.png");
+}
+.country-flag-NC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NC.png");
+}
+.country-flag-NA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/NA.png");
+}
+.country-flag-MZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MZ.png");
+}
+.country-flag-MY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MY.png");
+}
+.country-flag-MX {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MX.png");
+}
+.country-flag-MW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MW.png");
+}
+.country-flag-MV {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MV.png");
+}
+.country-flag-MU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MU.png");
+}
+.country-flag-MT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MT.png");
+}
+.country-flag-MS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MS.png");
+}
+.country-flag-MR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MR.png");
+}
+.country-flag-MQ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MQ.png");
+}
+.country-flag-MP {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MP.png");
+}
+.country-flag-MO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MO.png");
+}
+.country-flag-MN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MN.png");
+}
+.country-flag-MM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MM.png");
+}
+.country-flag-ML {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ML.png");
+}
+.country-flag-MK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MK.png");
+}
+.country-flag-MH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MH.png");
+}
+.country-flag-MG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MG.png");
+}
+.country-flag-MF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MF.png");
+}
+.country-flag-ME {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ME.png");
+}
+.country-flag-MD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MD.png");
+}
+.country-flag-MC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MC.png");
+}
+.country-flag-MA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/MA.png");
+}
+.country-flag-LY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LY.png");
+}
+.country-flag-LV {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LV.png");
+}
+.country-flag-LU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LU.png");
+}
+.country-flag-LT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LT.png");
+}
+.country-flag-LS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LS.png");
+}
+.country-flag-LR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LR.png");
+}
+.country-flag-LK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LK.png");
+}
+.country-flag-LI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LI.png");
+}
+.country-flag-LC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LC.png");
+}
+.country-flag-LB {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LB.png");
+}
+.country-flag-LA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/LA.png");
+}
+.country-flag-KZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KZ.png");
+}
+.country-flag-KY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KY.png");
+}
+.country-flag-KW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KW.png");
+}
+.country-flag-KR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KR.png");
+}
+.country-flag-KP {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KP.png");
+}
+.country-flag-KN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KN.png");
+}
+.country-flag-KM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KM.png");
+}
+.country-flag-KI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KI.png");
+}
+.country-flag-KH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KH.png");
+}
+.country-flag-KG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KG.png");
+}
+.country-flag-KE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/KE.png");
+}
+.country-flag-JP {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/JP.png");
+}
+.country-flag-JO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/JO.png");
+}
+.country-flag-JM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/JM.png");
+}
+.country-flag-JE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/JE.png");
+}
+.country-flag-IT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IT.png");
+}
+.country-flag-IS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IS.png");
+}
+.country-flag-IR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IR.png");
+}
+.country-flag-IQ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IQ.png");
+}
+.country-flag-IN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IN.png");
+}
+.country-flag-IM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IM.png");
+}
+.country-flag-IL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IL.png");
+}
+.country-flag-IE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IE.png");
+}
+.country-flag-ID {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ID.png");
+}
+.country-flag-IC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/IC.png");
+}
+.country-flag-HU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/HU.png");
+}
+.country-flag-HT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/HT.png");
+}
+.country-flag-HR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/HR.png");
+}
+.country-flag-HN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/HN.png");
+}
+.country-flag-HK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/HK.png");
+}
+.country-flag-GY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GY.png");
+}
+.country-flag-GW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GW.png");
+}
+.country-flag-GU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GU.png");
+}
+.country-flag-GT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GT.png");
+}
+.country-flag-GS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GS.png");
+}
+.country-flag-GR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GR.png");
+}
+.country-flag-GQ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GQ.png");
+}
+.country-flag-GN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GN.png");
+}
+.country-flag-GM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GM.png");
+}
+.country-flag-GL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GL.png");
+}
+.country-flag-GI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GI.png");
+}
+.country-flag-GH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GH.png");
+}
+.country-flag-GG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GG.png");
+}
+.country-flag-GE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GE.png");
+}
+.country-flag-GD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GD.png");
+}
+.country-flag-GB {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GB.png");
+}
+.country-flag-GA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/GA.png");
+}
+.country-flag-FR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FR.png");
+}
+.country-flag-FO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FO.png");
+}
+.country-flag-FM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FM.png");
+}
+.country-flag-FK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FK.png");
+}
+.country-flag-FJ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FJ.png");
+}
+.country-flag-FI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/FI.png");
+}
+.country-flag-EU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/EU.png");
+}
+.country-flag-ET {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ET.png");
+}
+.country-flag-ES {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ES.png");
+}
+.country-flag-ER {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/ER.png");
+}
+.country-flag-EH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/EH.png");
+}
+.country-flag-EG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/EG.png");
+}
+.country-flag-EE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/EE.png");
+}
+.country-flag-EC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/EC.png");
+}
+.country-flag-DZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DZ.png");
+}
+.country-flag-DO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DO.png");
+}
+.country-flag-DM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DM.png");
+}
+.country-flag-DK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DK.png");
+}
+.country-flag-DJ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DJ.png");
+}
+.country-flag-DE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/DE.png");
+}
+.country-flag-CZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CZ.png");
+}
+.country-flag-CY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CY.png");
+}
+.country-flag-CX {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CX.png");
+}
+.country-flag-CW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CW.png");
+}
+.country-flag-CV {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CV.png");
+}
+.country-flag-CU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CU.png");
+}
+.country-flag-CR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CR.png");
+}
+.country-flag-CO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CO.png");
+}
+.country-flag-CN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CN.png");
+}
+.country-flag-CM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CM.png");
+}
+.country-flag-CL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CL.png");
+}
+.country-flag-CK {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CK.png");
+}
+.country-flag-CI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CI.png");
+}
+.country-flag-CH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CH.png");
+}
+.country-flag-CG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CG.png");
+}
+.country-flag-CF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CF.png");
+}
+.country-flag-CD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CD.png");
+}
+.country-flag-CC {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CC.png");
+}
+.country-flag-CA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/CA.png");
+}
+.country-flag-BZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BZ.png");
+}
+.country-flag-BY {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BY.png");
+}
+.country-flag-BW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BW.png");
+}
+.country-flag-BT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BT.png");
+}
+.country-flag-BS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BS.png");
+}
+.country-flag-BR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BR.png");
+}
+.country-flag-BO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BO.png");
+}
+.country-flag-BN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BN.png");
+}
+.country-flag-BM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BM.png");
+}
+.country-flag-BL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BL.png");
+}
+.country-flag-BJ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BJ.png");
+}
+.country-flag-BI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BI.png");
+}
+.country-flag-BH {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BH.png");
+}
+.country-flag-BG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BG.png");
+}
+.country-flag-BF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BF.png");
+}
+.country-flag-BE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BE.png");
+}
+.country-flag-BD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BD.png");
+}
+.country-flag-BB {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BB.png");
+}
+.country-flag-BA {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/BA.png");
+}
+.country-flag-AZ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AZ.png");
+}
+.country-flag-AX {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AX.png");
+}
+.country-flag-AW {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AW.png");
+}
+.country-flag-AU {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AU.png");
+}
+.country-flag-AT {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AT.png");
+}
+.country-flag-AS {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AS.png");
+}
+.country-flag-AR {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AR.png");
+}
+.country-flag-AQ {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AQ.png");
+}
+.country-flag-AO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AO.png");
+}
+.country-flag-AN {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AN.png");
+}
+.country-flag-AM {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AM.png");
+}
+.country-flag-AL {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AL.png");
+}
+.country-flag-AI {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AI.png");
+}
+.country-flag-AG {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AG.png");
+}
+.country-flag-AF {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AF.png");
+}
+.country-flag-AE {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AE.png");
+}
+.country-flag-AD {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/AD.png");
+}
+.country-flag-_wales {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_wales.png");
+}
+.country-flag-_unknown {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_unknown.png");
+}
+.country-flag-_united-nations {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_united-nations.png");
+}
+.country-flag-_south-ossetia {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_south-ossetia.png");
+}
+.country-flag-_SO {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_south-ossetia.png");
+}
+.country-flag-_somaliland {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_somaliland.png");
+}
+.country-flag-_scotland {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_scotland.png");
+}
+.country-flag-_red-cross {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_red-cross.png");
+}
+.country-flag-_olympics {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_olympics.png");
+}
+.country-flag-_northern-cyprus {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_northern-cyprus.png");
+}
+.country-flag-_nato {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_nato.png");
+}
+.country-flag-_nagorno-karabakh {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_nagorno-karabakh.png");
+}
+.country-flag-_mars {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_mars.png");
+}
+.country-flag-_kosovo {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_kosovo.png");
+}
+.country-flag-_gosquared {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_gosquared.png");
+}
+.country-flag-_england {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_england.png");
+}
+.country-flag-_commonwealth {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_commonwealth.png");
+}
+.country-flag-_british-antarctic-territory {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_british-antarctic-territory.png");
+}
+.country-flag-_basque-country {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_basque-country.png");
+}
+.country-flag-_abkhazia {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_abkhazia.png");
+}
+.country-flag-AB {
+  background-image: url("/static/vendor/flags/flags-iso/flat/64/_abkhazia.png");
+}

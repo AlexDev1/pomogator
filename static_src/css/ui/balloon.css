@@ -1,0 +1,20 @@
+.balloon-list--title {
+  margin-bottom: 1rem;
+}
+.balloon-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.balloon-item--cover img {
+  width: 100%;
+}
+.balloon-item--cover {
+  width: 80px;
+  min-width: 80px;
+}
+.balloon-item--text {
+  padding-left: 1rem;
+}

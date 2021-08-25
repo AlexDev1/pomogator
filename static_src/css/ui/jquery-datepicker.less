@@ -1,0 +1,28 @@
+@import "core";
+@import (reference) "../../vendor/components-font-awesome/less/mixins";
+@import (reference) "../../vendor/components-font-awesome/less/variables";
+@import (reference) "../../vendor/components-font-awesome/less/fixed-width";
+
+
+.hasDatepicker {
+    & + .ui-datepicker-trigger {
+        width: @ui-height / 2;
+        height: @ui-height / 2;
+        border: 0;
+        background-color: transparent;
+
+        &:before {
+            .fa-icon();
+            .fa-fw();
+            line-height: @ui-height / 2;
+            content: @fa-var-calendar;
+            color: black;
+        }
+
+        &:hover {
+            &:before {
+                color: @primary-bg-color;
+            }
+        }
+    }
+}

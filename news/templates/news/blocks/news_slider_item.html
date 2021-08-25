@@ -1,0 +1,51 @@
+<section class="news-block">{% load thumbnail %}
+    <div class="photo-wrap">
+      {% thumbnail object.get_cover "480x300" crop="center" as image %}
+        <span class="photo__img" style="background-image: url({{ image.url }})">
+        </span>
+        {% endthumbnail %}
+        <div class="photo__title">
+            <h2><a href="{{ object.get_absolute_url }}">
+                {{ object.title }}
+            </a></h2>
+        </div>
+    </div>
+
+    <div class="news-block__text">
+        <a href="{{ object.get_absolute_url }}" class="link-more">
+            {{ object.text|striptags|truncatewords:"30"|safe }}
+        </a>
+    </div>
+
+    <div class="news-block__footer">
+        {% ifnotequal object.countries.count 0 %}
+        {% with object.countries.all as labels %}
+            {% include "includies/blocks/labels.html" %}
+        {% endwith %}
+        {% endifnotequal %}
+
+        <div class="no-labels">
+            <span class="news-block__date date">
+                <span class="fa fa-clock-o"></span> {{ object.pubdate|date:"d M y"}}
+            </span>
+
+            {% ifnotequal object.get_comment_count 0 %}
+            <a class="news-block__comments" href="{{ object.get_absolute_url }}#comments">
+                <span class="fa fa-comment"></span> {{ object.get_comment_count }}
+            </a>
+            {% endifnotequal %}
+
+            {% if object.video %}
+            <a class="news-block__has-video" href="{{ object.video.get_absolute_url }}">
+                <span class="fa fa-video-camera"></span>
+            </a>
+            {% endif %}
+
+            {% if object.photogallery %}
+            <a class="news-block__has-photogallery" href="{{ object.photogallery.get_absolute_url }}">
+                <span class="fa fa-camera"></span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>

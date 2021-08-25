@@ -1,0 +1,16 @@
+{# require slider scripts #}
+<div class="panel {% block block_css_class %}{% endblock %}">
+  <div class="panel-heading">
+    <h2>{% block slider_title %}{% endblock %}</h2>
+  </div>
+
+  <div class="panel-body">
+    <div class="news-slider block">
+      <div class="slider" {% block aslider_params %}data-autoplay="false"{% endblock %}>
+      <ul>
+      {% block slider_body %}{% endblock %}
+      </ul>
+      </div>
+    </div><!-- /.news-slider -->
+  </div><!-- /.panel-body -->
+</div>

@@ -1,0 +1,98 @@
+<div class="logo_area">{% load static i18n %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 align-self-center">
+        <div class="logo4">
+          <a href="/">
+            <img src="{% static 'assets/img/logo/logo41.png' %}" alt="{{ name_site }}">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-9 align-self-center">
+        <div class="row">
+          <div class="col-12">
+            <div class="topbar">
+              <div class="row">
+                <div class="col-md-8 align-self-center">
+                  <div class="trancarousel_area">
+                    <p class="trand">Актуально</p>
+                    <div class="trancarousel owl-carousel nav_style1">
+                      <div class="trancarousel_item">
+                        <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                          Now</a>
+                        </p>
+                      </div>
+                      <div class="trancarousel_item">
+                        <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                          Now</a>
+                        </p>
+                      </div>
+                      <div class="trancarousel_item">
+                        <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                          Now</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 align-self-center">
+                  <div class="top_date_social text-right">
+                    <div class="user3"><i class="fal fa-user-circle"></i>
+                    </div>
+                    <div class="lang-3">
+                      <ul>{% get_current_language as lang %}
+                        <li><a href="#">{{ lang }} <i class="fal fa-angle-down"></i></a>
+                          <ul>
+                            <li><a href="#">en-EN</a>
+                            </li>
+                            <li><a href="#">fr-FR</a>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-5"></div>
+        <div class="border4"></div>
+        <div class="space-20"></div>
+        <div class="row justify-content-end">
+          <div class="space-5"></div>
+          <div class="col-md-6 col-lg-5 align-self-center">
+            <div class="v3datentemp">
+              <div class="date4">
+                <h5>{% now 'l' %} <span>{% now 'DATE_FORMAT' %}</span></h5>
+              </div>
+              <div class="temp d-none d-lg-block">
+                <div class="temp_wap">
+                  <div class="temp_icon">
+                    <img src="../assets/img/icon/s4.png" alt="">
+                  </div>
+                  <h3 class="temp_count">13</h3>
+                  <p>Москва</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 align-self-center fix_width_social">
+            <div class="social4 text-right">
+              <ul class="inline">
+                <li><a href="#"><i class="fab fa-telegram"></i></a>
+                </li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

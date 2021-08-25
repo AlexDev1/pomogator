@@ -1,0 +1,178 @@
+footer {
+    background-color: #f5f5f5;
+    color: white;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 980px;
+    padding: 0.5rem;
+    position: relative;
+    top: 0;
+}
+
+footer > * {
+    background-color: #1a6d3c;
+}
+
+footer > div.grid + div.grid {
+    border-top: 1px solid white;
+    padding: 1rem 0;
+}
+
+footer .social {
+    color: white;
+    text-align: justify;
+    vertical-align: middle;
+}
+
+footer .social__title {
+    font-size: 1.3em;
+}
+
+footer .social__links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px 40px;
+}
+
+footer .social__links a {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+footer .social__links a:hover .fa {
+    background-color: #ffffff;
+    color: #363636;
+    font-size: 5vw;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+}
+
+footer .social__links a:hover .fa-twitter {
+    background-color: #00ACED;
+    color: white;
+}
+
+footer .social__links a:hover .fa-telegram {
+    background-color: #279FD3;
+    color: white;
+}
+
+footer .social__links a .fa {
+
+    background-color: #E6E6E6;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: #696969;
+    font-size: 4vw;
+    height: 6vw;
+    line-height: 6vw;
+    text-align: center;
+    width: 6vw;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+footer .web-counters {
+    border-right: 1px solid white;
+}
+
+footer nav ul li {
+    list-style: none;
+}
+
+footer nav ul li + li {
+    margin-top: 12px;
+}
+
+footer nav ul li a {
+    color: white;
+    /*font-weight: bold;*/
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    color: #37bf29;
+}
+
+footer .rss {
+    border-right: 1px solid white;
+}
+
+footer .rss .rss__element {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer .rss .rss__element:hover {
+    color: #37bf29;
+}
+
+footer .copyright {
+    margin: 0 0;
+    position: relative;
+}
+
+footer .copyright__text {
+    font-size: 0.9em;
+}
+
+footer .copyright .phone-number__list {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+footer .copyright .phone-number__list li {
+    font-size: 0.8em;
+    list-style: none;
+}
+
+footer .main-logo {
+    background-image: url("../../images/main-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    display: block;
+    height: 100px;
+    width: 136px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+footer .main-logo:before {
+    background-color: transparent;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    color: gray;
+    content: "18+";
+    display: inline-block;
+    font-size: 1vw;
+    height: 2vw;
+    line-height: 2vw;
+    text-align: center;
+    width: 2vw;
+}
+
+@media (max-width: 480px) {
+    footer .main-logo {
+        height: 80px;
+        width: 70px;
+    }
+}

@@ -1,0 +1,56 @@
+﻿<div style="border: 1px solid #0080c0; padding: 3px;">
+    
+<script type="text/javascript" >
+function checkAndSubmitOrder(param) {
+    if(param) {
+        $('input[name=accept]').attr('checked', true);
+        $("form[name=addBaner]").submit();
+    } else {
+        $('input[name=accept]').attr('checked', false);
+        $("form[name=addBaner]").submit();
+    }
+    
+}
+</script>
+
+
+<b># {{order.id}}</b>
+    <br><br>
+
+рекламодатель: <b>{{order.user}}</b><br><br>
+
+email: <b>{{order.email}}</b><br><br>
+
+телефон: <b>{{order.phone}}</b><br><br>
+
+контактное лицо: <b>{{order.contact}}</b><br><br>
+
+тип оплаты: <b>{{order.pay_type}}</b><br><br>
+
+{%ifequal order.pay_type 'Наличная'%}адрес офиса{%endifequal%}{%ifequal order.pay_type 'Безналичная'%}реквизиты для б/н оплаты{%endifequal%}: <b>{{order.pay_data}}</b><br><br>
+
+место: <b>{{order.banner_place}}</b><br><br>
+
+начало показа: <b>{{order.start_date|date:"d.m.Y"}}</b><br><br>
+
+конец показа: <b>{{order.end_date|date:"d.m.Y"}}</b><br><br>
+
+страна/тип туризма/круиз: <b>{{order.country}} / {{order.tourismtype}} / {{order.cruise}}</b><br><br>
+
+примечания: <b>{{order.ask_order}}</b><br><br>
+
+<br><br>
+<form action="." method="POST" name="addBaner" enctype="multipart/form-data">
+<input type="hidden" name="id" value="{{order.id}}">
+
+  
+    
+<input type="button" value="Подтвердить" onclick="checkAndSubmitOrder(true)">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Отказать" onclick="checkAndSubmitOrder(false)">
+    
+    <br><br>
+<input type="checkbox" name="accept" id="accept" style="display:none;">    
+</form>
+
+</div>

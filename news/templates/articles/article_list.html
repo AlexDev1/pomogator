@@ -1,0 +1,74 @@
+{% extends "base.html" %}{% load custom_utils banner_tags %}
+{% block seo_title %}Журнал ЗОЖ - статьи о Здоровом Образе Жизни | ЗОЖ.news {% if page_obj.number != 1 %} Страница
+  {{ page_obj.number }}{% endif %}{% endblock %}
+{% block seo_keywords %}Журнал о здоровом образе жизни и правильном питании: статьи о пользе ЗОЖ и ПП{% endblock %}
+{% block seo_description %}Журнал ЗОЖ - статьи о пользе здорового образа жизни ЗОЖ и правильного питания ПП, различные
+  исследования, диеты, фитнес-тренировки и другая полезная информация на портале ZOJ.news {% if page_obj.number != 1 %}
+  Страница {{ page_obj.number }}{% endif %}{% endblock %}
+{% block extra_js %}
+  {{ block.super }}
+{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'articles:list' %}">Журнал о ЗОЖ</a>
+{% endblock %}
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/ui/maps.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/ui/messages.css">
+{% endblock %}
+
+{% block h1 %}{{ h1 }}{% endblock %}
+
+{% block description %} {{ rubric.text|safe }}{% endblock %}
+
+{% block post_news_list %}{% endblock %}
+
+{% block main %}
+  <div class="grid grid--bleed" id="{% block main_block_css_id %}news-page{% endblock %}">
+    <div class="grid__col-sm-9 left-col p-t-10">
+      <div class="panel">
+        <div class="panel-heading">
+          {% block heading %}
+            <h1>Журнал о здоровом образе жизни и правильном питании: все статьи о пользе ЗОЖ и ПП</h1>
+            {% if show_return_link %}
+              <a href="{% url 'news-list' %}" class="pull-right return-link">Вернуться ко всем новостям</a>
+            {% endif %}
+          {% endblock %}
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block description">
+              Журнал ЗОЖ: статьи о пользе Здорового Образа Жизни (ЗОЖ) и Правильного Питания (ПП): различные
+              исследования, диеты, фитнес-тренировки и другая полезная информация на портале ZOJ.news
+            </div>
+
+          </div>
+        {% endblock %}
+      </div>
+      {% if object_list|length > 0 %}
+        {% for object in object_list %}
+          {#       {% include 'redesign2/news/blocks/_forloop_ad_video.html' %}#}
+          {#       {% include 'redesign2/news/_forloop_yandex_widget.html' %}#}
+          <div class="news-list__item-wrap p-r-5 p-l-5">
+            {% include "articles/article_list_item.html" with show_date_circle=1 %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="message message--warning message--centered">
+          <h2 class="message__title">Опубликованных статей в этом разделе ещё нет</h2>
+          <p class="message__text">Не упустите возможность стать первым!</p>
+          <div class="message__footer">
+            <a class="btn btn--simple btn--small" href="/reklama/#articles">ЗАКАЗАТЬ СТАТЬЮ</a>
+          </div>
+        </div>
+      {% endif %}
+      <div class="block paginator">
+        {% paginator2 page_obj %}
+      </div>
+
+    </div>
+    <div class="grid__col-sm-3 right-col">
+      {% get_widget_scripts section=4 %}
+    </div>
+  </div>
+{% endblock %}

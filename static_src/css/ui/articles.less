@@ -1,0 +1,17 @@
+
+.top-articles {
+  .photo__title {
+    padding: 0 .5em;
+  }
+
+  .news-block {
+    & + .news-block {
+      &:before {
+        display: none;
+        content: "";
+      }
+    }
+
+    padding-bottom: 0;
+  }
+}

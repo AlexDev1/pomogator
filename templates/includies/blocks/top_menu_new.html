@@ -1,0 +1,46 @@
+{% load thumbnail static menu_build %}
+<ul class="menu">
+  <li class="main-menu__element">
+    <span id="hamburger" class="btn hamburger">
+      <span class="fa fa-bars fa-2x"></span>
+    </span>
+  </li>
+  <li class="main-menu__element">
+    <a href="/" class="btn header-logo-2 {% if HOLIDAY_NAME %}holiday-{{ HOLIDAY_NAME }}{% endif %}"
+       title="На главную!"></a>
+  </li>
+  <li class="main-menu__element hide-480px">
+    <a href="{% url 'news:list' %}" class="btn btn-secondary">
+      Новости:</a>
+  </li>
+
+  {% menu_builder as rubrics %}
+  {% for rubric in rubrics %}
+    <li class="main-menu__element hide-480px">
+      <a href="{% url 'news:rubric' rubric.slug %}" class="btn btn-secondary">{{ rubric.title }}</a>
+    </li>
+  {% endfor %}
+  <li class="main-menu__element hide-480px"><span class="btn btn-secondary">|</span></li>
+  <li class="main-menu__element hide-480px">
+    <a href="{% url 'articles:list' %}" class="btn btn-secondary">
+       Журнал о ЗОЖ и ПП</a>
+  </li>
+  <li class="main-menu__element hide-480px search">
+    <span data-target="#tp_search" class="btn btn-secondary open-popup" title="Поиск">
+      <span class="fa fa-search fa-2x"></span>
+    </span>
+  </li>
+  <li class="main-menu__element {% if not request.user.is_authenticated %}sign-in{% else %}sign-out{% endif %}">
+    {% if not request.user.is_authenticated %}
+      <a class="btn btn-primary open-ajax-popup" data-type="ajax" href="/accounts/login-popup/" title="Войти">
+        <img width="45" src="{% static 'icons/icons-user.png' %}" alt="User-not-is-authenticated">
+        <span class="btn__text hide-768px"></span>
+      </a>
+    {% else %}
+      <a class="btn btn-primary open-ajax-popup" data-type="ajax" href="/logout/" title="Войти">
+        <img width="40" src="{% static 'icons/icons8-user-o.png' %}" alt="{{ request.user }}">
+        <span class="btn__text hide-768px"></span>
+      </a>
+    {% endif %}
+  </li>
+</ul>

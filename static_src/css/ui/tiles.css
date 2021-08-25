@@ -1,0 +1,47 @@
+.tiles .no-cover {
+  width: 100%;
+  background-image: url('/static/images/blue_sky_800x800.jpg');
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center center;
+}
+.tiles .no-cover .company-logo {
+  width: 60%;
+  max-width: 80px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.tiles .tile {
+  background-position: center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  width: inherit !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 7px solid white;
+}
+.tiles .tile:hover h2,
+.tiles .tile:hover h3,
+.tiles .tile:hover h4 {
+  color: #37bf29;
+}
+.tiles .tile .photo__title {
+  padding: 4pt 4pt;
+}
+.tiles .tile-wrap--small .photo__title {
+  font-size: 1.1rem;
+}
+.tiles > [class*="grid__col"]:first-child .left > * {
+  left: 0;
+}
+.tiles > [class*="grid__col"]:last-child .right > * {
+  right: 0;
+}

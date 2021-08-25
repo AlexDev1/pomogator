@@ -1,0 +1,10 @@
+.top-articles .photo__title {
+  padding: 0 0.5em;
+}
+.top-articles .news-block {
+  padding-bottom: 0;
+}
+.top-articles .news-block + .news-block:before {
+  display: none;
+  content: "";
+}

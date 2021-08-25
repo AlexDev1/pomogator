@@ -1,0 +1,21 @@
+{% load thumbnail %}
+<div class="balloon-list">
+  <div class="balloon-list--title">
+    <strong>Последние статьи о <a href="{{ country.get_absolute_url }}" target="_parent">{{ country.title_datel }}</a>:</strong>
+  </div>
+
+  {% for item in news %}
+  <div class="balloon-item">
+    <div class="balloon-item--cover">
+      {% thumbnail item.get_cover "60x60" crop="center" as img %}
+      <img src="{{ img.url }}" align="left">
+      {% endthumbnail %}
+    </div>
+
+    <div class="balloon-item--text">
+      {{ item.pubdate|date:"d.m" }} - <a href="{{ item.get_absolute_url }}" target="_parent">{{ item.title }}</a>
+    </div>
+  </div>
+  {% endfor %}
+  <div><a href="{% url 'articles:list' %}?country={{ country.slug }}" class="btn2" target="_parent">все статьи по стране</a></div>
+</div>

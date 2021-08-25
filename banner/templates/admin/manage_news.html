@@ -1,0 +1,180 @@
+
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %} Управление показами банеров {% endblock %}
+
+{% block metanocache %}<meta http-equiv="Pragma" content="no-cache">{% endblock %}
+
+{% block javascript %}
+{{ block.super }}
+
+<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>
+
+<script type="text/javascript" src="/site_media/js/ajax_functions.js"></script>
+<script type="text/javascript" src="/site_media/js/jquery.MultiFile.pack.js"></script>
+<script type="text/javascript">
+function checkAndSubmitBaner() {
+    clearErrors();
+    valid = true;
+    if(jQuery.trim($('#banUrl').val())=='') {
+        $('#errorUrl').html("Вы не ввели адрес ссылки для банера");
+        valid = false;
+    }
+    if($('#banFile').val()=='') {
+        $('#errorFile').html("Вы не выбрали изображение для банера");
+        valid = false;
+    }
+    if($('#banFile2').val()=='') {
+        $('#errorFile2').html("Вы не выбрали большое изображение для банера");
+        valid = false;
+    }
+    if(valid) {
+        document.forms.addBaner.submit();
+    }
+}
+function clearErrors() {
+    $('#errorUrl').html("");
+    $('#errorFile').html("");
+    $('#errorFile2').html("");
+
+
+}
+$(document).ready(function() {
+    $("#preview_button").click(function() {
+        $(":input[name='preview']").val("1");
+        $("#addBaner").submit();
+    });
+
+    });
+</script>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+    <link type="text/css" href="/site_media/css/menu.css" rel="stylesheet" />
+    <link type="text/css" href="/site_media/css/base_fix.css" rel="stylesheet" />
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="/admin/">{% trans 'Home' %}</a>
+&rsaquo; <a href="/admin/banner/banneradvertisers/">Управление показами банеров</a>
+</div>
+{% endblock %}
+
+{% block content %}
+{% ifnotequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}
+<div id="title_block">Редактирование NEWS-ВИДЖЕТА</div>
+{% endifnotequal %}
+
+{% ifequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}
+<div id="title_block">Редактирование COUNTRY-ВИДЖЕТА</div>
+{% endifequal %}
+
+<br>
+    {{item.scedule.banner_place.place}}
+<p>&nbsp;</p>
+
+<div class="head_top_content" style="text-align: left; padding: 10px;">
+
+
+{% ifnotequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}{% endifnotequal %}{% ifequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}{% endifequal %}
+
+
+{% if preview %}
+        <div style="width:450px;">
+<noindex>
+<b class="xtop"><b class="eb1"></b><b class="eb2"></b><b class="eb3"></b><b class="eb4"></b></b>
+<div class="econtentb" style="text-align:left;">
+    <div style="padding:3px;">
+    {% if not flash %}
+        <a href="{{url}}"><img src="{{ img_url }}" style="width: 100%" class="square1" align="right"></a>
+    {% endif %}
+    {% if flash %}
+        <div  style="width:160px;float:right;">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="160" height="120">
+        <param name="movie" value="/site_media/BannerWrap.swf?banner={{ img_url }}&link=/baner/click/" />
+        <param name="allowScriptAccess" value="sameDomain" />
+        <param name="allowFullScreen" value="true" />
+        <param name="wmode" value="transparent" />
+        <!--[if !IE]>-->
+        <object type="application/x-shockwave-flash" data="/site_media/BannerWrap.swf?banner={{ img_url }}&link=/baner/click/" width="160" height="120">
+        <param name="allowScriptAccess" value="sameDomain" />
+        <param name="allowFullScreen" value="true" />
+        <param name="wmode" value="transparent" />
+        <!--<![endif]-->
+        <p>Alternative content</p>
+        <!--[if !IE]>-->
+        </object>
+        <!--<![endif]-->
+        </object>
+        </div>
+    {% endif %}
+
+<h4 class="title" style="margin-top:0;">{% ifnotequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}NEWS-ВИДЖЕТ:{% endifnotequal %}{% ifequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}COUNTRY-ВИДЖЕТ:{% endifequal %} <a href="{{url}}">{{title}}</a></h4>
+<p class="text">
+<a href="{{url}}" class="nothing2">{{message}}</a>
+</p>
+<div class="top-clear"></div>
+    </div>
+</div>
+<b class="xbottom"><b class="eb4"></b><b class="eb3"></b><b class="eb2"></b><b class="eb1"></b></b> <br>
+</noindex>
+</div>
+{% endif %}
+
+    <p>&nbsp;</p>
+
+
+
+    <br>
+    <form action="." method="POST" name="addBaner" id="addBaner" enctype="multipart/form-data">
+    {% if preview %}
+    <input type="hidden" name="url" value="{{url}}" />
+    <input type="hidden" name="title" value="{{title}}" />
+    <input type="hidden" name="message" value="{{message}}" />
+    <input type="hidden" name="img_url" value="{{img_url}}" />
+{% endif %}
+
+{% if not preview %}
+    <input type="hidden" name="img_url" value="{{item.storage}}" />
+    <b>Укажите URL (интернет-адрес)<span style="color:red; font-weight: bold;">*</span>:</b><br>
+      <input type="text" name="url" id="id_contact" size="50" value="{{item.baner_url}}">
+      <span id="errorUrl" class="errorMessage"></span>
+
+<br><br>
+    <b>Заголовок<span style="color:red; font-weight: bold;">*</span> (максимум 75 символов):</b>
+    <br>
+    <input type="text" name="title" id="id_title" size="50" maxlength="75" value="{{item.title}}">
+    <br><br>
+    <b>Текст<span style="color:red; font-weight: bold;">*</span> (максимум {% ifnotequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}200{% endifnotequal %}{% ifequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}300{% endifequal %} символов):</b>
+    <br>
+    <textarea name="message" id="id_message" style="width: 400px; height: 160px;" maxlength="{% ifnotequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}200{% endifnotequal %}{% ifequal item.scedule.banner_place.place 'TourOpedia_Vidjet' %}300{% endifequal %}">{{item.text}}</textarea>
+
+     <br><br>
+    <b>Загрузите файл иллюстрации<span style="color:red; font-weight: bold;">*</span><br> (разрешены: jpg, gif, swf):</b>
+
+     <br>
+
+    <input type="file" name="newsvidget" id="banFile" class="multi" maxlength="1" accept="gif|jpg|swf">
+      <span id="errorFile" class="errorMessage"></span>
+
+    <br><br>
+
+    <b>Текущая иллюстрация:</b> <br> <img src="{{item.storage}}">
+    <br><br>
+    <input type="hidden" name="preview" value="0" />
+{% endif %}
+    <input id="preview_button" type="button" value="Предпросмотр" {% if preview %}style="display:none"{% endif %}/>
+        &nbsp;&nbsp;
+    <input type="button" value="Назад" onclick="history.go(-1)" {% if not preview %}style="display:none"{% endif %}/>
+        &nbsp;&nbsp;
+    <input type="submit" value="Сохранить News Виджет" {% if not preview %}style="display:none"{% endif %}/>
+    </form>
+      <br><br>
+    <span style="color:red; font-weight: bold;">*</span> - Все поля являются обязательными для заполнения
+    <br>
+</div>
+{% endblock %}

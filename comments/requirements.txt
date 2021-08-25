@@ -1,0 +1,1 @@
+python-obscene-words-filter>=0.1.6

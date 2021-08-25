@@ -1,0 +1,13 @@
+{% if script_branding_list %}
+<div class="head-branding">
+  <!--noindex-->
+  <div class="banner banner--text-type" style="text-align: center">
+    {% for script in script_branding_list %}
+      {% for foo in  script.get_widgets %}
+        {{ foo.content|safe }}
+      {% endfor %}
+    {% endfor %}
+  </div>
+  <!--/noindex-->
+</div>
+{% endif %}

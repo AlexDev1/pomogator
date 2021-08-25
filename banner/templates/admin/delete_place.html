@@ -1,0 +1,66 @@
+
+{% extends "admin/base_site.html" %}
+{% block title %} Удаление забронированного места {% endblock %}
+
+
+{% block javascript %}
+{{ block.super }}
+<script type="text/javascript" src="/site_media/js/jquery-1.3.2.min.js"></script>
+
+
+<script>document.write("<link rel='stylesheet' href='/site_media/css/"+$.browser.name+"/patern.css' type='text/css'>");</script>
+
+<script type="text/javascript" src="/site_media/js/ajax_functions.js"></script>
+
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link type="text/css" href="/site_media/css/jquery-ui/ui.all.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block content %}
+
+{% if scedule.decline %}
+
+Бронь реклманого места удалена.
+<p>&nbsp;</p>
+<a href="../">Вернуться к управлению показами банеров</a>
+
+{% else %}
+
+<p>&nbsp;</p>
+<div id="title_block">Удаление забронированного места</div>
+<br>
+{% if scedule.country %} страна - <b>{{scedule.country.title}}</b>{%endif%}
+<hr>
+
+
+
+<p>&nbsp;</p>
+<div id="title_block">Место показа и период</div>
+
+<table cellpadding="6" cellspacing="6" border="0">
+<tr>
+    <td><b>ID</b></td>
+    <td><b>Место</b></td>
+    <td><b>Период показа</b></td>
+    <td><b>Начало показа</b></td>
+    <td><b>Конец показа</b></td>
+    <td><b>&nbsp;</b></td>
+</tr>
+<tr>
+    <td>{{scedule.id}}</a></td>
+    <td>{{scedule.banner_place.alias}}<br><i>{{scedule.banner_place.description|safe}}</i></td>
+    <td>{{scedule.period_type}}</td>
+    <td>{{scedule.start_date|date:"d.m.y"}}</td>
+    <td>{{scedule.end_date|date:"d.m.y"}}</td>
+    <td><a href="?action=confirm_delete&id={{scedule.id}}"><span style="color:red"><b>Подтвердить удаление!</b></span></a></td>
+</tr>
+
+</table>
+
+{% endif %}
+
+{% endblock %}

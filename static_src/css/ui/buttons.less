@@ -1,0 +1,235 @@
+// Buttons is a part of UI styles of tourprom
+// author: Coder <coder@xevin.ru>
+@import "core";
+
+
+.btn-common() {
+    .no-select;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: @ui-border-radius;
+    border-width: @ui-border-width;
+    box-shadow: @ui-box-shadow;
+
+    .transition(all .2s ease-in-out);
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn {
+    .btn-common();
+    box-sizing: border-box;
+    display: inline-block;
+    height: @ui-height;
+    line-height: @ui-height;
+    padding: 0 7px;
+    vertical-align: middle;
+
+    &:active {
+        transition-property: transform;
+        transition-duration: 0.1s;
+    }
+
+    &-default {
+        color: @primary-color;
+        background-color: @primary-bg-color;
+
+        &:hover {
+            text-decoration: none;
+            background-color: (@primary-bg-color + #111);
+            color: @secondary-bg-color;
+        }
+    }
+
+    &--fullwidth {
+        display: block;
+    }
+
+    &--small {
+        height: @ui-height / 2;
+        line-height: @ui-height / 2;
+    }
+
+    &--simple {
+        background-color: transparent;
+        border-color: @color;
+        border-width: 1px;
+        border-style: solid;
+    }
+}
+
+.btn-big {
+    &:extend(.btn);
+    display: block;
+    line-height: normal;
+    padding: 6pt;
+}
+
+.btn-small {
+    height: @ui-height / 2;
+    line-height: @ui-height / 2;
+    margin: 2pt 0;
+}
+
+.btn2 {
+    .btn-common();
+
+    display: block;
+    padding: .4em .2em;
+    // line-height: 1em;
+    // height: 1em;
+    background-color: transparent;
+    border-color: @secondary-bg-color;
+    border-width: 1px;
+    border-style: solid;
+    color: @secondary-bg-color;
+
+    &:hover {
+        color: white;
+        background-color: @secondary-bg-color;
+    }
+
+    &--block {
+        display: block;
+    }
+
+    &--inline {
+        display: inline-block;
+    }
+
+    margin: 2pt 0;
+    // color: @hint-color;
+    // line-height: @ui-height / 2;
+
+
+    // &:before, &:after {
+    //     display: inline-block;
+    //     white-space: normal;
+    //     letter-spacing: normal;
+    // }
+
+    // &:before {
+    //     content: "[";
+    //     padding-right: @block-margin / 4;
+    // }
+
+    // &:after {
+    //     content: "]";
+    //     padding-left: @block-margin / 4;
+    // }
+}
+
+.btn-primary { // use with .btn
+    background-color: @primary-bg-color;
+    color: @primary-color;
+
+    &:hover {
+        background-color: @primary-bg-color + #300;
+        color: contrast(@primary-color);
+    }
+}
+
+.btn-secondary { // use with .btn
+    background-color: @secondary-bg-color;
+    color: @secondary-color;
+
+    &:hover {
+        background-color: @primary-bg-color;
+        color: contrast(@secondary-color);
+    }
+}
+
+.btn-more {
+    padding: 0;
+    height: @ui-height/3;
+    line-height: @ui-height/3;
+    &:before {
+        content: "→";
+           width: @ui-height/3;
+    }
+}
+
+.btn-group {
+    display: inline-block;
+    vertical-align: middle;
+
+    .btn {
+        float: left;
+        position: relative;
+        box-shadow: none;
+    }
+
+    .btn + .btn {
+        margin-left: -1px;
+    }
+
+    &>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+
+.scroll-left,
+.scroll-right {
+    .circle-btn(@ui-height / 1.5);
+    display: block;
+    position: relative;
+
+    &:hover {
+        border-color: @primary-bg-color;
+
+        &:before {
+            border-right-color: @primary-bg-color;
+            border-top-color: @primary-bg-color;
+        }
+    }
+}
+
+.scroll-left {
+    float: left;
+    margin-right: 0;
+
+    &:before {
+       .circle-btn-arrow-left(@ui-height / 1.5);
+    }
+}
+
+.scroll-right {
+    float: right;
+    margin-left: 0;
+
+    &:before {
+       .circle-btn-arrow-right(@ui-height / 1.5);
+    }
+}
+
+.close {
+    .no-select;
+    color: #FFF;
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 44px;
+    z-index: 10;
+
+    &:after {
+        content: "×";
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,44 @@
+.company-card {
+  margin: 1rem;
+  overflow: hidden;
+}
+.news-item__body > .company-card {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.company-card .company__logo {
+  margin-right: 1rem;
+  float: left;
+}
+.company-card .company__logo img {
+  border: 1px solid #D7DBDA;
+  width: 80px;
+  height: 80px;
+}
+.company-card .company__name {
+  text-align: left;
+  margin-bottom: 1rem;
+  display: block;
+}
+.company-card .company__website {
+  color: #37bf29;
+}
+.company-card .company__type {
+  display: block;
+}
+.company-card .date {
+  display: inline-block;
+  margin-left: 1rem;
+  line-height: 24px;
+  height: 24px;
+  vertical-align: top;
+}
+.company-card .label-container {
+  display: inline-block;
+}
+.company-card .label-container .label {
+  margin-left: 0;
+}
+.company-card .label-container .label:hover {
+  margin-left: 0;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}{% load custom_utils banner_tags news %}
+{% block seo_title %}{% if rubric %}{{ rubric.title }} |{% endif %} Новости ЗОЖ - газета о Здоровом Образе Жизни
+  {% if page_obj.number != 1 %} Страница {{ page_obj.number }}{% endif %}{% endblock %}
+{% block seo_keywords %}{% if rubric %}{{ rubric.title }} {% endif %}новости ЗОЖ, Здоровый образ жизни, Здоровое и
+  правильное питание, Правильное похудение,
+  Правильная физическая активность{% endblock %}
+{% block seo_description %}{% if rubric %}{{ rubric.text|striptags }}{% else %}Новости Здорового Образа Жизни - газета
+  ЗОЖ | от ЗОЖ.news{% endif %} {% if page_obj.number != 1 %} Страница {{ page_obj.number }}{% endif %}{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'news:list' %}">Новости ЗОЖ</a>
+  {% if rubric %}<a herf="">{{ rubric }}</a>{% endif %}
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="news-page">
+    <div class="grid__col-sm-9 left-col" style="padding-top: 10px">
+      <div class="news-list block">
+        <div class="panel top-main-news">
+          {% top_topics_day_news news_block=False %}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading">
+          {% if rubric %}
+            <h1>{{ rubric.title }} | Новости ЗОЖ</h1>
+          {% else %}
+            <h1>Новости Здорового Образа Жизни - газета ЗОЖ | от ЗОЖ.news</h1>
+          {% endif %}
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block description">
+              {% if rubric.description %}
+                {{ rubric.description }}
+              {% else %}
+                Лента новостей о ЗОЖ - источник оперативной и достоверной информации в мире Здорового Образа Жизни.
+                Новости нашей газеты ЗОЖ широко цитируемы в рунете, однако мы не ограничиваемся лишь темой Здорового и
+                правильного питания: на нашей ленте новостей о Здоровом Образе Жизни вы найдёте исследования в области
+                правильного похудения, физической активности, а также вредных и полезных привычек для ЗОЖ.
+              {% endif %}
+            </div>
+
+          </div>
+        {% endblock %}
+      </div>
+      {% block page_content %}
+        {% include 'news/news_list_items.html' %}
+        {% include 'includies/paginator2.html' %}
+      {% endblock %}
+    </div>
+    <div class="grid__col-sm-3 right-col">
+      {% get_widget_scripts section=4 %}
+    </div>
+  </div>
+{% endblock %}

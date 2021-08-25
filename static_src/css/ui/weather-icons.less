@@ -1,0 +1,35 @@
+@import "core.less";
+
+.icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.gen-weather-icon(@name) {
+    .icon-weather-@{name} {
+        background-image: url("../../icons/weather/@{name}.png");
+    }
+}
+
+.gen-weather-icon(~"01d");
+.gen-weather-icon(~"01n");
+.gen-weather-icon(~"02d");
+.gen-weather-icon(~"02n");
+.gen-weather-icon(~"03d");
+.gen-weather-icon(~"03n");
+.gen-weather-icon(~"04d");
+.gen-weather-icon(~"04n");
+.gen-weather-icon(~"09d");
+.gen-weather-icon(~"09n");
+.gen-weather-icon(~"10d");
+.gen-weather-icon(~"10n");
+.gen-weather-icon(~"11d");
+.gen-weather-icon(~"11n");
+.gen-weather-icon(~"13d");
+.gen-weather-icon(~"13n");
+.gen-weather-icon(~"50d");
+.gen-weather-icon(~"50n");

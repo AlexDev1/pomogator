@@ -1,0 +1,7 @@
+#login-popup .social-option {
+  text-align: center;
+}
+#login-popup .social-option > iframe {
+  height: inherit !important;
+  margin: 0 auto;
+}

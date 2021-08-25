@@ -1,0 +1,58 @@
+{% extends "redesign2/advertisers/profile_base.html" %}
+
+{% block title %}{{ block.super }} - Архив статей{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <span>Архив статей</span>
+{% endblock %}
+
+
+{% block content %}
+<div class="panel">
+    <div class="panel-heading">
+        <h1>Архив статей</h1>
+    </div>
+
+    <div class="panel-body panel-body--padding">
+
+    {% if object_list.count > 0 %}
+    <div>
+        <div class="tab-content__item">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Дата публикации</th>
+                </tr>
+                {% for object in object_list %}
+                <tr>
+                    <td>
+                        {{ object.id }}
+                    </td>
+                    <td>
+                        <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                    </td>
+                    <td>
+                        {{ object.pubdate|date:"d M Y"}} в {{ object.pubdate|time:"H:i" }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div><!-- .table-warp -->
+    {% else %}
+        <div class="message message--warning message--centered">
+            <h2 class="message__title">У вас ещё нет опубликованных статей!</h2>
+            <p class="message__text">
+                Вы ещё не заказывали статьи. Не упустите возможность!
+            </p>
+
+            <div class="message__footer">
+                <a class="btn btn--simple btn--small" href="/reklama/#articles">ЗАКАЗАТЬ СТАТЬЮ</a>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock content %}

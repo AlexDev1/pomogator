@@ -1,0 +1,49 @@
+{% extends 'base.html' %}{% load custom_utils banner_tags news %}
+{% block seo_title %}Новости ЗОЖ {{ country.title_rod }}{% endblock %}
+{% block seo_keywords %}новости ЗОЖ в {{ country.title_rod }}, Здоровый образ жизни {{ country.title_rod }}, Здоровое и
+  правильное питание, Правильное похудение {{ country.title_rod }}, Правильная физическая активность
+  {{ country.title_rod }}{% endblock %}
+{% block seo_description %}Новости ЗОЖ {{ country.title_rod }} - всё о Здоровом образе жизни в {{ country.title_rod }}
+  - профессионально и оперативно{% endblock %}
+{% block breadcrumbs %}
+  <a href="{% url 'news:list' %}">Новости ЗОЖ {{ country.title_rod }} </a>
+  {% if rubric %}<a herf="">{{ rubric }}</a>{% endif %}
+{% endblock %}
+{% block main %}
+  <div class="grid grid--bleed" id="news-page">
+    <div class="grid__col-sm-9 left-col" style="padding-top: 10px">
+      <div class="panel">
+        <div class="panel-heading">
+          <h1>Новости ЗОЖ {{ country.title_rod }} </h1>
+        </div>
+        {% block heading-description %}
+          <div class="panel-body" style="padding-bottom: 20px">
+            <div class="block cover">
+              {% block cover %}
+                <div class="block map">
+                  <img width="100%" src="{{ rubric.image.url }}" alt="{{ subject.name }}" title="{{ subject.name }}"/>
+                </div>
+              {% endblock %}
+              <div class="block description">
+                Лента новостей о ЗОЖ в {{ country.title_rod }} - источник оперативной и достоверной информации в мире
+                Здорового Образа Жизни.
+                Новости нашего издательского дома широко цитируемы в рунете, однако мы не ограничиваемся лишь темой
+                Здорового и правильного питания в {{ country.title_rod }}: на нашей ленте новостей о Здоровом Образе
+                Жизни
+                вы найдёте исследования в {{ country.title_rod }} в
+                области правильного похудения, физической активности, а также вредных и полезных привычек для ЗОЖ.
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+      </div>
+      {% block page_content %}
+        {% include 'news/news_list_items.html' %}
+        {% include 'includies/paginator2.html' %}
+      {% endblock %}
+    </div>
+    <div class="grid__col-sm-3 right-col">
+      {% get_widget_scripts section=4 %}
+    </div>
+  </div>
+{% endblock %}

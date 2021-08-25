@@ -1,0 +1,211 @@
+@import "core";
+
+body {
+    &> header {
+        background-color: @body-background-color;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+        max-width: 980px;
+        font-family: Arial, sans;
+        position: relative;
+        left: 0;
+        top: 0;
+        padding: @block-margin / 2;
+    }
+}
+
+header {
+    // margin-top: 90px; // Пространство для брендинга
+    z-index: 1010;
+
+    .banner {
+        margin-top: @block-margin;
+    }
+
+    nav {
+        height: @ui-height;
+        position: relative;
+        z-index: 1;
+
+        .sticked {
+            z-index: 1000;
+        }
+
+        #hamburger {
+            max-width: @ui-height;
+            min-width: @ui-height;
+        }
+
+        .header-logo-2 {
+            background-image: url("../../images/menu-logo.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: 4px solid transparent; // for background-image 'padding'
+            display: inline-block;
+            height: @ui-height;
+            min-width: 140px;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &.holiday-xmas:before {
+                top: @ui-height / 2;
+                left: 0;
+                height: @ui-height;
+                background-image: url("../../images/holidays/xmas-logo.png");
+            }
+
+            &.holiday-eightmarch:before {
+                top: 4;
+                width: @ui-height * 1.3;
+                left: -@ui-height / 2.5;
+                height: @ui-height * 1.3;
+                background-size: contain;
+                background-image: url("../../images/holidays/8march.png");
+            }
+
+            &.holiday-ninemay:before {
+                top: @ui-height / 2;
+                left: 0;
+                height: @ui-height;
+                background-image: url("../../images/holidays/9may.png");
+            }
+        }
+
+        .btn {
+            border-radius: 0 !important;
+        }
+
+        & + .banner { // когда после nav идёт баннер (или другой блок) нужен отступ между ними
+            & > *:first-child {
+                margin-top: @block-margin;
+            }
+        }
+
+        ul.menu {
+            display: table;
+            padding: 0;
+            width: 100%;
+
+            .submenu {
+                .transition(0.3s ease-in-out);
+                position: absolute;
+                max-height: 0;
+                overflow-y: hidden;
+                z-index: 1000;
+                padding-left: 0;
+                min-width: 180px;
+
+                li {
+                    display: block;
+
+                    .btn {
+                        white-space: nowrap;
+                        text-align: left;
+                    }
+
+                }
+
+            }
+
+            .main-menu__element {
+                &:before {
+                    content: "";
+                    display: block;
+                    float: left;
+                    height: @ui-height/2;
+                    margin-left: -1px;
+                    position: absolute;
+                    top: @ui-height/4;
+                    width: 1px;
+                }
+
+                &:hover {
+                    ul.submenu {
+                        .block-shadow();
+                        max-height: 2000px;
+                    }
+                }
+
+            }
+
+            &> li,
+            .main-menu__element {
+                border-collapse: collapse;
+                display: table-cell;
+                list-style: none;
+                position: relative;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+
+                .btn {
+                    width: 100%;
+                }
+
+                &> .btn {
+                    text-transform: uppercase;
+                }
+
+                &:first-child { // hamburger
+                    width: @ui-height;
+
+                    &>* {
+                        max-width: @ui-height;
+                    }
+
+                }
+
+            }
+
+            .sign-in {
+                width: @ui-height*2;
+                white-space: nowrap;
+
+                .btn__text {
+                    vertical-align: top;
+                }
+
+            }
+
+            .sign-out {
+                width: @ui-height;
+
+                .submenu {
+                    right: 0;
+                }
+
+                &> .btn {
+                    padding: 4px 0.5cm;
+                }
+
+                img.avatar {
+                    width: @ui-height - 8px;
+                    height: @ui-height - 8px;
+                }
+
+            }
+
+            .sign-in,
+            .sign-out,
+            #hamburger,
+            .search {
+                .fa {
+                    line-height: @ui-height;
+                }
+
+            }
+
+        }
+
+    }
+
+}

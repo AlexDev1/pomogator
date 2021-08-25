@@ -1,0 +1,118 @@
+<footer class="">
+  {% block footer %}
+    <div class="social grid">
+
+    </div>
+
+    <div class="grid --bleed">
+      <div class="grid__col-xs-3 rid__col--bleed grid__col-sm-3  web-counters">
+        <div class="grid grid--bleed">
+                  <span style="float: right" class="grid__col-sm-12 grid__col-xs-12">
+                    {% include "includies/blocks/counter/liveinternet_counter.html" %}
+                  </span>
+          <span class="grid__col-sm-12 grid__col-xs-12">
+                    {% include 'includies/blocks/counter/yandex.html' %}
+                  </span>
+
+        </div>
+      </div>
+
+      <div class="grid__col-xs-4 rid__col--bleed grid__col-sm-3 ">
+        <nav class="">
+          <ul class="" style="font-size: 0.9em; padding-left: 0">
+            <li><a href="/about/">о нас</a></li>
+            <li><a href="/feedback/">пишите нам</a></li>
+            <li><a href="/reklama/">реклама на сайте</a></li>
+            {#            <li><a href="/about/#reviews">отзывы рекламодателей</a></li>#}
+            <li><a href="/privacy/">политика конфиденциальности</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="grid__col-sm-6 grid__col-xs-5">
+
+        <div class="grid__col-sm-12 align-center">
+          <span class="social__title" style="font-size: 0.9em;">Читайте новости о Здоровом Образе Жизни в соцсетях и мессенджерах</span>
+        </div>
+
+        <div class="grid__col-sm-12">
+          <div class="social__links">
+
+            <a href="https://vk.com/zoj.news" rel="nofollow" target="_blank"><span
+                    class="fa fa-vk"></span></a>
+            <a href="https://www.instagram.com/ZOJ.news/" rel="nofollow" target="_blank"><span
+                    class="fa fa-instagram"></span></a>
+            <a href=" https://t.me/zoj_news" rel="nofollow" target="_blank"><span class="fa fa-telegram"></span></a>
+            <!--/noindex-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__col-3 grid__col--bleed rss">
+        <div class="grid">
+        <span class="grid__col-sm-6 grid__col-xs-12">
+          <a href="/feed/rss.xml" class="rss__element">
+            <span class="fa fa-rss"></span>&nbsp;RSS<br/>
+            компактная
+          </a>
+        </span>
+
+          <span class="grid__col-sm-6 grid__col-xs-12" style="vertical-align: bottom">
+          <a href="/feed/rssfull.xml" class="rss__element">
+            <span class="fa fa-rss"></span>&nbsp;RSS<br/>
+            полная
+          </a>
+        </span>
+          <span class="grid__col-sm-6 grid__col-xs-12" style="vertical-align: bottom">
+          <a href="/feed/yandex.xml" class="rss__element">
+            <span class="fa fa-rss"></span>&nbsp;RSS<br/>
+            яндекс
+          </a>
+        </span>
+          <span class="grid__col-sm-6 grid__col-xs-12" style="vertical-align: bottom">
+          <a href="/feed/zen.xml" class="rss__element">
+            <span class="fa fa-rss"></span>&nbsp;RSS<br/>
+            дзен
+          </a>
+        </span>
+          <span class="grid__col-sm-6 grid__col-xs-12" style="vertical-align: bottom">
+          <a href="/feed/rssmailru.xml" class="rss__element">
+            <span class="fa fa-rss"></span>&nbsp;RSS<br/>
+            pulse.mail.ru
+          </a>
+        </span>
+        </div>
+      </div>
+
+      <div class="grid__col-9 grid__col--bleed">
+        <div class="grid">
+          <div class="copyright grid__col-8">
+            <div class="copyright__text">
+
+              Copyright &copy; 2020–{% now 'Y' %}<br/>
+              Издатель: инфогруппа &laquo;ТУРПРОМ&raquo;<br/><br>
+
+              Редакция: +7 (495) 585-80-10<br>Реклама: +7 (495) 585-40-35<br><br>
+
+              Зарегистрированны в Роскомнадзоре: свидетельство Эл №ФС77-28779.
+              Использование наших материалов приветствуется, но ТОЛЬКО при условии
+              индексируемой гиперссылки на ZOJ.news или на конкретный материал!
+            </div>
+          </div>
+          <div class="grid__col-4">{% load static %}
+
+            <div style="clear: right; font-size: 0.9em;">
+              Возрастное огрнаничение читателей 18+
+            </div>
+            <img width="50%" src="{% static 'images/18plus.png' %}" style="float: right" alt=""/>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endblock %}
+</footer>

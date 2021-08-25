@@ -1,0 +1,30 @@
+{% load thumbnail tags_utils %}
+<section class="news-block">
+    <div class="news-block__header">
+    {% block header %}
+        <div class="photo-wrap">
+            <a href="{{ object.get_absolute_url }}">{% thumbnail object.get_cover "480x140" crop="center" as image %}
+                    <img src="{{ image.url }}" alt="">
+                {% empty %}
+                    {% thumbnail NOIMAGE_URL "480x140" crop="center" as noimage %}
+                    <img src="{{ noimage.url }}" class="noimage" alt="">
+                    {% endthumbnail %}
+                {% endthumbnail %}</a>
+
+            <span class="photo__title">
+                <h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+            </span>
+        </div>
+    {% endblock %}
+    </div>
+
+    <div class="news-block__body">
+    {% block body %}
+        <div class="news-block__text">
+            <a class="link-more" href="{{ object.get_absolute_url }}">
+            {{ object.text|striptags|strip_blank_paragraphs|truncatechars:350 }}
+            </a>
+        </div>
+    {% endblock %}
+    </div>
+</section>

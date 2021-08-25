@@ -1,0 +1,157 @@
+// Panels is a part of UI styles of tourprom
+// author: Coder <coder@xevin.ru>
+@import "core";
+@import "panel_mixins";
+
+.panel {
+    .block-shadow();
+    background-color: #ffffff;
+    border: none;
+    box-sizing: border-box;
+
+    & + & {
+        margin-top: @block-margin;
+    }
+
+    &--transparent {
+        background-color: transparent;
+    }
+
+    &.panel-default {
+        .panel-heading {
+            color: @color;
+        }
+    }
+
+    &-heading,
+    &__title,
+    &__head {
+        .panel-heading();
+    }
+
+    .panel-empty-heading + .panel-body {
+        border-top-width: 0;
+    }
+
+    .panel-body,
+    &__body {
+        border-color: @ui-border-color;
+        border-style: @ui-border-style;
+        border-width: @ui-border-width;
+        box-sizing: border-box;
+
+        &--no-overflow {
+            overflow: hidden;
+        }
+
+        &--transparent {
+            background-color: transparent;
+        }
+
+        &--white {
+            background-color: white;
+            padding: 0;
+        }
+
+        &> * + &>* {
+            margin-top: @block-margin;
+        }
+
+        .panel-body-wrap--padding {
+            padding: @block-margin;
+        }
+
+        .panel-body-wrap {
+            background-color: transparent;
+
+            >* + * {
+                margin-top: 12px;
+            }
+        }
+
+        &> table {
+            border-collapse: collapse;
+            width: 100%;
+
+            tr {
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border-bottom: @lite-border;
+                border-collapse: collapse;
+                padding-left: 1em;
+            }
+
+            td:last-child {
+                padding-right: 1em;
+            }
+
+            tr:last-child {
+                td {
+                    border-bottom: 0px;
+                }
+            }
+
+            th {
+                color: #7397A5;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-footer,
+    &__footer {
+        border-bottom-left-radius: @ui-border-radius;
+        border-bottom-right-radius: @ui-border-radius;
+        border-color: @ui-border-color;
+        border-style: @ui-border-style;
+        border-width: @ui-border-width;
+        padding: @block-margin;
+        padding-top: 0;
+
+        &--center {
+            text-align: center;
+
+            .btn-small {
+                display: block;
+            }
+        }
+
+        &--white {
+            background-color: white;
+        }
+
+        .links {
+            text-align: left;
+
+            .btn2 {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+// @mini-panel-border-color: @lite-color - #222;
+@mini-panel-border-color: @heading-border-color;
+
+.mini-panel {
+    border: 1px solid @mini-panel-border-color;
+
+    & + & {
+        margin-top: @block-margin;
+    }
+
+    &-heading {
+        height: @ui-height / 1.5;
+        background-color: @lite-color;
+        line-height: @ui-height / 1.5;
+        text-align: center;
+        border-bottom: 1px solid @mini-panel-border-color;
+    }
+
+    &-body {
+        box-sizing: border-box;
+    }
+}

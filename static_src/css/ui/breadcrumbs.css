@@ -1,0 +1,84 @@
+.breadcrumbs {
+  padding: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.breadcrumbs > * {
+  white-space: nowrap;
+}
+.breadcrumbs > a {
+  display: inline-block;
+}
+.breadcrumbs > a:hover:before {
+  color: #a2a19f;
+  text-decoration: none;
+  background-color: transparent;
+}
+.breadcrumbs > * + *::before,
+.breadcrumbs .split {
+  display: inline-block;
+  color: #a2a19f;
+  text-shadow: 1px 1px white;
+  vertical-align: middle;
+}
+.breadcrumbs > * + *::before {
+  content: "»";
+  padding-right: 4px;
+  vertical-align: top;
+}
+.breadcomb {
+  padding: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.breadcomb > * {
+  white-space: nowrap;
+}
+.breadcomb > a {
+  display: inline-block;
+}
+.breadcomb > a:hover:before {
+  color: #a2a19f;
+  text-decoration: none;
+  background-color: transparent;
+}
+.breadcomb > * + *::before,
+.breadcomb .split {
+  display: inline-block;
+  color: #a2a19f;
+  text-shadow: 1px 1px white;
+  vertical-align: middle;
+}
+.breadcomb > * + *::before {
+  content: "»";
+  padding-right: 4px;
+  vertical-align: top;
+}
+.breadcrumb {
+  padding: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.breadcrumb > * {
+  white-space: nowrap;
+}
+.breadcrumb > a {
+  display: inline-block;
+}
+.breadcrumb > a:hover:before {
+  color: #a2a19f;
+  text-decoration: none;
+  background-color: transparent;
+}
+.breadcrumb > * + *::before,
+.breadcrumb .split {
+  display: inline-block;
+  color: #a2a19f;
+  text-shadow: 1px 1px white;
+  vertical-align: middle;
+}
+.breadcrumb > * + *::before {
+  content: "»";
+  padding-right: 4px;
+  vertical-align: top;
+}

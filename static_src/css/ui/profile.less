@@ -1,0 +1,72 @@
+@import "core";
+@import (reference) "tables";
+
+.advertiser_logo {
+    display: inline-block;
+    padding: 2pt;
+    border: 1px solid @lite-color;
+}
+
+.advertiser_profile_head {
+    text-align: center;
+}
+
+.adv_btn {
+    height: @ui-height;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.adv_btn_list {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+
+    .adv_btn_column {
+        .adv_btn;
+        display: table-cell;
+        padding: 0 4pt;
+
+        &:hover {
+            background-color: @body-bg-color;
+            text-decoration: none;
+        }
+
+        & + .adv_btn_column {
+            border-left: 1px solid @heading-border-color;
+        }
+    }
+}
+
+.adv_profile_count {
+    color: @green;
+}
+
+.counter {
+    &--danger {
+        color: #f00;
+    }
+
+    &--success {
+        color: #0a0;
+    }
+}
+
+.tab-content__item {
+    table {
+        .table();
+
+        th {
+            text-align: left;
+        }
+
+    }
+
+    .empty {
+        height: @ui-height;
+        line-height: @ui-height;
+        text-align: center;
+        color: @hint-color;
+        font-style: italic;
+    }
+}
